@@ -1,9 +1,8 @@
 ﻿Public Class extras
-
     Public Sub buttons(btn As Button)
         btn.FlatStyle = FlatStyle.Flat
         btn.FlatAppearance.BorderSize = 0
-        btn.BackColor = Color.Red
+        'btn.BackColor = Color.Red
         btn.ForeColor = Color.White
         btn.Cursor = Cursors.Hand
 
@@ -29,4 +28,6 @@
 
         btn.Region = New Region(Raduis)
     End Sub
+
+
 End Class

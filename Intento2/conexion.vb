@@ -5,7 +5,6 @@ Public Class conexion
     Public cmd As New SqlCommand
     Public dataadapter As New SqlDataAdapter
     Public dataset As New DataSet
-    Public connError As String
 
     Public Sub New()
         Try
@@ -22,10 +21,8 @@ Public Class conexion
             conn.Open()
 
             cmd.Connection = conn
-
-            connError = ""
         Catch ex As Exception
-            connError = ex.Message
+            MessageBox.Show("")
         End Try
     End Sub
 

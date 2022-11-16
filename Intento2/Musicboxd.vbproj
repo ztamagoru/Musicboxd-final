@@ -74,6 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="conexion.vb" />
+    <Compile Include="datos.vb" />
     <Compile Include="extras.vb" />
     <Compile Include="Inicio.vb">
       <SubType>Form</SubType>

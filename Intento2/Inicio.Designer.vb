@@ -52,7 +52,7 @@ Partial Class Inicio
         Me.createAcc.Cursor = System.Windows.Forms.Cursors.Hand
         Me.createAcc.Font = New System.Drawing.Font("Mark", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.createAcc.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.createAcc.Location = New System.Drawing.Point(68, 604)
+        Me.createAcc.Location = New System.Drawing.Point(68, 594)
         Me.createAcc.Name = "createAcc"
         Me.createAcc.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.createAcc.Size = New System.Drawing.Size(160, 21)

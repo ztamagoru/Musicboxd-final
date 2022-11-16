@@ -1,5 +1,5 @@
 ﻿Public Class Inicio
-    Dim validator As New validador
+    Dim datos As New datos
     Dim extra As New extras
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         extra.buttons(Button1)
@@ -45,13 +45,19 @@
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim user, pass As String
-        Dim resultado As Integer
+
         user = _username.Text.Trim
         pass = _password.Text.Trim
 
-        resultado = validator.iniciarSesion(user, pass)
+        datos.inicioSesion(user, pass)
 
-        MsgBox(resultado.ToString)
+        If datos.rol = 0 Then
+            MessageBox.Show("Incorrect username or password.",
+                            "Error",
+                            MessageBoxButtons.OK)
+        Else
+            MsgBox($"u did it! here is ur role id: {datos.rol}")
+        End If
     End Sub
 
     Private Sub createAcc_Click(sender As Object, e As EventArgs) Handles createAcc.Click

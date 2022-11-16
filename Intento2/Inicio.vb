@@ -9,7 +9,7 @@
         If _username.Text = "Username" And _username.ForeColor = createAcc.ForeColor Then
 
             _username.Text = String.Empty
-            _username.ForeColor = Color.FromArgb(1, 60, 60, 65)
+            _username.ForeColor = Color.FromArgb(1, 91, 90, 86)
 
         End If
     End Sub
@@ -52,5 +52,23 @@
         resultado = validator.iniciarSesion(user, pass)
 
         MsgBox(resultado.ToString)
+    End Sub
+
+    Private Sub createAcc_Click(sender As Object, e As EventArgs) Handles createAcc.Click
+        Me.Hide()
+        Registro.Show()
+    End Sub
+
+    Private Sub Inicio_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
+        With _username
+            .Text = "Username"
+            .ForeColor = Color.FromArgb(1, 91, 90, 86)
+        End With
+
+        With _password
+            .Text = "Password"
+            .PasswordChar = ""
+            .ForeColor = Color.FromArgb(1, 91, 90, 86)
+        End With
     End Sub
 End Class

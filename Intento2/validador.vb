@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class validador
-    Private Shared code As String
+    Private Shared _code As String
     Private _rol As Integer
 
     Private comando As New SqlCommand
@@ -14,6 +14,15 @@ Public Class validador
         End Get
         Set(value As Integer)
             _rol = value
+        End Set
+    End Property
+
+    Private Property code As String
+        Get
+            Return _code
+        End Get
+        Set(value As String)
+            _code = value
         End Set
     End Property
 
@@ -37,9 +46,16 @@ Public Class validador
             End With
 
         Catch ex As Exception
-            MsgBox(ex.Message)
+            MessageBox.Show("Error",
+                            "Usuario o contraseña incorrectos.",
+                            MessageBoxButtons.OK)
         End Try
 
         Return iniciarSesion
     End Function
+
+    Public Sub validarDatos(user As String, pass As String, mail As String)
+
+
+    End Sub
 End Class

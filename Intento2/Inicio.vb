@@ -3,8 +3,6 @@
     Dim extra As New extras
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         extra.buttons(Button1)
-
-        Button1.Enabled() = False
     End Sub
 
     Private Sub _username_Enter(sender As Object, e As EventArgs) Handles _username.Enter

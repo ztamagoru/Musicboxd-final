@@ -20,16 +20,21 @@ Public Class validador
     Public Function iniciarSesion(user As String, pass As String) As Integer
         iniciarSesion = 0
 
+        conexion.cmd = New SqlCommand("[Users].[SP_LOG_IN]", conexion.conn)
+
         Try
-            With comando
+            With conexion.cmd
                 .CommandType = CommandType.StoredProcedure
                 .Parameters.AddWithValue("@username", user)
                 .Parameters.AddWithValue("@password", pass)
                 .Parameters.Add("@rol", SqlDbType.Int).Direction = ParameterDirection.Output
+
+                .ExecuteScalar()
+
+                If .Parameters("@rol").Value <> 0 Then
+                    iniciarSesion = .Parameters("@rol").Value
+                End If
             End With
-
-            conexion.execute(comando)
-
 
         Catch ex As Exception
             MsgBox(ex.Message)

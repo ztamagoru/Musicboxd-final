@@ -9,7 +9,16 @@ Public Class conexion
 
     Public Sub New()
         Try
-            conn.ConnectionString = "Server=DESKTOP-ULVBESH\SQLEXPRESS;Database=cupiniuwu;Integrated Security=true;User Id=test;Password=wasd1234;"
+            Dim server As String
+
+            ' Si estoy trabajando con la pc:
+            'server = "DESKTOP-ULVBESH\SQLEXPRESS"
+
+            ' Si estoy trabajando con la notebook:
+            server = "(Localdb)\servidormaria"
+
+            conn.ConnectionString = $"Server={server};Database=Musicboxd;Integrated Security=true;User Id=test;Password=wasd1234;"
+
             conn.Open()
 
             cmd.Connection = conn

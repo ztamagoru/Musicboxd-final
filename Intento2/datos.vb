@@ -2,7 +2,7 @@
 
 Public Class datos
     Dim conexion As New conexion
-    Dim validador As New validador
+    'Dim validador As validador
 
     Private _rol As Integer
 
@@ -31,10 +31,12 @@ Public Class datos
             Else
                 rol = 0
             End If
+
+            conexion.closeDatabase()
         End With
     End Sub
 
-    Public Function compararDatos() As Boolean
+    Public Function compararDatos() As Integer
         conexion.cmd = New SqlCommand("[Users].[SP_VERIFY_EXISTING_ACCOUNT]", conexion.conn)
 
         With conexion.cmd
@@ -48,6 +50,8 @@ Public Class datos
             If .Parameters("@result").Value <> 0 Then
                 Return .Parameters("@result").Value
             End If
+
+            conexion.closeDatabase()
         End With
 
         Return 0
@@ -65,6 +69,8 @@ Public Class datos
             .Parameters.AddWithValue("@surname", validador.usurname)
 
             .ExecuteScalar()
+
+            conexion.closeDatabase()
         End With
     End Sub
 End Class

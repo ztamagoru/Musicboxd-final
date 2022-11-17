@@ -3,17 +3,15 @@ Imports System.Net.Mail
 
 Public Class validador
     Dim conexion As New conexion
-    Dim datos As New datos
+    Dim datos As datos
 
-    Private _user, _pass, _mail, _name, _surname, _code, _text As String
+    Private Shared _user, _pass, _mail, _name, _surname As String
+    Private _code, _text As String
 
-    Private smtp_server As New SmtpClient
-    Private e_mail As MailMessage
+    Private Shared MBmail As String = "noreply.musicboxd@gmail.com"
+    Private Shared MBpass As String = "wijijdjplsfqmsba"
 
-    Private MBmail As String = "noreply.musicboxd@gmail.com"
-    Private MBpass As String = "ftknsjdorgznqaiv"
-
-    Public Property username As String
+    Public Shared Property username As String
         Get
             Return _user
         End Get
@@ -22,7 +20,7 @@ Public Class validador
         End Set
     End Property
 
-    Public Property password As String
+    Public Shared Property password As String
         Get
             Return _pass
         End Get
@@ -31,7 +29,7 @@ Public Class validador
         End Set
     End Property
 
-    Public Property useremail As String
+    Public Shared Property useremail As String
         Get
             Return _mail
         End Get
@@ -40,7 +38,7 @@ Public Class validador
         End Set
     End Property
 
-    Public Property uname As String
+    Public Shared Property uname As String
         Get
             Return _name
         End Get
@@ -49,7 +47,7 @@ Public Class validador
         End Set
     End Property
 
-    Public Property usurname As String
+    Public Shared Property usurname As String
         Get
             Return _surname
         End Get
@@ -121,14 +119,18 @@ Public Class validador
                 Code: {code}{vbCrLf}{vbCrLf}
                 Thank you,{vbCrLf}The Musicboxd Team"
 
+        Dim smtp_server As New SmtpClient("smtp.gmail.com", 587)
+        Dim e_mail As new MailMessage
+
         With smtp_server
             .Credentials = New Net.NetworkCredential(MBmail, MBpass)
             .UseDefaultCredentials = False
-            .Host = "smtp.gmail.com"
             .EnableSsl = True
             .Port = 587
+            .Host = "smtp.gmail.com"
         End With
 
+        e_mail = New MailMessage
         With e_mail
             .From = New MailAddress(MBmail)
             .To.Add(useremail)

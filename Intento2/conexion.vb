@@ -11,10 +11,10 @@ Public Class conexion
             Dim server As String
 
             ' Si estoy trabajando con la pc:
-            'server = "DESKTOP-ULVBESH\SQLEXPRESS"
+            server = "DESKTOP-ULVBESH\SQLEXPRESS"
 
             ' Si estoy trabajando con la notebook:
-            server = "(Localdb)\servidormaria"
+            'server = "(Localdb)\servidormaria"
 
             With conn
                 .ConnectionString = $"Server={server};Database=Musicboxd;Integrated Security=true;User Id=test;Password=wasd1234;"

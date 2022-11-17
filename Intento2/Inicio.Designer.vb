@@ -38,7 +38,7 @@ Partial Class Inicio
         Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(89, Byte), Integer), CType(CType(98, Byte), Integer))
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.Location = New System.Drawing.Point(113, 492)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(93, 86)
         Me.Button1.TabIndex = 18
@@ -63,9 +63,9 @@ Partial Class Inicio
         '
         Me._password.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me._password.Font = New System.Drawing.Font("Mark", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me._password.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
+        Me._password.ForeColor = System.Drawing.SystemColors.ControlDark
         Me._password.Location = New System.Drawing.Point(43, 295)
-        Me._password.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me._password.Margin = New System.Windows.Forms.Padding(4)
         Me._password.MaxLength = 20
         Me._password.Name = "_password"
         Me._password.Size = New System.Drawing.Size(263, 28)
@@ -76,9 +76,9 @@ Partial Class Inicio
         '
         Me._username.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me._username.Font = New System.Drawing.Font("Mark", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me._username.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
+        Me._username.ForeColor = System.Drawing.SystemColors.ControlDark
         Me._username.Location = New System.Drawing.Point(43, 247)
-        Me._username.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me._username.Margin = New System.Windows.Forms.Padding(4)
         Me._username.MaxLength = 50
         Me._username.Name = "_username"
         Me._username.Size = New System.Drawing.Size(263, 28)
@@ -119,8 +119,10 @@ Partial Class Inicio
         Me.Controls.Add(Me._username)
         Me.Controls.Add(Me.logo)
         Me.Controls.Add(Me.fondo)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
+        Me.MaximizeBox = False
         Me.Name = "Inicio"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Musicboxd"

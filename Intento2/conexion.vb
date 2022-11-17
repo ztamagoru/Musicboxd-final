@@ -17,16 +17,22 @@ Public Class conexion
             'server = "(Localdb)\servidormaria"
 
             With conn
-                .ConnectionString = $"Server={server};Database=Musicboxd;Integrated Security=true;User Id=test;Password=wasd1234;"
-                '.ConnectionTimeout = 60
-
-                .Open()
+                .ConnectionString = $"Data Source={server};Initial Catalog=Musicboxd;Integrated Security=True;"
+                '.ConnectionString = $"Server={server};Database=Musicboxd;Integrated Security=true;User Id=test;Password=wasd1234;"
             End With
 
             cmd.Connection = conn
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
+    End Sub
+
+    Public Sub openDatabase()
+        conn.Open()
+    End Sub
+
+    Public Sub closeDatabase()
+        conn.Close()
     End Sub
 
     Public Sub execute(comando As SqlCommand)

@@ -2,6 +2,7 @@
 
 Public Class datos
     Dim conexion As New conexion
+    Dim validador As New validador
 
     Private _rol As Integer
 
@@ -33,26 +34,37 @@ Public Class datos
         End With
     End Sub
 
-    Public Function compararDatos(user As String, email As String) As Boolean
-        Try
-            conexion.cmd = New SqlCommand("[Users].[SP_VERIFY_EXISTING_ACCOUNT]", conexion.conn)
+    Public Function compararDatos() As Boolean
+        conexion.cmd = New SqlCommand("[Users].[SP_VERIFY_EXISTING_ACCOUNT]", conexion.conn)
 
-            With conexion.cmd
-                .CommandType = CommandType.StoredProcedure
-                .Parameters.AddWithValue("@username", user)
-                .Parameters.AddWithValue("@email", email)
-                .Parameters.Add("@result", SqlDbType.Int).Direction = ParameterDirection.Output
+        With conexion.cmd
+            .CommandType = CommandType.StoredProcedure
+            .Parameters.AddWithValue("@username", validador.username)
+            .Parameters.AddWithValue("@email", validador.useremail)
+            .Parameters.Add("@result", SqlDbType.Int).Direction = ParameterDirection.Output
 
-                .ExecuteScalar()
+            .ExecuteScalar()
 
-                If .Parameters("@result").Value <> 0 Then
-                    Return .Parameters("@result").Value
-                End If
-            End With
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
+            If .Parameters("@result").Value <> 0 Then
+                Return .Parameters("@result").Value
+            End If
+        End With
 
         Return 0
     End Function
+
+    Public Sub registrarUsuario()
+        conexion.cmd = New SqlCommand("[Users].[SP_CREATE_ACCOUNT]", conexion.conn)
+
+        With conexion.cmd
+            .CommandType = CommandType.StoredProcedure
+            .Parameters.AddWithValue("@username", validador.username)
+            .Parameters.AddWithValue("@password", validador.password)
+            .Parameters.AddWithValue("@mail", validador.useremail)
+            .Parameters.AddWithValue("@name", validador.uname)
+            .Parameters.AddWithValue("@surname", validador.usurname)
+
+            .ExecuteScalar()
+        End With
+    End Sub
 End Class

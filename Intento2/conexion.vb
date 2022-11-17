@@ -11,18 +11,21 @@ Public Class conexion
             Dim server As String
 
             ' Si estoy trabajando con la pc:
-            'server = "DESKTOP-ULVBESH\SQLEXPRESS"
+            server = "DESKTOP-ULVBESH\SQLEXPRESS"
 
             ' Si estoy trabajando con la notebook:
-            server = "(Localdb)\servidormaria"
+            'server = "(Localdb)\servidormaria"
 
-            conn.ConnectionString = $"Server={server};Database=Musicboxd;Integrated Security=true;User Id=test;Password=wasd1234;"
+            With conn
+                .ConnectionString = $"Server={server};Database=Musicboxd;Integrated Security=true;User Id=test;Password=wasd1234;"
+                '.ConnectionTimeout = 60
 
-            conn.Open()
+                .Open()
+            End With
 
             cmd.Connection = conn
         Catch ex As Exception
-            MessageBox.Show("")
+            MessageBox.Show(ex.Message)
         End Try
     End Sub
 

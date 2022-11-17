@@ -132,8 +132,6 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-
-
         If _name.Text.Trim = "Name" Or
                 _surname.Text.Trim = "Surname" Or
                 _email.Text.Trim = "Email" Or
@@ -144,12 +142,30 @@
                             "Error",
                             MessageBoxButtons.OK)
         Else
-            Dim validation As Boolean
+            Dim user, pass, mail, name, surname As String
 
-            validation = validator.validarDatos(_username.Text.Trim, _password.Text.Trim, _email.Text.Trim)
+            user = _username.Text.Trim
+            pass = _password.Text.Trim
+            mail = _email.Text.Trim
+            name = _name.Text.Trim
+            surname = _surname.Text.Trim
 
-            If validation Then
-                datos.compararDatos(_username.Text.Trim, _email.Text.Trim)
+            If validator.validarDatos(user, pass, mail, name, surname) Then
+                Select Case (datos.compararDatos())
+                    Case 0
+                        Me.Enabled() = False
+                        IngresarCodigo.Show()
+
+                        validator.enviarCodigo()
+                    Case 1
+                        MessageBox.Show("An account with that username already exists.",
+                                        "Error",
+                                        MessageBoxButtons.OK)
+                    Case 2
+                        MessageBox.Show("An account with that email already exists.",
+                                        "Error",
+                                        MessageBoxButtons.OK)
+                End Select
             End If
         End If
     End Sub

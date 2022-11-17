@@ -76,6 +76,12 @@
     <Compile Include="conexion.vb" />
     <Compile Include="datos.vb" />
     <Compile Include="extras.vb" />
+    <Compile Include="IngresarCodigo.Designer.vb">
+      <DependentUpon>IngresarCodigo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IngresarCodigo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Inicio.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,9 @@
     <Compile Include="validador.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="IngresarCodigo.resx">
+      <DependentUpon>IngresarCodigo.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.vb</DependentUpon>
     </EmbeddedResource>

@@ -5,13 +5,58 @@ Public Class validador
     Dim conexion As New conexion
     Dim datos As New datos
 
-    Private _code As String
+    Private _user, _pass, _mail, _name, _surname, _code, _text As String
+
     Private smtp_server As New SmtpClient
     Private e_mail As MailMessage
-    Private _text As String
 
     Private MBmail As String = "noreply.musicboxd@gmail.com"
     Private MBpass As String = "ftknsjdorgznqaiv"
+
+    Public Property username As String
+        Get
+            Return _user
+        End Get
+        Set(value As String)
+            _user = value
+        End Set
+    End Property
+
+    Public Property password As String
+        Get
+            Return _pass
+        End Get
+        Set(value As String)
+            _pass = value
+        End Set
+    End Property
+
+    Public Property useremail As String
+        Get
+            Return _mail
+        End Get
+        Set(value As String)
+            _mail = value
+        End Set
+    End Property
+
+    Public Property uname As String
+        Get
+            Return _name
+        End Get
+        Set(value As String)
+            _name = value
+        End Set
+    End Property
+
+    Public Property usurname As String
+        Get
+            Return _surname
+        End Get
+        Set(value As String)
+            _surname = value
+        End Set
+    End Property
 
     Public Property code As String
         Get
@@ -31,11 +76,20 @@ Public Class validador
         End Set
     End Property
 
-    Public Function validarDatos(user As String, pass As String, mail As String) As Boolean
-        Dim validU As Boolean = user.Length > 7
-        Dim validP As Boolean = Regex.IsMatch(pass,
+    Public Function validarDatos(user As String, pass As String, mail As String, name As String, surname As String) As Boolean
+        username = user
+        password = pass
+        useremail = mail
+        uname = name
+        usurname = surname
+
+
+        Dim validU As Boolean = username.Length > 7
+
+        Dim validP As Boolean = Regex.IsMatch(password,
                                               "^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,20}$")
-        Dim validM As Boolean = Regex.IsMatch(mail,
+
+        Dim validM As Boolean = Regex.IsMatch(useremail,
                                               "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")
 
         If Not validU Then
@@ -53,17 +107,16 @@ Public Class validador
                             "Error",
                             MessageBoxButtons.OK)
         Else
-            enviarCodigo(mail)
             Return True
         End If
 
         Return False
     End Function
 
-    Private Sub enviarCodigo(mail As String)
+    Public Sub enviarCodigo()
         generarCodigo()
 
-        text = $"Dear {Registro._name.Text.Trim},{vbCrLf}
+        text = $"Dear {username},{vbCrLf}
                 Please verify your email adress to complete your Musicboxd account.{vbCrLf}
                 Code: {code}{vbCrLf}{vbCrLf}
                 Thank you,{vbCrLf}The Musicboxd Team"
@@ -78,15 +131,13 @@ Public Class validador
 
         With e_mail
             .From = New MailAddress(MBmail)
-            .To.Add(mail)
+            .To.Add(useremail)
             .Subject = "Musicboxd - verify your account"
             .IsBodyHtml = False
             .Body = text
         End With
 
         smtp_server.SendMailAsync(e_mail)
-
-
     End Sub
 
     Private Sub generarCodigo()
@@ -103,4 +154,12 @@ Public Class validador
 
         code = generatedCode
     End Sub
+
+    Public Function validarCodigo(ucode As String) As Boolean
+        If ucode = code Then
+            Return True
+        End If
+
+        Return False
+    End Function
 End Class

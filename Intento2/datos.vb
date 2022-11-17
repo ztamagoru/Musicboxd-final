@@ -16,6 +16,7 @@ Public Class datos
     End Property
 
     Public Sub inicioSesion(user As String, pass As String)
+        conexion.openDatabase()
         conexion.cmd = New SqlCommand("[Users].[SP_LOG_IN]", conexion.conn)
 
         With conexion.cmd
@@ -37,6 +38,7 @@ Public Class datos
     End Sub
 
     Public Function compararDatos() As Integer
+        conexion.openDatabase()
         conexion.cmd = New SqlCommand("[Users].[SP_VERIFY_EXISTING_ACCOUNT]", conexion.conn)
 
         With conexion.cmd
@@ -47,17 +49,18 @@ Public Class datos
 
             .ExecuteScalar()
 
+            conexion.closeDatabase()
             If .Parameters("@result").Value <> 0 Then
                 Return .Parameters("@result").Value
             End If
 
-            conexion.closeDatabase()
         End With
 
         Return 0
     End Function
 
     Public Sub registrarUsuario()
+        conexion.openDatabase()
         conexion.cmd = New SqlCommand("[Users].[SP_CREATE_ACCOUNT]", conexion.conn)
 
         With conexion.cmd

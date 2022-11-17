@@ -6,7 +6,7 @@
     End Sub
 
     Private Sub _username_Enter(sender As Object, e As EventArgs) Handles _username.Enter
-        If _username.Text = "Username" And _username.ForeColor = createAcc.ForeColor Then
+        If _username.Text = "Username" Then
 
             _username.Text = String.Empty
             _username.ForeColor = Color.FromArgb(1, 91, 90, 86)
@@ -24,7 +24,7 @@
     End Sub
 
     Private Sub _password_Enter(sender As Object, e As EventArgs) Handles _password.Enter
-        If _password.Text = "Password" And _password.ForeColor = createAcc.ForeColor Then
+        If _password.Text = "Password" Then
 
             _password.Text = String.Empty
             _password.ForeColor = Color.FromArgb(1, 60, 60, 65)

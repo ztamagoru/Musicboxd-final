@@ -5,11 +5,11 @@ Public Class validador
     Dim conexion As New conexion
     Dim datos As datos
 
-    Private Shared _user, _pass, _mail, _name, _surname As String
-    Private _code, _text As String
+    Private Shared _user, _pass, _mail, _name, _code, _surname As String
+    Private _text As String
 
     Private Shared MBmail As String = "noreply.musicboxd@gmail.com"
-    Private Shared MBpass As String = "wijijdjplsfqmsba"
+    Private Shared MBpass As String = "adphsllcidaznukb"
 
     Public Shared Property username As String
         Get
@@ -56,7 +56,7 @@ Public Class validador
         End Set
     End Property
 
-    Public Property code As String
+    Public Shared Property code As String
         Get
             Return _code
         End Get
@@ -100,7 +100,7 @@ Public Class validador
                             "Error",
                             MessageBoxButtons.OK)
 
-        ElseIf Not validP Then
+        ElseIf Not validM Then
             MessageBox.Show("Invalid mail format.",
                             "Error",
                             MessageBoxButtons.OK)
@@ -120,11 +120,11 @@ Public Class validador
                 Thank you,{vbCrLf}The Musicboxd Team"
 
         Dim smtp_server As New SmtpClient("smtp.gmail.com", 587)
-        Dim e_mail As new MailMessage
+        Dim e_mail As New MailMessage
 
         With smtp_server
-            .Credentials = New Net.NetworkCredential(MBmail, MBpass)
             .UseDefaultCredentials = False
+            .Credentials = New Net.NetworkCredential(MBmail, MBpass)
             .EnableSsl = True
             .Port = 587
             .Host = "smtp.gmail.com"
@@ -138,8 +138,12 @@ Public Class validador
             .IsBodyHtml = False
             .Body = text
         End With
+        Try
+            smtp_server.SendMailAsync(e_mail)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
 
-        smtp_server.SendMailAsync(e_mail)
     End Sub
 
     Private Sub generarCodigo()
@@ -158,6 +162,8 @@ Public Class validador
     End Sub
 
     Public Function validarCodigo(ucode As String) As Boolean
+        Debug.WriteLine($"{ucode}{vbCrLf}{code}")
+
         If ucode = code Then
             Return True
         End If

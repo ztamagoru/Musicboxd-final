@@ -19,15 +19,16 @@ Public Class conexion
             With conn
                 .ConnectionString = $"Data Source={server};Initial Catalog=Musicboxd;Integrated Security=True;"
                 '.ConnectionString = $"Server={server};Database=Musicboxd;Integrated Security=true;User Id=test;Password=wasd1234;"
-                '.ConnectionTimeout = 60
-
-                .Open()
             End With
 
             cmd.Connection = conn
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
+    End Sub
+
+    Public Sub openDatabase()
+        conn.Open()
     End Sub
 
     Public Sub closeDatabase()

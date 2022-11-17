@@ -11,6 +11,7 @@ Public Class validador
     Private Shared MBmail As String = "noreply.musicboxd@gmail.com"
     Private Shared MBpass As String = "adphsllcidaznukb"
 
+#Region "    properties"
     Public Shared Property username As String
         Get
             Return _user
@@ -74,6 +75,8 @@ Public Class validador
         End Set
     End Property
 
+#End Region
+
     Public Function validarDatos(user As String, pass As String, mail As String, name As String, surname As String) As Boolean
         username = user
         password = pass
@@ -114,10 +117,10 @@ Public Class validador
     Public Sub enviarCodigo()
         generarCodigo()
 
-        text = $"Dear {username},{vbCrLf}
-                Please verify your email adress to complete your Musicboxd account.{vbCrLf}
-                Code: {code}{vbCrLf}{vbCrLf}
-                Thank you,{vbCrLf}The Musicboxd Team"
+        text = $"Dear {username},{vbNewLine}
+                Please verify your email adress to complete your Musicboxd account.{vbNewLine}
+                Code: {code}{vbNewLine}{vbNewLine}
+                Thank you,{vbNewLine}The Musicboxd Team"
 
         Dim smtp_server As New SmtpClient("smtp.gmail.com", 587)
         Dim e_mail As New MailMessage
@@ -138,12 +141,8 @@ Public Class validador
             .IsBodyHtml = False
             .Body = text
         End With
-        Try
-            smtp_server.SendMailAsync(e_mail)
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
 
+        smtp_server.SendMailAsync(e_mail)
     End Sub
 
     Private Sub generarCodigo()
@@ -162,7 +161,7 @@ Public Class validador
     End Sub
 
     Public Function validarCodigo(ucode As String) As Boolean
-        Debug.WriteLine($"{ucode}{vbCrLf}{code}")
+        'Debug.WriteLine($"{ucode}{vbCrLf}{code}")
 
         If ucode = code Then
             Return True

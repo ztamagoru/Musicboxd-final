@@ -5,16 +5,16 @@
         extra.buttons(Button1)
     End Sub
 
-    Private Sub _username_Enter(sender As Object, e As EventArgs) Handles _username.Enter
+#Region "    hovers"
+    Private Sub _username_Enter(sender As Object, e As EventArgs) Handles _username.GotFocus
         If _username.Text = "Username" Then
 
             _username.Text = String.Empty
-            _username.ForeColor = Color.FromArgb(1, 91, 90, 86)
-
+            _username.ForeColor = Color.FromArgb(60, 60, 65)
         End If
     End Sub
 
-    Private Sub _username_Leave(sender As Object, e As EventArgs) Handles _username.Leave
+    Private Sub _username_Leave(sender As Object, e As EventArgs) Handles _username.LostFocus
         If _username.Text = String.Empty Then
 
             _username.Text = "Username"
@@ -23,17 +23,16 @@
         End If
     End Sub
 
-    Private Sub _password_Enter(sender As Object, e As EventArgs) Handles _password.Enter
+    Private Sub _password_Enter(sender As Object, e As EventArgs) Handles _password.GotFocus
         If _password.Text = "Password" Then
 
             _password.Text = String.Empty
-            _password.ForeColor = Color.FromArgb(1, 60, 60, 65)
+            _password.ForeColor = Color.FromArgb(60, 60, 65)
             _password.PasswordChar = "•"
-
         End If
     End Sub
 
-    Private Sub _password_Leave(sender As Object, e As EventArgs) Handles _password.Leave
+    Private Sub _password_Leave(sender As Object, e As EventArgs) Handles _password.LostFocus
         If _password.Text = String.Empty Then
 
             _password.Text = "Password"
@@ -42,6 +41,7 @@
 
         End If
     End Sub
+#End Region
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim user, pass As String
@@ -57,24 +57,39 @@
                             MessageBoxButtons.OK)
         Else
             MsgBox($"u did it! here is ur role id: {datos.rol}")
+
+            Me.Hide()
+            MenuPrincipal.Show()
         End If
     End Sub
 
     Private Sub createAcc_Click(sender As Object, e As EventArgs) Handles createAcc.Click
         Me.Hide()
+        ResetBoxes()
         Registro.Show()
     End Sub
 
-    Private Sub Inicio_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
+#Region "    reset"
+    Public Sub ResetBoxes()
         With _username
             .Text = "Username"
-            .ForeColor = Color.FromArgb(1, 91, 90, 86)
+            .ForeColor = createAcc.ForeColor
         End With
 
         With _password
             .Text = "Password"
             .PasswordChar = ""
-            .ForeColor = Color.FromArgb(1, 91, 90, 86)
+            .ForeColor = createAcc.ForeColor
         End With
     End Sub
+
+    Private Sub Inicio_Shown(sender As Object, e As EventArgs) Handles MyBase.GotFocus
+        ResetBoxes()
+    End Sub
+
+    Private Sub Inicio_cn(sender As Object, e As EventArgs) Handles MyBase.LostFocus
+        ResetBoxes()
+    End Sub
+
+#End Region
 End Class

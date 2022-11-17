@@ -17,6 +17,8 @@ Public Class IngresarCodigo
         ocult = Regex.Replace(validador.useremail, pattern, "***")
 
         insertmail.Text = ocult
+
+        MaskedTextBox1.Clear()
     End Sub
 
     Private Sub IngresarCodigo_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
@@ -45,11 +47,18 @@ Public Class IngresarCodigo
 
             datos.registrarUsuario()
 
-            MessageBox.Show($"Account created succesfully.{vbCrLf}Please sign in.",
+            MessageBox.Show($"Account created succesfully.{vbNewLine}Please sign in.",
                             "Musicboxd",
                             MessageBoxButtons.OK)
+
+            Me.Hide()
+
+            Registro.Enabled() = True
+            Registro.Hide()
+
+            Inicio.Show()
         Else
-            MessageBox.Show($".{vbCrLf}Please try again.",
+            MessageBox.Show($"Incorrect code.{vbNewLine}Please try again.",
                             "Musicboxd",
                             MessageBoxButtons.OK)
         End If

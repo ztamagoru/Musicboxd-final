@@ -3,6 +3,7 @@
     Dim validator As New validador
     Dim datos As New datos
 
+#Region "    hovers"
     Private Sub Registro_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
         With _username
             .Text = "Username"
@@ -117,6 +118,8 @@
             _surname.ForeColor = signin.ForeColor
         End If
     End Sub
+
+#End Region
 
     Private Sub signin_Click(sender As Object, e As EventArgs) Handles signin.Click
         Me.Hide()

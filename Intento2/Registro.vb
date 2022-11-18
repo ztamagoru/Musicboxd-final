@@ -5,31 +5,7 @@
 
 #Region "    hovers"
     Private Sub Registro_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
-        With _username
-            .Text = "Username"
-            .ForeColor = signin.ForeColor
-        End With
-
-        With _password
-            .Text = "Password"
-            .PasswordChar = ""
-            .ForeColor = signin.ForeColor
-        End With
-
-        With _email
-            .Text = "Email"
-            .ForeColor = signin.ForeColor
-        End With
-
-        With _name
-            .Text = "Name"
-            .ForeColor = signin.ForeColor
-        End With
-
-        With _surname
-            .Text = "Surname"
-            .ForeColor = signin.ForeColor
-        End With
+        ResetBoxes()
     End Sub
 
     Private Sub _username_Enter(sender As Object, e As EventArgs) Handles _username.Enter
@@ -122,8 +98,8 @@
 #End Region
 
     Private Sub signin_Click(sender As Object, e As EventArgs) Handles signin.Click
-        Me.Hide()
         Inicio.Show()
+        Me.Dispose()
     End Sub
 
     Private Sub Registro_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
@@ -172,4 +148,36 @@
             End If
         End If
     End Sub
+
+#Region "    resets"
+
+    Public Sub ResetBoxes()
+        With _username
+            .Text = "Username"
+            .ForeColor = signin.ForeColor
+        End With
+
+        With _password
+            .Text = "Password"
+            .PasswordChar = ""
+            .ForeColor = signin.ForeColor
+        End With
+
+        With _email
+            .Text = "Email"
+            .ForeColor = signin.ForeColor
+        End With
+
+        With _name
+            .Text = "Name"
+            .ForeColor = signin.ForeColor
+        End With
+
+        With _surname
+            .Text = "Surname"
+            .ForeColor = signin.ForeColor
+        End With
+    End Sub
+
+#End Region
 End Class

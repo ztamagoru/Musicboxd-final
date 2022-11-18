@@ -4,9 +4,9 @@ Public Class datos
     Dim conexion As New conexion
     'Dim validador As validador
 
-    Private _rol As Integer
+    Private Shared _rol As Integer
 
-    Public Property rol As Integer
+    Public Shared Property rol As Integer
         Get
             Return _rol
         End Get

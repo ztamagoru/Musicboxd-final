@@ -66,6 +66,7 @@
     Private Sub createAcc_Click(sender As Object, e As EventArgs) Handles createAcc.Click
         Me.Hide()
         ResetBoxes()
+        Registro.ResetBoxes()
         Registro.Show()
     End Sub
 

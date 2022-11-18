@@ -48,7 +48,7 @@ Partial Class Registro
         '
         Me._password.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me._password.Font = New System.Drawing.Font("Mark", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me._password.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
+        Me._password.ForeColor = System.Drawing.SystemColors.ControlDark
         Me._password.Location = New System.Drawing.Point(64, 111)
         Me._password.MaxLength = 20
         Me._password.Name = "_password"
@@ -60,7 +60,7 @@ Partial Class Registro
         '
         Me._username.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me._username.Font = New System.Drawing.Font("Mark", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me._username.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
+        Me._username.ForeColor = System.Drawing.SystemColors.ControlDark
         Me._username.Location = New System.Drawing.Point(64, 72)
         Me._username.MaxLength = 50
         Me._username.Name = "_username"
@@ -87,7 +87,7 @@ Partial Class Registro
         '
         Me._email.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me._email.Font = New System.Drawing.Font("Mark", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me._email.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
+        Me._email.ForeColor = System.Drawing.SystemColors.ControlDark
         Me._email.Location = New System.Drawing.Point(64, 150)
         Me._email.MaxLength = 150
         Me._email.Name = "_email"
@@ -99,7 +99,7 @@ Partial Class Registro
         '
         Me._name.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me._name.Font = New System.Drawing.Font("Mark", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me._name.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
+        Me._name.ForeColor = System.Drawing.SystemColors.ControlDark
         Me._name.Location = New System.Drawing.Point(64, 189)
         Me._name.MaxLength = 100
         Me._name.Name = "_name"
@@ -111,7 +111,7 @@ Partial Class Registro
         '
         Me._surname.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me._surname.Font = New System.Drawing.Font("Mark", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me._surname.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
+        Me._surname.ForeColor = System.Drawing.SystemColors.ControlDark
         Me._surname.Location = New System.Drawing.Point(64, 228)
         Me._surname.MaxLength = 100
         Me._surname.Name = "_surname"
@@ -148,8 +148,10 @@ Partial Class Registro
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me._password)
         Me.Controls.Add(Me._username)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.MaximizeBox = False
         Me.Name = "Registro"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Musicboxd"

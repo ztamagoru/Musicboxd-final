@@ -51,12 +51,12 @@ Public Class IngresarCodigo
                             "Musicboxd",
                             MessageBoxButtons.OK)
 
-            Me.Hide()
-
             Registro.Enabled() = True
             Registro.Hide()
 
             Inicio.Show()
+
+            Me.Dispose()
         Else
             MessageBox.Show($"Incorrect code.{vbNewLine}Please try again.",
                             "Musicboxd",

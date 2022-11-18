@@ -56,9 +56,11 @@
                             "Error",
                             MessageBoxButtons.OK)
         Else
-            MsgBox($"u did it! here is ur role id: {datos.rol}")
+            'MsgBox($"u did it! here is ur role id: {datos.rol}")
 
+            MenuPrincipal._username.Text = user
             Me.Hide()
+            ResetBoxes()
             MenuPrincipal.Show()
         End If
     End Sub
@@ -82,14 +84,6 @@
             .PasswordChar = ""
             .ForeColor = createAcc.ForeColor
         End With
-    End Sub
-
-    Private Sub Inicio_Shown(sender As Object, e As EventArgs) Handles MyBase.GotFocus
-        ResetBoxes()
-    End Sub
-
-    Private Sub Inicio_cn(sender As Object, e As EventArgs) Handles MyBase.LostFocus
-        ResetBoxes()
     End Sub
 
 #End Region

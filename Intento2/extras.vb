@@ -1,4 +1,6 @@
-﻿Public Class extras
+﻿Imports System.Drawing.Drawing2D
+
+Public Class extras
     Public Sub buttons(btn As Button)
         With btn
             .FlatStyle = FlatStyle.Flat
@@ -63,5 +65,31 @@
         menu.ShowDialog()
 
         Return result
+    End Function
+
+    Shared profilepic As Bitmap
+
+    Shared Function roundpfp(pfp As Bitmap) As Bitmap
+        If profilepic Is Nothing Then
+            Dim croppedImage As New Bitmap(pfp.Width,
+                                            pfp.Height)
+
+            Using g = Graphics.FromImage(croppedImage)
+                Dim path As New GraphicsPath
+
+                path.AddEllipse(0, 0,
+                                croppedImage.Width,
+                                croppedImage.Height)
+
+                Dim reg As New Region(path)
+
+                g.Clip = reg
+                g.DrawImage(pfp, Point.Empty)
+            End Using
+
+            profilepic = croppedImage
+        End If
+
+        Return profilepic
     End Function
 End Class

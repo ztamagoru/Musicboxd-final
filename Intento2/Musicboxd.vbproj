@@ -73,6 +73,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="album.vb" />
+    <Compile Include="artista.vb" />
+    <Compile Include="buscador.vb" />
+    <Compile Include="cancion.vb" />
     <Compile Include="conexion.vb" />
     <Compile Include="datos.vb" />
     <Compile Include="extras.vb" />

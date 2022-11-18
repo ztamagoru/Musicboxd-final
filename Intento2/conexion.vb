@@ -11,14 +11,13 @@ Public Class conexion
             Dim server As String
 
             ' Si estoy trabajando con la pc:
-            server = "DESKTOP-ULVBESH\SQLEXPRESS"
+            'server = "DESKTOP-ULVBESH\SQLEXPRESS"
 
             ' Si estoy trabajando con la notebook:
-            'server = "(Localdb)\servidormaria"
+            server = "(Localdb)\servidormaria"
 
             With conn
                 .ConnectionString = $"Data Source={server};Initial Catalog=Musicboxd;Integrated Security=True;"
-                '.ConnectionString = $"Server={server};Database=Musicboxd;Integrated Security=true;User Id=test;Password=wasd1234;"
             End With
 
             cmd.Connection = conn
@@ -39,9 +38,28 @@ Public Class conexion
         Try
             cmd = comando
 
+            conn.Open()
+
             cmd.ExecuteScalar()
+
+            conn.Close()
         Catch ex As Exception
             MsgBox(ex.Message, vbOK)
         End Try
     End Sub
+
+    Public Function executeReader(comando As String) As SqlDataReader
+        Try
+            cmd.CommandText = comando
+
+            conn.Open()
+
+            executeReader = cmd.ExecuteReader()
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+        Return executeReader
+    End Function
 End Class

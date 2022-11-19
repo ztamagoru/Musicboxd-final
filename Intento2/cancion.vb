@@ -23,8 +23,6 @@ Public Class cancion
 
             Dim bytes = CType(reader(2), Byte())
 
-            'Dim bm As Bitmap = nothing
-
             MenuPrincipal.addCover(bytes, i)
         End While
 

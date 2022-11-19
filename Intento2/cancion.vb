@@ -19,11 +19,11 @@ Public Class cancion
             songName(i) = reader.GetString(0)
             artistName(i) = reader.GetString(1)
 
-            Dim bytes As Byte() = CType(reader(2), Byte())
-
             i += 1
 
-            MenuPrincipal.addCover(bytes, i)
+            'Dim bytes As Byte() = CType(reader(2), Byte())
+
+            'MenuPrincipal.addCover(bytes, i)
         End While
 
         With MenuPrincipal

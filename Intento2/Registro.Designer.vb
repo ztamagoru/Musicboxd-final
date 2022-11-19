@@ -37,10 +37,9 @@ Partial Class Registro
         '
         Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(89, Byte), Integer), CType(CType(98, Byte), Integer))
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(164, 437)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button1.Location = New System.Drawing.Point(123, 355)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(93, 86)
+        Me.Button1.Size = New System.Drawing.Size(70, 70)
         Me.Button1.TabIndex = 6
         Me.Button1.Text = ">"
         Me.Button1.UseVisualStyleBackColor = False
@@ -50,11 +49,10 @@ Partial Class Registro
         Me._password.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me._password.Font = New System.Drawing.Font("Mark", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._password.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me._password.Location = New System.Drawing.Point(69, 137)
-        Me._password.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me._password.Location = New System.Drawing.Point(52, 111)
         Me._password.MaxLength = 20
         Me._password.Name = "_password"
-        Me._password.Size = New System.Drawing.Size(284, 28)
+        Me._password.Size = New System.Drawing.Size(213, 22)
         Me._password.TabIndex = 2
         Me._password.Text = "Password"
         '
@@ -63,11 +61,10 @@ Partial Class Registro
         Me._username.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me._username.Font = New System.Drawing.Font("Mark", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._username.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me._username.Location = New System.Drawing.Point(69, 89)
-        Me._username.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me._username.Location = New System.Drawing.Point(52, 72)
         Me._username.MaxLength = 50
         Me._username.Name = "_username"
-        Me._username.Size = New System.Drawing.Size(284, 28)
+        Me._username.Size = New System.Drawing.Size(213, 22)
         Me._username.TabIndex = 1
         Me._username.Text = "Username"
         '
@@ -78,10 +75,11 @@ Partial Class Registro
         Me.label1.Cursor = System.Windows.Forms.Cursors.Arrow
         Me.label1.Font = New System.Drawing.Font("Mark", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
-        Me.label1.Location = New System.Drawing.Point(57, 25)
+        Me.label1.Location = New System.Drawing.Point(29, 20)
+        Me.label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.label1.Name = "label1"
         Me.label1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.label1.Size = New System.Drawing.Size(309, 41)
+        Me.label1.Size = New System.Drawing.Size(259, 34)
         Me.label1.TabIndex = 22
         Me.label1.Text = "Create an account"
         '
@@ -90,11 +88,10 @@ Partial Class Registro
         Me._email.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me._email.Font = New System.Drawing.Font("Mark", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._email.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me._email.Location = New System.Drawing.Point(69, 185)
-        Me._email.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me._email.Location = New System.Drawing.Point(52, 150)
         Me._email.MaxLength = 150
         Me._email.Name = "_email"
-        Me._email.Size = New System.Drawing.Size(284, 28)
+        Me._email.Size = New System.Drawing.Size(213, 22)
         Me._email.TabIndex = 3
         Me._email.Text = "Email"
         '
@@ -103,11 +100,10 @@ Partial Class Registro
         Me._name.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me._name.Font = New System.Drawing.Font("Mark", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._name.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me._name.Location = New System.Drawing.Point(69, 233)
-        Me._name.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me._name.Location = New System.Drawing.Point(52, 189)
         Me._name.MaxLength = 100
         Me._name.Name = "_name"
-        Me._name.Size = New System.Drawing.Size(284, 28)
+        Me._name.Size = New System.Drawing.Size(213, 22)
         Me._name.TabIndex = 4
         Me._name.Text = "Name"
         '
@@ -116,11 +112,10 @@ Partial Class Registro
         Me._surname.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me._surname.Font = New System.Drawing.Font("Mark", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._surname.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me._surname.Location = New System.Drawing.Point(69, 281)
-        Me._surname.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me._surname.Location = New System.Drawing.Point(52, 228)
         Me._surname.MaxLength = 100
         Me._surname.Name = "_surname"
-        Me._surname.Size = New System.Drawing.Size(284, 28)
+        Me._surname.Size = New System.Drawing.Size(213, 22)
         Me._surname.TabIndex = 5
         Me._surname.Text = "Surname"
         '
@@ -131,19 +126,20 @@ Partial Class Registro
         Me.signin.Cursor = System.Windows.Forms.Cursors.Hand
         Me.signin.Font = New System.Drawing.Font("Mark", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.signin.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.signin.Location = New System.Drawing.Point(59, 546)
+        Me.signin.Location = New System.Drawing.Point(44, 444)
+        Me.signin.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.signin.Name = "signin"
         Me.signin.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.signin.Size = New System.Drawing.Size(277, 21)
+        Me.signin.Size = New System.Drawing.Size(229, 18)
         Me.signin.TabIndex = 26
         Me.signin.Text = "Already have an account? Sign in"
         '
         'Registro
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(233, Byte), Integer), CType(CType(228, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(423, 585)
+        Me.ClientSize = New System.Drawing.Size(317, 475)
         Me.Controls.Add(Me.signin)
         Me.Controls.Add(Me._surname)
         Me.Controls.Add(Me._name)
@@ -154,7 +150,7 @@ Partial Class Registro
         Me.Controls.Add(Me._username)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.MaximizeBox = False
         Me.Name = "Registro"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

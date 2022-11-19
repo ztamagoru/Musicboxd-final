@@ -21,10 +21,14 @@ Public Class cancion
 
             i += 1
 
-            'Dim bytes As Byte() = CType(reader(2), Byte())
+            Dim bytes = CType(reader(2), Byte())
 
-            'MenuPrincipal.addCover(bytes, i)
+            'Dim bm As Bitmap = nothing
+
+            MenuPrincipal.addCover(bytes, i)
         End While
+
+        conexion.closeDatabase()
 
         With MenuPrincipal
             .songName1.Text = songName(0)
@@ -37,7 +41,5 @@ Public Class cancion
             .artistName3.Text = artistName(2)
             .artistName4.Text = artistName(3)
         End With
-
-        conexion.closeDatabase()
     End Sub
 End Class

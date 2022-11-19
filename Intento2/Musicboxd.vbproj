@@ -120,6 +120,12 @@
     <Compile Include="Registro.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="UserCenter.Designer.vb">
+      <DependentUpon>UserCenter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserCenter.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="validador.vb" />
   </ItemGroup>
   <ItemGroup>
@@ -140,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Registro.resx">
       <DependentUpon>Registro.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCenter.resx">
+      <DependentUpon>UserCenter.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

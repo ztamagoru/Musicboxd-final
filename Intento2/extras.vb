@@ -36,22 +36,38 @@ Public Class extras
     Public Function show(options As IEnumerable(Of String), Optional message As String = "", Optional title As String = "") As String
         result = "Cancel"
 
-        Dim menu As New Form With {.Text = title, .StartPosition = FormStartPosition.CenterParent}
+        Dim menu As New Form
+
+        With menu
+            .Text = title
+            .StartPosition = FormStartPosition.CenterParent
+            .Icon = MenuPrincipal.Icon
+            .FormBorderStyle = FormBorderStyle.None
+            .ControlBox = False
+        End With
+
         Dim tlp As New TableLayoutPanel With {.ColumnCount = 1, .RowCount = 2}
         Dim flp As New FlowLayoutPanel()
-        Dim l As New Label With {.Text = message}
+        'Dim l As New Label With {.Text = message}
 
         menu.Controls.Add(tlp)
 
 
         tlp.Dock = DockStyle.Fill
-        tlp.Controls.Add(l)
-        l.Dock = DockStyle.Fill
         tlp.Controls.Add(flp)
         flp.Dock = DockStyle.Fill
 
         For Each o In options
-            Dim b As New Button With {.Text = o}
+            Dim b As New Button
+
+            buttons(b)
+
+            With b
+                .Text = o
+                .Font = New Font("Mark", 10, FontStyle.Bold)
+                .AutoSize = True
+            End With
+
             flp.Controls.Add(b)
             AddHandler b.Click,
                 Sub(sender As Object, e As EventArgs)

@@ -3,7 +3,7 @@
 
     Private Sub UserCenter_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Dim result = extras.show(
-                    {"Close", "Sign out"},
+                    {"Close", "Sign out", "Cancel"},
                     "",
                     "Musicboxd")
 
@@ -22,6 +22,8 @@
 
     Private Sub UserCenter_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         pfp.Image = extras.roundpfp(pfp.Image)
+
+
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click

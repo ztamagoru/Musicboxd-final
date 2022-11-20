@@ -19,6 +19,10 @@ Public Class cancion
             songName(i) = reader.GetString(0)
             artistName(i) = reader.GetString(1)
 
+            If songName(i).Length() > 17 Then
+                songName(i) = $"{Left(songName(i), 17)}..."
+            End If
+
             i += 1
 
             Dim bytes = CType(reader(2), Byte())

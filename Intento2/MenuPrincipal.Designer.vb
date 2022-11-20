@@ -42,13 +42,23 @@ Partial Class MenuPrincipal
         Me.cover3 = New System.Windows.Forms.PictureBox()
         Me.cover2 = New System.Windows.Forms.PictureBox()
         Me.cover1 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.logo = New System.Windows.Forms.PictureBox()
+        Me.banner = New System.Windows.Forms.PictureBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         CType(Me.pfp, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cover4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cover3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cover2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cover1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.logo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.banner, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'searchbar
@@ -101,9 +111,10 @@ Partial Class MenuPrincipal
         'songName1
         '
         Me.songName1.AutoSize = True
+        Me.songName1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.songName1.Font = New System.Drawing.Font("Mark", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.songName1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
-        Me.songName1.Location = New System.Drawing.Point(193, 184)
+        Me.songName1.Location = New System.Drawing.Point(203, 184)
         Me.songName1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.songName1.Name = "songName1"
         Me.songName1.Size = New System.Drawing.Size(128, 25)
@@ -113,9 +124,10 @@ Partial Class MenuPrincipal
         'artistName1
         '
         Me.artistName1.AutoSize = True
+        Me.artistName1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.artistName1.Font = New System.Drawing.Font("Mark", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.artistName1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
-        Me.artistName1.Location = New System.Drawing.Point(193, 219)
+        Me.artistName1.Location = New System.Drawing.Point(203, 219)
         Me.artistName1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.artistName1.Name = "artistName1"
         Me.artistName1.Size = New System.Drawing.Size(109, 20)
@@ -125,9 +137,10 @@ Partial Class MenuPrincipal
         'artistName2
         '
         Me.artistName2.AutoSize = True
+        Me.artistName2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.artistName2.Font = New System.Drawing.Font("Mark", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.artistName2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
-        Me.artistName2.Location = New System.Drawing.Point(639, 219)
+        Me.artistName2.Location = New System.Drawing.Point(649, 219)
         Me.artistName2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.artistName2.Name = "artistName2"
         Me.artistName2.Size = New System.Drawing.Size(109, 20)
@@ -137,9 +150,10 @@ Partial Class MenuPrincipal
         'songName2
         '
         Me.songName2.AutoSize = True
+        Me.songName2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.songName2.Font = New System.Drawing.Font("Mark", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.songName2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
-        Me.songName2.Location = New System.Drawing.Point(639, 184)
+        Me.songName2.Location = New System.Drawing.Point(649, 184)
         Me.songName2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.songName2.Name = "songName2"
         Me.songName2.Size = New System.Drawing.Size(128, 25)
@@ -149,9 +163,10 @@ Partial Class MenuPrincipal
         'artistName4
         '
         Me.artistName4.AutoSize = True
+        Me.artistName4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.artistName4.Font = New System.Drawing.Font("Mark", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.artistName4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
-        Me.artistName4.Location = New System.Drawing.Point(639, 430)
+        Me.artistName4.Location = New System.Drawing.Point(649, 430)
         Me.artistName4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.artistName4.Name = "artistName4"
         Me.artistName4.Size = New System.Drawing.Size(109, 20)
@@ -161,9 +176,10 @@ Partial Class MenuPrincipal
         'songName4
         '
         Me.songName4.AutoSize = True
+        Me.songName4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.songName4.Font = New System.Drawing.Font("Mark", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.songName4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
-        Me.songName4.Location = New System.Drawing.Point(639, 396)
+        Me.songName4.Location = New System.Drawing.Point(649, 396)
         Me.songName4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.songName4.Name = "songName4"
         Me.songName4.Size = New System.Drawing.Size(128, 25)
@@ -173,9 +189,10 @@ Partial Class MenuPrincipal
         'artistName3
         '
         Me.artistName3.AutoSize = True
+        Me.artistName3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.artistName3.Font = New System.Drawing.Font("Mark", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.artistName3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
-        Me.artistName3.Location = New System.Drawing.Point(193, 430)
+        Me.artistName3.Location = New System.Drawing.Point(203, 430)
         Me.artistName3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.artistName3.Name = "artistName3"
         Me.artistName3.Size = New System.Drawing.Size(109, 20)
@@ -185,9 +202,10 @@ Partial Class MenuPrincipal
         'songName3
         '
         Me.songName3.AutoSize = True
+        Me.songName3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.songName3.Font = New System.Drawing.Font("Mark", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.songName3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
-        Me.songName3.Location = New System.Drawing.Point(193, 396)
+        Me.songName3.Location = New System.Drawing.Point(203, 396)
         Me.songName3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.songName3.Name = "songName3"
         Me.songName3.Size = New System.Drawing.Size(128, 25)
@@ -237,58 +255,112 @@ Partial Class MenuPrincipal
         '
         'cover4
         '
+        Me.cover4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.cover4.Image = Global.Intento2.My.Resources.Resources.not_found
         Me.cover4.Location = New System.Drawing.Point(492, 375)
         Me.cover4.Margin = New System.Windows.Forms.Padding(2)
         Me.cover4.Name = "cover4"
-        Me.cover4.Size = New System.Drawing.Size(146, 150)
+        Me.cover4.Size = New System.Drawing.Size(150, 150)
         Me.cover4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.cover4.TabIndex = 28
         Me.cover4.TabStop = False
         '
         'cover3
         '
+        Me.cover3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.cover3.Image = Global.Intento2.My.Resources.Resources.not_found
         Me.cover3.Location = New System.Drawing.Point(45, 375)
         Me.cover3.Margin = New System.Windows.Forms.Padding(2)
         Me.cover3.Name = "cover3"
-        Me.cover3.Size = New System.Drawing.Size(146, 150)
+        Me.cover3.Size = New System.Drawing.Size(150, 150)
         Me.cover3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.cover3.TabIndex = 25
         Me.cover3.TabStop = False
         '
         'cover2
         '
+        Me.cover2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.cover2.Image = Global.Intento2.My.Resources.Resources.not_found
         Me.cover2.Location = New System.Drawing.Point(492, 163)
         Me.cover2.Margin = New System.Windows.Forms.Padding(2)
         Me.cover2.Name = "cover2"
-        Me.cover2.Size = New System.Drawing.Size(146, 150)
+        Me.cover2.Size = New System.Drawing.Size(150, 150)
         Me.cover2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.cover2.TabIndex = 22
         Me.cover2.TabStop = False
         '
         'cover1
         '
+        Me.cover1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.cover1.Image = Global.Intento2.My.Resources.Resources.not_found
         Me.cover1.Location = New System.Drawing.Point(45, 163)
         Me.cover1.Margin = New System.Windows.Forms.Padding(2)
         Me.cover1.Name = "cover1"
-        Me.cover1.Size = New System.Drawing.Size(146, 150)
+        Me.cover1.Size = New System.Drawing.Size(150, 150)
         Me.cover1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.cover1.TabIndex = 18
         Me.cover1.TabStop = False
         '
-        'PictureBox1
+        'logo
         '
-        Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox1.Image = Global.Intento2.My.Resources.Resources.logo
-        Me.PictureBox1.Location = New System.Drawing.Point(7, 5)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(80, 57)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 16
-        Me.PictureBox1.TabStop = False
+        Me.logo.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.logo.Image = Global.Intento2.My.Resources.Resources.logo
+        Me.logo.Location = New System.Drawing.Point(7, 5)
+        Me.logo.Name = "logo"
+        Me.logo.Size = New System.Drawing.Size(80, 57)
+        Me.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.logo.TabIndex = 16
+        Me.logo.TabStop = False
+        '
+        'banner
+        '
+        Me.banner.Image = CType(resources.GetObject("banner.Image"), System.Drawing.Image)
+        Me.banner.Location = New System.Drawing.Point(-1, 0)
+        Me.banner.Name = "banner"
+        Me.banner.Size = New System.Drawing.Size(986, 85)
+        Me.banner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.banner.TabIndex = 34
+        Me.banner.TabStop = False
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox3.Location = New System.Drawing.Point(25, 148)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(450, 194)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox3.TabIndex = 35
+        Me.PictureBox3.TabStop = False
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox4.Location = New System.Drawing.Point(25, 348)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(450, 194)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox4.TabIndex = 36
+        Me.PictureBox4.TabStop = False
+        '
+        'PictureBox5
+        '
+        Me.PictureBox5.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox5.Location = New System.Drawing.Point(481, 148)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(469, 194)
+        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox5.TabIndex = 37
+        Me.PictureBox5.TabStop = False
+        '
+        'PictureBox6
+        '
+        Me.PictureBox6.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox6.Location = New System.Drawing.Point(481, 348)
+        Me.PictureBox6.Name = "PictureBox6"
+        Me.PictureBox6.Size = New System.Drawing.Size(469, 194)
+        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox6.TabIndex = 38
+        Me.PictureBox6.TabStop = False
         '
         'MenuPrincipal
         '
@@ -314,8 +386,13 @@ Partial Class MenuPrincipal
         Me.Controls.Add(Me.userBttn)
         Me.Controls.Add(Me.parameterBttn)
         Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.logo)
         Me.Controls.Add(Me.searchbar)
+        Me.Controls.Add(Me.banner)
+        Me.Controls.Add(Me.PictureBox3)
+        Me.Controls.Add(Me.PictureBox4)
+        Me.Controls.Add(Me.PictureBox5)
+        Me.Controls.Add(Me.PictureBox6)
         Me.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -329,14 +406,19 @@ Partial Class MenuPrincipal
         CType(Me.cover3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cover2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cover1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.logo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.banner, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents searchbar As TextBox
-    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents logo As PictureBox
     Friend WithEvents Button1 As Button
     Friend WithEvents parameterBttn As Button
     Friend WithEvents userBttn As Button
@@ -355,4 +437,9 @@ Partial Class MenuPrincipal
     Friend WithEvents pfp As PictureBox
     Friend WithEvents label1 As Label
     Friend WithEvents _username As Label
+    Friend WithEvents banner As PictureBox
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents PictureBox4 As PictureBox
+    Friend WithEvents PictureBox5 As PictureBox
+    Friend WithEvents PictureBox6 As PictureBox
 End Class

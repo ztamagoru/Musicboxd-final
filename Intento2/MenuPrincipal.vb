@@ -34,11 +34,7 @@ Public Class MenuPrincipal
             .buttons(userBttn)
         End With
 
-        Dim x As Integer = datos.rol
-
-        Debug.WriteLine(x.ToString)
-
-        Select Case (x)
+        Select Case (datos.rol)
             Case 2
                 parameterBttn.Visible = True
             Case 3
@@ -48,14 +44,9 @@ Public Class MenuPrincipal
 
         pfp.Image = extras.roundpfp(pfp.Image)
 
-        pfp.BackColor = Color.FromArgb(195, 206, 204)
-        _username.BackColor = Color.FromArgb(195, 206, 204)
-        logo.BackColor = Color.FromArgb(195, 206, 204)
-
         song.obtenerRecomendaciones()
     End Sub
 
-    'sujeto a cambios:
     Public Sub addCover(cover As Byte(), i As Integer)
         Select Case (i)
             Case 1
@@ -150,8 +141,37 @@ Public Class MenuPrincipal
         artistName2.BackColor = Color.FromArgb(231, 233, 228)
     End Sub
 
-    Private Sub artistName1_Click(sender As Object, e As EventArgs) Handles songName1.Click, PictureBox3.Click, cover1.Click, artistName1.Click
+#End Region
 
+#Region "    no sé cómo describir esto :p"
+    Private Sub artistName1_Click(sender As Object, e As EventArgs) Handles songName1.Click, PictureBox3.Click, cover1.Click, artistName1.Click
+        Dim artistname As String = artistName1.Text
+        Dim songname As String = songName1.Text
+
+        song.specificSong(songname, artistname)
+        Me.Hide()
+        SongInfo.Show()
+    End Sub
+
+    Private Sub artistName2_Click(sender As Object, e As EventArgs) Handles songName2.Click, PictureBox5.Click, cover2.Click, artistName2.Click
+        Dim artistname As String = artistName2.Text
+        Dim songname As String = songName2.Text
+
+        song.specificSong(songname, artistname)
+    End Sub
+
+    Private Sub artistName3_Click(sender As Object, e As EventArgs) Handles songName3.Click, PictureBox4.Click, cover3.Click, artistName3.Click
+        Dim artistname As String = artistName3.Text
+        Dim songname As String = songName3.Text
+
+        song.specificSong(songname, artistname)
+    End Sub
+
+    Private Sub artistName4_Click(sender As Object, e As EventArgs) Handles songName4.Click, PictureBox6.Click, cover4.Click, artistName4.Click
+        Dim artistname As String = artistName4.Text
+        Dim songname As String = songName4.Text
+
+        song.specificSong(songname, artistname)
     End Sub
 
 #End Region

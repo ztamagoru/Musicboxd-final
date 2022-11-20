@@ -5,6 +5,17 @@ Imports System.Runtime.Serialization.Formatters.Binary
 Public Class cancion
     Dim conexion As New conexion
 
+    Private Shared _rating As Integer = 0
+
+    Public Shared Property rating As Integer
+        Get
+            Return _rating
+        End Get
+        Set(value As Integer)
+            _rating = value
+        End Set
+    End Property
+
     Public Sub obtenerRecomendaciones()
         Dim comando, songName(3), artistName(3) As String
 
@@ -43,5 +54,9 @@ Public Class cancion
             .artistName3.Text = artistName(2)
             .artistName4.Text = artistName(3)
         End With
+    End Sub
+
+    Public Sub specificSong(songs As String, artist As String)
+
     End Sub
 End Class

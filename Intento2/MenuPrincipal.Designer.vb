@@ -230,7 +230,7 @@ Partial Class MenuPrincipal
         '_username
         '
         Me._username.AutoSize = True
-        Me._username.BackColor = System.Drawing.Color.Transparent
+        Me._username.BackColor = System.Drawing.Color.FromArgb(CType(CType(195, Byte), Integer), CType(CType(206, Byte), Integer), CType(CType(204, Byte), Integer))
         Me._username.Cursor = System.Windows.Forms.Cursors.Arrow
         Me._username.Font = New System.Drawing.Font("Mark", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._username.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
@@ -244,6 +244,7 @@ Partial Class MenuPrincipal
         '
         'pfp
         '
+        Me.pfp.BackColor = System.Drawing.Color.FromArgb(CType(CType(195, Byte), Integer), CType(CType(206, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.pfp.Image = Global.Intento2.My.Resources.Resources.image
         Me.pfp.Location = New System.Drawing.Point(92, 9)
         Me.pfp.Margin = New System.Windows.Forms.Padding(2)
@@ -303,6 +304,7 @@ Partial Class MenuPrincipal
         '
         'logo
         '
+        Me.logo.BackColor = System.Drawing.Color.FromArgb(CType(CType(195, Byte), Integer), CType(CType(206, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.logo.Cursor = System.Windows.Forms.Cursors.Hand
         Me.logo.Image = Global.Intento2.My.Resources.Resources.logo
         Me.logo.Location = New System.Drawing.Point(7, 5)
@@ -315,7 +317,7 @@ Partial Class MenuPrincipal
         'banner
         '
         Me.banner.Image = CType(resources.GetObject("banner.Image"), System.Drawing.Image)
-        Me.banner.Location = New System.Drawing.Point(-1, 0)
+        Me.banner.Location = New System.Drawing.Point(0, 0)
         Me.banner.Name = "banner"
         Me.banner.Size = New System.Drawing.Size(986, 85)
         Me.banner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage

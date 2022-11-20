@@ -110,7 +110,7 @@
         extras.buttons(Button1)
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub registrarse(sender As Object, e As EventArgs) Handles Button1.Click
         If _name.Text.Trim = "Name" Or
                 _surname.Text.Trim = "Surname" Or
                 _email.Text.Trim = "Email" Or

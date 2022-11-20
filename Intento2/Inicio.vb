@@ -43,7 +43,7 @@
     End Sub
 #End Region
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub iniciarsesion(sender As Object, e As EventArgs) Handles Button1.Click
         Dim user, pass As String
 
         user = _username.Text.Trim

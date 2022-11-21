@@ -3,15 +3,15 @@
     Dim songs As New cancion
 
 #Region "    links click"
-    Private Sub LinkLabel3_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel3.LinkClicked
+    Private Sub LinkLabel3_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles deezerLink.LinkClicked
         Process.Start(e.Link.LinkData.ToString)
     End Sub
 
-    Private Sub LinkLabel2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel2.LinkClicked
+    Private Sub LinkLabel2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles itunesLink.LinkClicked
         Process.Start(e.Link.LinkData.ToString)
     End Sub
 
-    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles spotifyLink.LinkClicked
         Process.Start(e.Link.LinkData.ToString)
     End Sub
 #End Region
@@ -158,10 +158,6 @@
         End Select
 
         _username.Text = MenuPrincipal._username.Text
-
-        Dim prueba As String = "El camino de cualquier triunfo está lleno de derrotas."
-
-        _reviews.Items.Add(prueba)
     End Sub
 
     Private Sub SongInfo_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing

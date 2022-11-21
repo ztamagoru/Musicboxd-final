@@ -33,33 +33,4 @@ Public Class conexion
     Public Sub closeDatabase()
         conn.Close()
     End Sub
-
-    Public Sub execute(comando As SqlCommand)
-        Try
-            cmd = comando
-
-            conn.Open()
-
-            cmd.ExecuteScalar()
-
-            conn.Close()
-        Catch ex As Exception
-            MsgBox(ex.Message, vbOK)
-        End Try
-    End Sub
-
-    Public Function executeReader(comando As String) As SqlDataReader
-        Try
-            cmd.CommandText = comando
-
-            conn.Open()
-
-            executeReader = cmd.ExecuteReader()
-
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-
-        Return executeReader
-    End Function
 End Class

@@ -120,6 +120,12 @@
     <Compile Include="Registro.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="SongButton.Designer.vb">
+      <DependentUpon>SongButton.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SongButton.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="SongInfo.Designer.vb">
       <DependentUpon>SongInfo.vb</DependentUpon>
     </Compile>
@@ -131,6 +137,12 @@
     </Compile>
     <Compile Include="UserCenter.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReviewItem.Designer.vb">
+      <DependentUpon>ReviewItem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReviewItem.vb">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="validador.vb" />
   </ItemGroup>
@@ -153,11 +165,17 @@
     <EmbeddedResource Include="Registro.resx">
       <DependentUpon>Registro.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SongButton.resx">
+      <DependentUpon>SongButton.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SongInfo.resx">
       <DependentUpon>SongInfo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserCenter.resx">
       <DependentUpon>UserCenter.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReviewItem.resx">
+      <DependentUpon>ReviewItem.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

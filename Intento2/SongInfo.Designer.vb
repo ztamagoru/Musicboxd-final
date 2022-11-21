@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class SongInfo
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class SongInfo
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SongInfo))
         Me._username = New System.Windows.Forms.Label()
@@ -28,13 +28,14 @@ Partial Class SongInfo
         Me.parameterBttn = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.searchbar = New System.Windows.Forms.TextBox()
-        Me.lbl_songname = New System.Windows.Forms.Label()
-        Me.lbl_ = New System.Windows.Forms.Label()
-        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
-        Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
-        Me.LinkLabel3 = New System.Windows.Forms.LinkLabel()
+        Me.lbl_songName = New System.Windows.Forms.Label()
+        Me.lbl_artistName = New System.Windows.Forms.Label()
+        Me.spotifyLink = New System.Windows.Forms.LinkLabel()
+        Me.itunesLink = New System.Windows.Forms.LinkLabel()
+        Me.deezerLink = New System.Windows.Forms.LinkLabel()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lbl_promedio = New System.Windows.Forms.Label()
+        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.star10 = New System.Windows.Forms.PictureBox()
         Me.star9 = New System.Windows.Forms.PictureBox()
@@ -48,11 +49,12 @@ Partial Class SongInfo
         Me.star1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.cover1 = New System.Windows.Forms.PictureBox()
+        Me.cover = New System.Windows.Forms.PictureBox()
         Me.pfp = New System.Windows.Forms.PictureBox()
         Me.logo = New System.Windows.Forms.PictureBox()
         Me.banner = New System.Windows.Forms.PictureBox()
-        Me.ListView1 = New System.Windows.Forms.ListView()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.star10, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.star9, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -66,7 +68,7 @@ Partial Class SongInfo
         CType(Me.star1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cover1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cover, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pfp, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.logo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.banner, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -134,75 +136,75 @@ Partial Class SongInfo
         Me.searchbar.TabIndex = 36
         Me.searchbar.Text = "Search song, album or artist"
         '
-        'lbl_songname
+        'lbl_songName
         '
-        Me.lbl_songname.AutoSize = True
-        Me.lbl_songname.BackColor = System.Drawing.Color.Transparent
-        Me.lbl_songname.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.lbl_songname.Font = New System.Drawing.Font("Mark", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_songname.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
-        Me.lbl_songname.Location = New System.Drawing.Point(27, 104)
-        Me.lbl_songname.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.lbl_songname.Name = "lbl_songname"
-        Me.lbl_songname.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lbl_songname.Size = New System.Drawing.Size(159, 34)
-        Me.lbl_songname.TabIndex = 44
-        Me.lbl_songname.Text = "SongName"
+        Me.lbl_songName.AutoSize = True
+        Me.lbl_songName.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_songName.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.lbl_songName.Font = New System.Drawing.Font("Mark", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_songName.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
+        Me.lbl_songName.Location = New System.Drawing.Point(27, 104)
+        Me.lbl_songName.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lbl_songName.Name = "lbl_songName"
+        Me.lbl_songName.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.lbl_songName.Size = New System.Drawing.Size(159, 34)
+        Me.lbl_songName.TabIndex = 44
+        Me.lbl_songName.Text = "SongName"
         '
-        'lbl_
+        'lbl_artistName
         '
-        Me.lbl_.AutoSize = True
-        Me.lbl_.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.lbl_.Font = New System.Drawing.Font("Mark", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
-        Me.lbl_.Location = New System.Drawing.Point(28, 151)
-        Me.lbl_.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.lbl_.Name = "lbl_"
-        Me.lbl_.Size = New System.Drawing.Size(128, 25)
-        Me.lbl_.TabIndex = 45
-        Me.lbl_.Text = "songName1"
+        Me.lbl_artistName.AutoSize = True
+        Me.lbl_artistName.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.lbl_artistName.Font = New System.Drawing.Font("Mark", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_artistName.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
+        Me.lbl_artistName.Location = New System.Drawing.Point(28, 151)
+        Me.lbl_artistName.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lbl_artistName.Name = "lbl_artistName"
+        Me.lbl_artistName.Size = New System.Drawing.Size(128, 25)
+        Me.lbl_artistName.TabIndex = 45
+        Me.lbl_artistName.Text = "songName1"
         '
-        'LinkLabel1
+        'spotifyLink
         '
-        Me.LinkLabel1.ActiveLinkColor = System.Drawing.Color.RoyalBlue
-        Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Font = New System.Drawing.Font("Mark", 13.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkLabel1.LinkColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(89, Byte), Integer), CType(CType(98, Byte), Integer))
-        Me.LinkLabel1.Location = New System.Drawing.Point(770, 459)
-        Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(184, 23)
-        Me.LinkLabel1.TabIndex = 46
-        Me.LinkLabel1.TabStop = True
-        Me.LinkLabel1.Text = "Escuchar en Spotify"
-        Me.LinkLabel1.VisitedLinkColor = System.Drawing.Color.FromArgb(CType(CType(185, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(118, Byte), Integer))
+        Me.spotifyLink.ActiveLinkColor = System.Drawing.Color.RoyalBlue
+        Me.spotifyLink.AutoSize = True
+        Me.spotifyLink.Font = New System.Drawing.Font("Mark", 13.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.spotifyLink.LinkColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(89, Byte), Integer), CType(CType(98, Byte), Integer))
+        Me.spotifyLink.Location = New System.Drawing.Point(770, 459)
+        Me.spotifyLink.Name = "spotifyLink"
+        Me.spotifyLink.Size = New System.Drawing.Size(184, 23)
+        Me.spotifyLink.TabIndex = 46
+        Me.spotifyLink.TabStop = True
+        Me.spotifyLink.Text = "Escuchar en Spotify"
+        Me.spotifyLink.VisitedLinkColor = System.Drawing.Color.FromArgb(CType(CType(185, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(118, Byte), Integer))
         '
-        'LinkLabel2
+        'itunesLink
         '
-        Me.LinkLabel2.ActiveLinkColor = System.Drawing.Color.RoyalBlue
-        Me.LinkLabel2.AutoSize = True
-        Me.LinkLabel2.Font = New System.Drawing.Font("Mark", 13.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkLabel2.LinkColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(89, Byte), Integer), CType(CType(98, Byte), Integer))
-        Me.LinkLabel2.Location = New System.Drawing.Point(779, 495)
-        Me.LinkLabel2.Name = "LinkLabel2"
-        Me.LinkLabel2.Size = New System.Drawing.Size(175, 23)
-        Me.LinkLabel2.TabIndex = 49
-        Me.LinkLabel2.TabStop = True
-        Me.LinkLabel2.Text = "Escuchar en iTunes"
-        Me.LinkLabel2.VisitedLinkColor = System.Drawing.Color.FromArgb(CType(CType(185, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(118, Byte), Integer))
+        Me.itunesLink.ActiveLinkColor = System.Drawing.Color.RoyalBlue
+        Me.itunesLink.AutoSize = True
+        Me.itunesLink.Font = New System.Drawing.Font("Mark", 13.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.itunesLink.LinkColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(89, Byte), Integer), CType(CType(98, Byte), Integer))
+        Me.itunesLink.Location = New System.Drawing.Point(779, 495)
+        Me.itunesLink.Name = "itunesLink"
+        Me.itunesLink.Size = New System.Drawing.Size(175, 23)
+        Me.itunesLink.TabIndex = 49
+        Me.itunesLink.TabStop = True
+        Me.itunesLink.Text = "Escuchar en iTunes"
+        Me.itunesLink.VisitedLinkColor = System.Drawing.Color.FromArgb(CType(CType(185, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(118, Byte), Integer))
         '
-        'LinkLabel3
+        'deezerLink
         '
-        Me.LinkLabel3.ActiveLinkColor = System.Drawing.Color.RoyalBlue
-        Me.LinkLabel3.AutoSize = True
-        Me.LinkLabel3.Font = New System.Drawing.Font("Mark", 13.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkLabel3.LinkColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(89, Byte), Integer), CType(CType(98, Byte), Integer))
-        Me.LinkLabel3.Location = New System.Drawing.Point(774, 531)
-        Me.LinkLabel3.Name = "LinkLabel3"
-        Me.LinkLabel3.Size = New System.Drawing.Size(180, 23)
-        Me.LinkLabel3.TabIndex = 50
-        Me.LinkLabel3.TabStop = True
-        Me.LinkLabel3.Text = "Escuchar en Deezer"
-        Me.LinkLabel3.VisitedLinkColor = System.Drawing.Color.FromArgb(CType(CType(185, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(118, Byte), Integer))
+        Me.deezerLink.ActiveLinkColor = System.Drawing.Color.RoyalBlue
+        Me.deezerLink.AutoSize = True
+        Me.deezerLink.Font = New System.Drawing.Font("Mark", 13.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.deezerLink.LinkColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(89, Byte), Integer), CType(CType(98, Byte), Integer))
+        Me.deezerLink.Location = New System.Drawing.Point(774, 531)
+        Me.deezerLink.Name = "deezerLink"
+        Me.deezerLink.Size = New System.Drawing.Size(180, 23)
+        Me.deezerLink.TabIndex = 50
+        Me.deezerLink.TabStop = True
+        Me.deezerLink.Text = "Escuchar en Deezer"
+        Me.deezerLink.VisitedLinkColor = System.Drawing.Color.FromArgb(CType(CType(185, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(118, Byte), Integer))
         '
         'TextBox1
         '
@@ -214,21 +216,30 @@ Partial Class SongInfo
         Me.TextBox1.Size = New System.Drawing.Size(553, 54)
         Me.TextBox1.TabIndex = 52
         '
-        'Label1
+        'lbl_promedio
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.Label1.Font = New System.Drawing.Font("Mark", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(851, 403)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label1.Size = New System.Drawing.Size(54, 34)
-        Me.Label1.TabIndex = 64
-        Me.Label1.Text = "1.8"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopRight
+        Me.lbl_promedio.AutoSize = True
+        Me.lbl_promedio.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_promedio.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.lbl_promedio.Font = New System.Drawing.Font("Mark", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_promedio.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
+        Me.lbl_promedio.Location = New System.Drawing.Point(861, 403)
+        Me.lbl_promedio.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lbl_promedio.Name = "lbl_promedio"
+        Me.lbl_promedio.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.lbl_promedio.Size = New System.Drawing.Size(54, 34)
+        Me.lbl_promedio.TabIndex = 64
+        Me.lbl_promedio.Text = "1.8"
+        Me.lbl_promedio.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'FlowLayoutPanel1
+        '
+        Me.FlowLayoutPanel1.AutoScroll = True
+        Me.FlowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(195, Byte), Integer), CType(CType(206, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(46, 206)
+        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(615, 276)
+        Me.FlowLayoutPanel1.TabIndex = 66
         '
         'PictureBox3
         '
@@ -372,17 +383,17 @@ Partial Class SongInfo
         Me.PictureBox1.TabIndex = 47
         Me.PictureBox1.TabStop = False
         '
-        'cover1
+        'cover
         '
-        Me.cover1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.cover1.Image = Global.Intento2.My.Resources.Resources.not_found
-        Me.cover1.Location = New System.Drawing.Point(704, 104)
-        Me.cover1.Margin = New System.Windows.Forms.Padding(2)
-        Me.cover1.Name = "cover1"
-        Me.cover1.Size = New System.Drawing.Size(250, 250)
-        Me.cover1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.cover1.TabIndex = 43
-        Me.cover1.TabStop = False
+        Me.cover.Cursor = System.Windows.Forms.Cursors.Default
+        Me.cover.Image = Global.Intento2.My.Resources.Resources.not_found
+        Me.cover.Location = New System.Drawing.Point(704, 104)
+        Me.cover.Margin = New System.Windows.Forms.Padding(2)
+        Me.cover.Name = "cover"
+        Me.cover.Size = New System.Drawing.Size(250, 250)
+        Me.cover.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.cover.TabIndex = 43
+        Me.cover.TabStop = False
         '
         'pfp
         '
@@ -418,18 +429,34 @@ Partial Class SongInfo
         Me.banner.TabIndex = 42
         Me.banner.TabStop = False
         '
-        'ListView1
+        'Label1
         '
-        Me.ListView1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.ListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None
-        Me.ListView1.HideSelection = False
-        Me.ListView1.Location = New System.Drawing.Point(46, 210)
-        Me.ListView1.MultiSelect = False
-        Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(615, 272)
-        Me.ListView1.TabIndex = 66
-        Me.ListView1.UseCompatibleStateImageBehavior = False
-        Me.ListView1.View = System.Windows.Forms.View.List
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(195, Byte), Integer), CType(CType(206, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.Label1.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.Label1.Font = New System.Drawing.Font("Mark", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
+        Me.Label1.Location = New System.Drawing.Point(172, 295)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label1.Size = New System.Drawing.Size(364, 34)
+        Me.Label1.TabIndex = 67
+        Me.Label1.Text = "No reviews at the moment"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.FromArgb(CType(CType(195, Byte), Integer), CType(CType(206, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.Label2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Label2.Font = New System.Drawing.Font("Mark", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
+        Me.Label2.Location = New System.Drawing.Point(202, 328)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(304, 25)
+        Me.Label2.TabIndex = 68
+        Me.Label2.Text = "Be the first one to publish one!"
         '
         'SongInfo
         '
@@ -437,9 +464,11 @@ Partial Class SongInfo
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(233, Byte), Integer), CType(CType(228, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(984, 577)
-        Me.Controls.Add(Me.ListView1)
-        Me.Controls.Add(Me.PictureBox3)
+        Me.Controls.Add(Me.FlowLayoutPanel1)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.PictureBox3)
+        Me.Controls.Add(Me.lbl_promedio)
         Me.Controls.Add(Me.star10)
         Me.Controls.Add(Me.star9)
         Me.Controls.Add(Me.star8)
@@ -452,13 +481,13 @@ Partial Class SongInfo
         Me.Controls.Add(Me.star1)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.LinkLabel3)
-        Me.Controls.Add(Me.LinkLabel2)
+        Me.Controls.Add(Me.deezerLink)
+        Me.Controls.Add(Me.itunesLink)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.LinkLabel1)
-        Me.Controls.Add(Me.lbl_)
-        Me.Controls.Add(Me.lbl_songname)
-        Me.Controls.Add(Me.cover1)
+        Me.Controls.Add(Me.spotifyLink)
+        Me.Controls.Add(Me.lbl_artistName)
+        Me.Controls.Add(Me.lbl_songName)
+        Me.Controls.Add(Me.cover)
         Me.Controls.Add(Me._username)
         Me.Controls.Add(Me.pfp)
         Me.Controls.Add(Me.userBttn)
@@ -471,7 +500,7 @@ Partial Class SongInfo
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "SongInfo"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Musicboxd"
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.star10, System.ComponentModel.ISupportInitialize).EndInit()
@@ -486,7 +515,7 @@ Partial Class SongInfo
         CType(Me.star1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cover1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cover, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pfp, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.logo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.banner, System.ComponentModel.ISupportInitialize).EndInit()
@@ -503,13 +532,13 @@ Partial Class SongInfo
     Friend WithEvents logo As PictureBox
     Friend WithEvents searchbar As TextBox
     Friend WithEvents banner As PictureBox
-    Friend WithEvents cover1 As PictureBox
-    Friend WithEvents lbl_songname As Label
-    Friend WithEvents lbl_ As Label
-    Friend WithEvents LinkLabel1 As LinkLabel
+    Friend WithEvents cover As PictureBox
+    Friend WithEvents lbl_songName As Label
+    Friend WithEvents lbl_artistName As Label
+    Friend WithEvents spotifyLink As LinkLabel
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents LinkLabel2 As LinkLabel
-    Friend WithEvents LinkLabel3 As LinkLabel
+    Friend WithEvents itunesLink As LinkLabel
+    Friend WithEvents deezerLink As LinkLabel
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents star1 As PictureBox
@@ -522,7 +551,9 @@ Partial Class SongInfo
     Friend WithEvents star8 As PictureBox
     Friend WithEvents star9 As PictureBox
     Friend WithEvents star10 As PictureBox
-    Friend WithEvents Label1 As Label
+    Friend WithEvents lbl_promedio As Label
     Friend WithEvents PictureBox3 As PictureBox
-    Friend WithEvents ListView1 As ListView
+    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
 End Class

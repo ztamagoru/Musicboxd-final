@@ -17,14 +17,18 @@ Public Class cancion
     End Property
 
     Public Sub obtenerRecomendaciones()
-        Dim comando, songName(3), artistName(3) As String
+        Dim songName(3), artistName(3) As String
 
         Dim i As Integer = 0
+
+        conexion.openDatabase()
+        conexion.cmd = New SqlCommand("[Songs].[SP_4_RECOMMENDATIONS]", conexion.conn)
+
+        conexion.cmd.CommandType = CommandType.StoredProcedure
+
         Dim reader As SqlDataReader
 
-        comando = "EXEC [Songs].[SP_4_RECOMMENDATIONS]"
-
-        reader = conexion.executeReader(comando)
+        reader = conexion.cmd.ExecuteReader()
 
         While reader.Read()
             songName(i) = reader.GetString(0)
@@ -56,7 +60,78 @@ Public Class cancion
         End With
     End Sub
 
-    Public Sub specificSong(songs As String, artist As String)
+    Public Sub specificsong(songs As String, artist As String)
+        songs = Replace(songs, "...", "", 1)
 
+        conexion.openDatabase()
+        conexion.cmd = New SqlCommand("[Songs].[SP_GET_SONG_DETAILS]", conexion.conn)
+
+        With conexion.cmd
+            .CommandType = CommandType.StoredProcedure
+            .Parameters.AddWithValue("@name", songs)
+            .Parameters.AddWithValue("@artist", artist)
+
+            Dim reader As SqlDataReader
+
+            reader = .ExecuteReader()
+
+            reader.Read()
+
+            With SongInfo
+                .lbl_songName.Text = reader.GetString(0)
+                .lbl_artistName.Text = reader.GetString(1)
+
+                .lbl_promedio.Text = CType(reader(2), String)
+
+                Dim bytes = CType(reader(3), Byte())
+
+                .cover.Image = Image.FromStream(New MemoryStream(bytes))
+
+                .spotifyLink.Links.Add(0, Len(.spotifyLink.Text), CType(reader(4), String))
+                .itunesLink.Links.Add(0, Len(.spotifyLink.Text), CType(reader(5), String))
+                .deezerLink.Links.Add(0, Len(.spotifyLink.Text), CType(reader(6), String))
+
+                reader.Close()
+
+                conexion.closeDatabase()
+
+                getreviews(.lbl_songName.Text, .lbl_artistName.Text)
+            End With
+        End With
+    End Sub
+
+    Private Sub getreviews(songname As String, artistname As String)
+        conexion.openDatabase()
+        conexion.cmd = New SqlCommand("[Songs].[SP_GET_SONG_REVIEWS]", conexion.conn)
+
+        With conexion.cmd
+            .CommandType = CommandType.StoredProcedure
+            .Parameters.AddWithValue("@name", songname)
+            .Parameters.AddWithValue("@artist", artistname)
+
+            Dim reader As SqlDataReader
+
+            reader = .ExecuteReader()
+            If reader.Read() Then
+                While reader.Read()
+                    Dim review As New ReviewItem
+
+                    Dim username = reader.GetString(0)
+                    Dim resena = reader.GetString(1)
+                    Dim fecha = CType(reader(2), String)
+
+                    review.SetearDatosDeReview(username, resena, fecha)
+
+                    SongInfo.FlowLayoutPanel1.Controls.Add(review)
+                End While
+            Else
+                SongInfo.FlowLayoutPanel1.Visible = False
+                'MsgBox("no hay reseñas disponibles al momento")
+            End If
+
+            reader.Close()
+        End With
+
+        conexion.closeDatabase()
     End Sub
 End Class

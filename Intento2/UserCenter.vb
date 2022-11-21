@@ -21,7 +21,7 @@
     End Sub
 
     Private Sub UserCenter_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        pfp.Image = extras.roundpfp(pfp.Image)
+        'pfp.Image = extras.roundpfp(pfp.Image)
 
 
     End Sub

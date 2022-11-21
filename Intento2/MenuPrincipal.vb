@@ -42,7 +42,7 @@ Public Class MenuPrincipal
                 userBttn.Visible = True
         End Select
 
-        pfp.Image = extras.roundpfp(pfp.Image)
+        'pfp.Image = extras.roundpfp(pfp.Image)
 
         song.obtenerRecomendaciones()
     End Sub
@@ -72,7 +72,6 @@ Public Class MenuPrincipal
             .Show()
             ._username.Text = _username.Text
         End With
-
     End Sub
 
 #Region "    hovers"
@@ -149,8 +148,8 @@ Public Class MenuPrincipal
         Dim songname As String = songName1.Text
 
         song.specificSong(songname, artistname)
-        Me.Hide()
         SongInfo.Show()
+        Me.Hide()
     End Sub
 
     Private Sub artistName2_Click(sender As Object, e As EventArgs) Handles songName2.Click, PictureBox5.Click, cover2.Click, artistName2.Click
@@ -158,6 +157,8 @@ Public Class MenuPrincipal
         Dim songname As String = songName2.Text
 
         song.specificSong(songname, artistname)
+        SongInfo.Show()
+        Me.Hide()
     End Sub
 
     Private Sub artistName3_Click(sender As Object, e As EventArgs) Handles songName3.Click, PictureBox4.Click, cover3.Click, artistName3.Click
@@ -165,6 +166,8 @@ Public Class MenuPrincipal
         Dim songname As String = songName3.Text
 
         song.specificSong(songname, artistname)
+        SongInfo.Show()
+        Me.Hide()
     End Sub
 
     Private Sub artistName4_Click(sender As Object, e As EventArgs) Handles songName4.Click, PictureBox6.Click, cover4.Click, artistName4.Click
@@ -172,6 +175,8 @@ Public Class MenuPrincipal
         Dim songname As String = songName4.Text
 
         song.specificSong(songname, artistname)
+        SongInfo.Show()
+        Me.Hide()
     End Sub
 
 #End Region

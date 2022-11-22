@@ -26,7 +26,11 @@ Public Class rating
 
             .ExecuteScalar()
 
-            rating = .Parameters("@rate").Value
+            If Not .Parameters("@rate").Value Is DBNull.Value Then
+                rating = .Parameters("@rate").Value
+            Else
+                rating = 0
+            End If
         End With
 
         conexion.closeDatabase()

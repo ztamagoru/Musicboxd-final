@@ -203,6 +203,17 @@
 
     Public Sub setstars(rating As Integer)
         Select Case (rating)
+            Case 0
+                star1.Image = My.Resources.star
+                star2.Image = My.Resources.star
+                star3.Image = My.Resources.star
+                star4.Image = My.Resources.star
+                star5.Image = My.Resources.star
+                star6.Image = My.Resources.star
+                star7.Image = My.Resources.star
+                star8.Image = My.Resources.star
+                star9.Image = My.Resources.star
+                star10.Image = My.Resources.star
             Case 1
                 star1.Image = My.Resources.star__1_
                 star2.Image = My.Resources.star

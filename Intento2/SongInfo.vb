@@ -1,9 +1,10 @@
 ﻿Public Class SongInfo
     Dim extras As New extras
-    Dim songs As New cancion
+    Dim songs As New song
     Dim rating As New rating
     Dim validador As New validador
     Dim review As New review
+    Dim search As New search
 
 #Region "    links click"
     Private Sub LinkLabel3_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles deezerLink.LinkClicked
@@ -162,6 +163,7 @@
     Private Sub SongInfo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         extras.buttons(userBttn)
         extras.buttons(parameterBttn)
+        extras.buttons(Button1)
 
         Select Case (datos.rol)
             Case 2
@@ -186,6 +188,7 @@
 
             Case "Sign out"
                 Me.Dispose()
+                MenuPrincipal.Dispose()
                 Inicio.Show()
 
             Case Else
@@ -403,11 +406,46 @@
         End If
     End Sub
 
-    Private Sub searchbar_Enter(sender As Object, e As EventArgs) Handles searchbar.Enter
+#Region "    searchbar hovers"
 
+    Private Sub searchbar_Enter(sender As Object, e As EventArgs) Handles searchbar.Enter
+        If searchbar.Text.Trim = "Search song, album or artist" Then
+            With searchbar
+                .Text = String.Empty
+                .ForeColor = Color.FromArgb(60, 60, 65)
+            End With
+        End If
     End Sub
 
     Private Sub searchbar_Leave(sender As Object, e As EventArgs) Handles searchbar.Leave
+        If searchbar.Text.Trim = String.Empty Then
+            With searchbar
+                .Text = "Search song, album or artist"
+                .ForeColor = Color.FromArgb(160, 160, 160)
+            End With
+        End If
+    End Sub
+#End Region
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        If searchbar.Text.Trim = "Search song, album or artist" Or
+            searchbar.Text.Trim = String.Empty Then
+
+            MessageBox.Show($"Search bar empty.{vbNewLine}Complete the blank space and try again",
+                            "Error",
+                            MessageBoxButtons.OK)
+        Else
+            SearchMenu.lbl.Text = $"Search results for: {searchbar.Text.Trim}"
+
+            search.makesearch(searchbar.Text.Trim)
+
+            With SearchMenu.searchbar
+                .Text = "Search song, album or artist"
+                .ForeColor = Color.FromArgb(160, 160, 160)
+            End With
+
+            SearchMenu.Show()
+            Me.Dispose()
+        End If
     End Sub
 End Class

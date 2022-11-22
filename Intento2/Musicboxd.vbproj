@@ -74,9 +74,27 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="album.vb" />
-    <Compile Include="artista.vb" />
-    <Compile Include="buscador.vb" />
-    <Compile Include="cancion.vb" />
+    <Compile Include="AlbumButton.Designer.vb">
+      <DependentUpon>AlbumButton.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AlbumButton.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AlbumInfo.Designer.vb">
+      <DependentUpon>AlbumInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AlbumInfo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="artist.vb" />
+    <Compile Include="ArtistButton.Designer.vb">
+      <DependentUpon>ArtistButton.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ArtistButton.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="search.vb" />
+    <Compile Include="song.vb" />
     <Compile Include="conexion.vb" />
     <Compile Include="datos.vb" />
     <Compile Include="extras.vb" />
@@ -122,6 +140,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="review.vb" />
+    <Compile Include="SearchMenu.Designer.vb">
+      <DependentUpon>SearchMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SearchMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="SongButton.Designer.vb">
       <DependentUpon>SongButton.vb</DependentUpon>
     </Compile>
@@ -149,6 +173,15 @@
     <Compile Include="validador.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AlbumButton.resx">
+      <DependentUpon>AlbumButton.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AlbumInfo.resx">
+      <DependentUpon>AlbumInfo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ArtistButton.resx">
+      <DependentUpon>ArtistButton.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="IngresarCodigo.resx">
       <DependentUpon>IngresarCodigo.vb</DependentUpon>
     </EmbeddedResource>
@@ -166,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Registro.resx">
       <DependentUpon>Registro.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchMenu.resx">
+      <DependentUpon>SearchMenu.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SongButton.resx">
       <DependentUpon>SongButton.vb</DependentUpon>

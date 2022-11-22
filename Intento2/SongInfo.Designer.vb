@@ -132,7 +132,7 @@ Partial Class SongInfo
         Me.searchbar.Font = New System.Drawing.Font("Mark", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.searchbar.ForeColor = System.Drawing.SystemColors.ControlDark
         Me.searchbar.Location = New System.Drawing.Point(638, 22)
-        Me.searchbar.MaxLength = 50
+        Me.searchbar.MaxLength = 100
         Me.searchbar.Name = "searchbar"
         Me.searchbar.Size = New System.Drawing.Size(245, 22)
         Me.searchbar.TabIndex = 3
@@ -246,7 +246,7 @@ Partial Class SongInfo
         Me.FlowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(195, Byte), Integer), CType(CType(206, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.FlowLayoutPanel1.Location = New System.Drawing.Point(46, 233)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(615, 249)
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(615, 242)
         Me.FlowLayoutPanel1.TabIndex = 66
         '
         'PictureBox3

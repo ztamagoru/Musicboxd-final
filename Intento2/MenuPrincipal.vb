@@ -5,8 +5,8 @@ Public Class MenuPrincipal
     Dim validador As New validador
     Dim datos As New datos
     Dim extras As New extras
-    Dim song As New cancion
-    Dim search As New buscador
+    Dim song As New song
+    Dim search As New search
 
     Private Sub MenuPrincipal_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Dim result = extras.show(
@@ -44,7 +44,7 @@ Public Class MenuPrincipal
 
         'pfp.Image = extras.roundpfp(pfp.Image)
 
-        song.obtenerRecomendaciones()
+        song.obtainrecommendations()
     End Sub
 
     Public Sub addCover(cover As Byte(), i As Integer)
@@ -58,12 +58,6 @@ Public Class MenuPrincipal
             Case 4
                 cover4.Image = Image.FromStream(New MemoryStream(cover))
         End Select
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        If searchbar.Text.Trim = "Search song, album or artist" Then
-
-        End If
     End Sub
 
     Private Sub userBttn_Click(sender As Object, e As EventArgs) Handles userBttn.Click
@@ -180,4 +174,48 @@ Public Class MenuPrincipal
     End Sub
 
 #End Region
+
+#Region "    searchbar hovers"
+
+    Private Sub searchbar_Enter(sender As Object, e As EventArgs) Handles searchbar.Enter
+        If searchbar.Text.Trim = "Search song, album or artist" Then
+            With searchbar
+                .Text = String.Empty
+                .ForeColor = Color.FromArgb(60, 60, 65)
+            End With
+        End If
+    End Sub
+
+    Private Sub searchbar_Leave(sender As Object, e As EventArgs) Handles searchbar.Leave
+        If searchbar.Text.Trim = String.Empty Then
+            With searchbar
+                .Text = "Search song, album or artist"
+                .ForeColor = Color.FromArgb(160, 160, 160)
+            End With
+        End If
+    End Sub
+
+#End Region
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        If searchbar.Text.Trim = "Search song, album or artist" Or
+            searchbar.Text.Trim = String.Empty Then
+
+            MessageBox.Show($"Search bar empty.{vbNewLine}Complete the blank space and try again",
+                            "Error",
+                            MessageBoxButtons.OK)
+        Else
+            SearchMenu.lbl.Text = $"Search results for: {searchbar.Text.Trim}"
+
+            search.makesearch(searchbar.Text.Trim)
+
+            With SearchMenu.searchbar
+                .Text = "Search song, album or artist"
+                .ForeColor = Color.FromArgb(160, 160, 160)
+            End With
+
+            SearchMenu.Show()
+            Me.Hide()
+        End If
+    End Sub
 End Class

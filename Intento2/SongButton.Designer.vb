@@ -25,9 +25,9 @@ Partial Class SongButton
         Me.lbl_artistname = New System.Windows.Forms.Label()
         Me.lbl_songname = New System.Windows.Forms.Label()
         Me.cover = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.buttonbackground = New System.Windows.Forms.PictureBox()
         CType(Me.cover, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.buttonbackground, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lbl_artistname
@@ -35,11 +35,11 @@ Partial Class SongButton
         Me.lbl_artistname.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lbl_artistname.AutoSize = True
-        Me.lbl_artistname.BackColor = System.Drawing.Color.FromArgb(CType(CType(195, Byte), Integer), CType(CType(206, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.lbl_artistname.BackColor = System.Drawing.Color.FromArgb(CType(CType(216, Byte), Integer), CType(CType(227, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.lbl_artistname.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lbl_artistname.Font = New System.Drawing.Font("Mark", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_artistname.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
-        Me.lbl_artistname.Location = New System.Drawing.Point(83, 42)
+        Me.lbl_artistname.Location = New System.Drawing.Point(83, 38)
         Me.lbl_artistname.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbl_artistname.MaximumSize = New System.Drawing.Size(550, 0)
         Me.lbl_artistname.Name = "lbl_artistname"
@@ -50,11 +50,11 @@ Partial Class SongButton
         'lbl_songname
         '
         Me.lbl_songname.AutoSize = True
-        Me.lbl_songname.BackColor = System.Drawing.Color.FromArgb(CType(CType(195, Byte), Integer), CType(CType(206, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.lbl_songname.BackColor = System.Drawing.Color.FromArgb(CType(CType(216, Byte), Integer), CType(CType(227, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.lbl_songname.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lbl_songname.Font = New System.Drawing.Font("Mark", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_songname.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
-        Me.lbl_songname.Location = New System.Drawing.Point(83, 19)
+        Me.lbl_songname.Location = New System.Drawing.Point(83, 15)
         Me.lbl_songname.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbl_songname.Name = "lbl_songname"
         Me.lbl_songname.Size = New System.Drawing.Size(115, 20)
@@ -65,23 +65,23 @@ Partial Class SongButton
         '
         Me.cover.Cursor = System.Windows.Forms.Cursors.Hand
         Me.cover.Image = Global.Intento2.My.Resources.Resources.not_found
-        Me.cover.Location = New System.Drawing.Point(24, 15)
+        Me.cover.Location = New System.Drawing.Point(24, 11)
         Me.cover.Name = "cover"
         Me.cover.Size = New System.Drawing.Size(50, 50)
         Me.cover.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.cover.TabIndex = 30
         Me.cover.TabStop = False
         '
-        'PictureBox1
+        'buttonbackground
         '
-        Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox1.Image = Global.Intento2.My.Resources.Resources.banner_inicio
-        Me.PictureBox1.Location = New System.Drawing.Point(4, 6)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(382, 69)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 29
-        Me.PictureBox1.TabStop = False
+        Me.buttonbackground.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.buttonbackground.Image = Global.Intento2.My.Resources.Resources.fondo_boton_claro
+        Me.buttonbackground.Location = New System.Drawing.Point(3, 2)
+        Me.buttonbackground.Name = "buttonbackground"
+        Me.buttonbackground.Size = New System.Drawing.Size(318, 69)
+        Me.buttonbackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.buttonbackground.TabIndex = 29
+        Me.buttonbackground.TabStop = False
         '
         'SongButton
         '
@@ -91,11 +91,11 @@ Partial Class SongButton
         Me.Controls.Add(Me.lbl_artistname)
         Me.Controls.Add(Me.lbl_songname)
         Me.Controls.Add(Me.cover)
-        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.buttonbackground)
         Me.Name = "SongButton"
-        Me.Size = New System.Drawing.Size(391, 81)
+        Me.Size = New System.Drawing.Size(325, 72)
         CType(Me.cover, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.buttonbackground, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -104,5 +104,5 @@ Partial Class SongButton
     Friend WithEvents lbl_artistname As Label
     Friend WithEvents lbl_songname As Label
     Friend WithEvents cover As PictureBox
-    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents buttonbackground As PictureBox
 End Class

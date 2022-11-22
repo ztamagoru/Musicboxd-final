@@ -67,7 +67,7 @@ Partial Class MenuPrincipal
         Me.searchbar.Font = New System.Drawing.Font("Mark", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.searchbar.ForeColor = System.Drawing.SystemColors.ControlDark
         Me.searchbar.Location = New System.Drawing.Point(638, 22)
-        Me.searchbar.MaxLength = 50
+        Me.searchbar.MaxLength = 100
         Me.searchbar.Name = "searchbar"
         Me.searchbar.Size = New System.Drawing.Size(245, 22)
         Me.searchbar.TabIndex = 3

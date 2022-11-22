@@ -21,7 +21,7 @@ Public Class rating
         With conexion.cmd
             .CommandType = CommandType.StoredProcedure
             .Parameters.AddWithValue("@username", MenuPrincipal._username.Text)
-            .Parameters.AddWithValue("@songid", cancion.idsong)
+            .Parameters.AddWithValue("@songid", song.idsong)
             .Parameters.Add("@rate", sqlDbType:=SqlDbType.Int).Direction = ParameterDirection.Output
 
             .ExecuteScalar()
@@ -45,7 +45,7 @@ Public Class rating
                 .CommandType = CommandType.StoredProcedure
                 .Parameters.AddWithValue("@username", SongInfo._username.Text)
                 .Parameters.AddWithValue("@rate", rate)
-                .Parameters.AddWithValue("@idsong", cancion.idsong)
+                .Parameters.AddWithValue("@idsong", song.idsong)
 
                 .ExecuteScalar()
             End With
@@ -65,7 +65,7 @@ Public Class rating
 
         With conexion.cmd
             .CommandType = CommandType.StoredProcedure
-            .Parameters.AddWithValue("@idsong", cancion.idsong)
+            .Parameters.AddWithValue("@idsong", song.idsong)
             .Parameters.Add("@rating", sqlDbType:=SqlDbType.Float).Direction = ParameterDirection.Output
 
             .ExecuteScalar()

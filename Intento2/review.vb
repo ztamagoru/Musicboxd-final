@@ -48,7 +48,7 @@ Public Class review
         With conexion.cmd
             .CommandType = CommandType.StoredProcedure
             .Parameters.AddWithValue("@username", SongInfo._username.Text)
-            .Parameters.AddWithValue("@idsong", cancion.idsong)
+            .Parameters.AddWithValue("@idsong", song.idsong)
             .Parameters.AddWithValue("@review", review)
 
             .ExecuteScalar()

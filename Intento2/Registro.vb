@@ -150,7 +150,6 @@
     End Sub
 
 #Region "    resets"
-
     Public Sub ResetBoxes()
         With _username
             .Text = "Username"
@@ -178,6 +177,29 @@
             .ForeColor = signin.ForeColor
         End With
     End Sub
-
 #End Region
+
+    'Private Sub _username_TextChanged(sender As Object, e As EventArgs) Handles _username.TextChanged
+    '    If _username.Text.Trim.Length >= 1 Then
+    '        If _username.Text.Trim.Length < 8 Then
+    '            ErrorProvider1.SetError(sender, "The username needs to have between 8 and 50 characters.")
+    '        Else
+    '            ErrorProvider1.SetError(sender, "")
+    '        End If
+    '    End If
+    'End Sub
+
+    Private Sub showPassword(sender As Object, e As MouseEventArgs) Handles eye.MouseDown
+        _password.PasswordChar = ""
+
+        eye.Image = My.Resources.view
+    End Sub
+
+    Private Sub hidePassword(sender As Object, e As MouseEventArgs) Handles eye.MouseUp
+        If Not _password.Text.Trim = "Password" Then
+            _password.PasswordChar = "•"
+        End If
+
+        eye.Image = My.Resources.view__1_
+    End Sub
 End Class

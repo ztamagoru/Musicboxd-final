@@ -85,4 +85,18 @@
     End Sub
 
 #End Region
+
+    Private Sub showPassword(sender As Object, e As MouseEventArgs) Handles eye.MouseDown
+        _password.PasswordChar = ""
+
+        eye.Image = My.Resources.view
+    End Sub
+
+    Private Sub hidePassword(sender As Object, e As MouseEventArgs) Handles eye.MouseUp
+        If Not _password.Text.Trim = "Password" Then
+            _password.PasswordChar = "•"
+        End If
+
+        eye.Image = My.Resources.view__1_
+    End Sub
 End Class

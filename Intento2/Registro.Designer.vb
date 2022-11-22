@@ -22,6 +22,7 @@ Partial Class Registro
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Registro))
         Me.Button1 = New System.Windows.Forms.Button()
         Me._password = New System.Windows.Forms.TextBox()
@@ -31,6 +32,10 @@ Partial Class Registro
         Me._name = New System.Windows.Forms.TextBox()
         Me._surname = New System.Windows.Forms.TextBox()
         Me.signin = New System.Windows.Forms.Label()
+        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.eye = New System.Windows.Forms.PictureBox()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.eye, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Button1
@@ -49,10 +54,10 @@ Partial Class Registro
         Me._password.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me._password.Font = New System.Drawing.Font("Mark", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._password.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me._password.Location = New System.Drawing.Point(52, 111)
+        Me._password.Location = New System.Drawing.Point(38, 111)
         Me._password.MaxLength = 20
         Me._password.Name = "_password"
-        Me._password.Size = New System.Drawing.Size(213, 22)
+        Me._password.Size = New System.Drawing.Size(240, 22)
         Me._password.TabIndex = 2
         Me._password.Text = "Password"
         '
@@ -61,10 +66,10 @@ Partial Class Registro
         Me._username.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me._username.Font = New System.Drawing.Font("Mark", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._username.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me._username.Location = New System.Drawing.Point(52, 72)
+        Me._username.Location = New System.Drawing.Point(38, 72)
         Me._username.MaxLength = 50
         Me._username.Name = "_username"
-        Me._username.Size = New System.Drawing.Size(213, 22)
+        Me._username.Size = New System.Drawing.Size(240, 22)
         Me._username.TabIndex = 1
         Me._username.Text = "Username"
         '
@@ -88,10 +93,10 @@ Partial Class Registro
         Me._email.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me._email.Font = New System.Drawing.Font("Mark", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._email.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me._email.Location = New System.Drawing.Point(52, 150)
+        Me._email.Location = New System.Drawing.Point(38, 150)
         Me._email.MaxLength = 150
         Me._email.Name = "_email"
-        Me._email.Size = New System.Drawing.Size(213, 22)
+        Me._email.Size = New System.Drawing.Size(240, 22)
         Me._email.TabIndex = 3
         Me._email.Text = "Email"
         '
@@ -100,10 +105,10 @@ Partial Class Registro
         Me._name.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me._name.Font = New System.Drawing.Font("Mark", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._name.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me._name.Location = New System.Drawing.Point(52, 189)
+        Me._name.Location = New System.Drawing.Point(38, 189)
         Me._name.MaxLength = 100
         Me._name.Name = "_name"
-        Me._name.Size = New System.Drawing.Size(213, 22)
+        Me._name.Size = New System.Drawing.Size(240, 22)
         Me._name.TabIndex = 4
         Me._name.Text = "Name"
         '
@@ -112,10 +117,10 @@ Partial Class Registro
         Me._surname.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me._surname.Font = New System.Drawing.Font("Mark", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._surname.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me._surname.Location = New System.Drawing.Point(52, 228)
+        Me._surname.Location = New System.Drawing.Point(38, 228)
         Me._surname.MaxLength = 100
         Me._surname.Name = "_surname"
-        Me._surname.Size = New System.Drawing.Size(213, 22)
+        Me._surname.Size = New System.Drawing.Size(240, 22)
         Me._surname.TabIndex = 5
         Me._surname.Text = "Surname"
         '
@@ -134,12 +139,30 @@ Partial Class Registro
         Me.signin.TabIndex = 26
         Me.signin.Text = "Already have an account? Sign in"
         '
+        'ErrorProvider1
+        '
+        Me.ErrorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink
+        Me.ErrorProvider1.ContainerControl = Me
+        Me.ErrorProvider1.Icon = CType(resources.GetObject("ErrorProvider1.Icon"), System.Drawing.Icon)
+        '
+        'eye
+        '
+        Me.eye.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.eye.Image = Global.Intento2.My.Resources.Resources.view__1_
+        Me.eye.Location = New System.Drawing.Point(282, 109)
+        Me.eye.Name = "eye"
+        Me.eye.Size = New System.Drawing.Size(30, 26)
+        Me.eye.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.eye.TabIndex = 27
+        Me.eye.TabStop = False
+        '
         'Registro
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(233, Byte), Integer), CType(CType(228, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(317, 475)
+        Me.Controls.Add(Me.eye)
         Me.Controls.Add(Me.signin)
         Me.Controls.Add(Me._surname)
         Me.Controls.Add(Me._name)
@@ -150,11 +173,13 @@ Partial Class Registro
         Me.Controls.Add(Me._username)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.MaximizeBox = False
         Me.Name = "Registro"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Musicboxd"
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.eye, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -168,4 +193,6 @@ Partial Class Registro
     Friend WithEvents _name As TextBox
     Friend WithEvents _surname As TextBox
     Friend WithEvents signin As Label
+    Friend WithEvents ErrorProvider1 As ErrorProvider
+    Friend WithEvents eye As PictureBox
 End Class

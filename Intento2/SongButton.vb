@@ -10,6 +10,7 @@ Public Class SongButton
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click, lbl_songname.Click, lbl_artistname.Click, cover.Click
-        songs.specificSong(lbl_songname.Text, lbl_artistname.Text)
+        songs.specificsong(lbl_songname.Text, lbl_artistname.Text)
+        Me.Dispose()
     End Sub
 End Class

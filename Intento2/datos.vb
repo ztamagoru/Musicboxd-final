@@ -15,7 +15,7 @@ Public Class datos
         End Set
     End Property
 
-    Public Sub inicioSesion(user As String, pass As String)
+    Public Sub login(user As String, pass As String)
         conexion.openDatabase()
         conexion.cmd = New SqlCommand("[Users].[SP_LOG_IN]", conexion.conn)
 
@@ -37,7 +37,7 @@ Public Class datos
         End With
     End Sub
 
-    Public Function compararDatos() As Integer
+    Public Function comparedata() As Integer
         conexion.openDatabase()
         conexion.cmd = New SqlCommand("[Users].[SP_VERIFY_EXISTING_ACCOUNT]", conexion.conn)
 
@@ -59,7 +59,7 @@ Public Class datos
         Return 0
     End Function
 
-    Public Sub registrarUsuario()
+    Public Sub registeruser()
         conexion.openDatabase()
         conexion.cmd = New SqlCommand("[Users].[SP_CREATE_ACCOUNT]", conexion.conn)
 

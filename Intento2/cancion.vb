@@ -4,15 +4,17 @@ Imports System.Runtime.Serialization.Formatters.Binary
 
 Public Class cancion
     Dim conexion As New conexion
+    Dim rating As New rating
+    Dim review As New review
 
-    Private Shared _rating As Integer = 0
+    Private Shared _idsong As Integer
 
-    Public Shared Property rating As Integer
+    Public Shared Property idsong As Integer
         Get
-            Return _rating
+            Return _idsong
         End Get
         Set(value As Integer)
-            _rating = value
+            _idsong = value
         End Set
     End Property
 
@@ -91,47 +93,19 @@ Public Class cancion
                 .itunesLink.Links.Add(0, Len(.spotifyLink.Text), CType(reader(5), String))
                 .deezerLink.Links.Add(0, Len(.spotifyLink.Text), CType(reader(6), String))
 
+                idsong = reader.GetInt32(7)
+
                 reader.Close()
 
-                conexion.closeDatabase()
-
-                getreviews(.lbl_songName.Text, .lbl_artistName.Text)
+                review.getreviews(.lbl_songName.Text, .lbl_artistName.Text)
+                rating.getuserrating()
             End With
-        End With
-    End Sub
-
-    Private Sub getreviews(songname As String, artistname As String)
-        conexion.openDatabase()
-        conexion.cmd = New SqlCommand("[Songs].[SP_GET_SONG_REVIEWS]", conexion.conn)
-
-        With conexion.cmd
-            .CommandType = CommandType.StoredProcedure
-            .Parameters.AddWithValue("@name", songname)
-            .Parameters.AddWithValue("@artist", artistname)
-
-            Dim reader As SqlDataReader
-
-            reader = .ExecuteReader()
-            If reader.Read() Then
-                While reader.Read()
-                    Dim review As New ReviewItem
-
-                    Dim username = reader.GetString(0)
-                    Dim resena = reader.GetString(1)
-                    Dim fecha = CType(reader(2), String)
-
-                    review.SetearDatosDeReview(username, resena, fecha)
-
-                    SongInfo.FlowLayoutPanel1.Controls.Add(review)
-                End While
-            Else
-                SongInfo.FlowLayoutPanel1.Visible = False
-                'MsgBox("no hay reseñas disponibles al momento")
-            End If
-
-            reader.Close()
         End With
 
         conexion.closeDatabase()
+    End Sub
+
+    Public Sub searchsong()
+
     End Sub
 End Class

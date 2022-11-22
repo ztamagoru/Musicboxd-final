@@ -77,7 +77,7 @@ Public Class validador
 
 #End Region
 
-    Public Function validarDatos(user As String, pass As String, mail As String, name As String, surname As String) As Boolean
+    Public Function validateuser(user As String, pass As String, mail As String, name As String, surname As String) As Boolean
         username = user
         password = pass
         useremail = mail
@@ -114,8 +114,8 @@ Public Class validador
         Return False
     End Function
 
-    Public Sub enviarCodigo()
-        generarCodigo()
+    Public Sub sendcode()
+        generatecode()
 
         text = $"Dear {username},{vbNewLine}
                 Please verify your email adress to complete your Musicboxd account.{vbNewLine}
@@ -145,7 +145,7 @@ Public Class validador
         smtp_server.SendMailAsync(e_mail)
     End Sub
 
-    Private Sub generarCodigo()
+    Private Sub generatecode()
         Dim num As New Random()
         Dim generatedCode As String = ""
 
@@ -160,7 +160,7 @@ Public Class validador
         code = generatedCode
     End Sub
 
-    Public Function validarCodigo(ucode As String) As Boolean
+    Public Function validatecode(ucode As String) As Boolean
         'Debug.WriteLine($"{ucode}{vbCrLf}{code}")
 
         If ucode = code Then
@@ -169,4 +169,20 @@ Public Class validador
 
         Return False
     End Function
+
+    Public Sub censorreview(review As String)
+        Dim insultos As String() = IO.File.ReadAllLines("C:\Musicboxd - imagenes\Insultos.txt")
+
+        Dim pattern As String = "(?<=[\w]{1})[\w-\._\+ %]*(?=[\w])"
+
+        For i = 0 To insultos.Length - 1
+            Dim word As String = insultos(i)
+
+            Dim censor As String = Regex.Replace(word, pattern, "**", RegexOptions.IgnoreCase)
+
+            review = Regex.Replace(review, word, censor, RegexOptions.IgnoreCase)
+        Next
+
+        MsgBox($"{review}")
+    End Sub
 End Class

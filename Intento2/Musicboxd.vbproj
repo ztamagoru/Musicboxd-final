@@ -114,12 +114,14 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="rating.vb" />
     <Compile Include="Registro.Designer.vb">
       <DependentUpon>Registro.vb</DependentUpon>
     </Compile>
     <Compile Include="Registro.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="review.vb" />
     <Compile Include="SongButton.Designer.vb">
       <DependentUpon>SongButton.vb</DependentUpon>
     </Compile>

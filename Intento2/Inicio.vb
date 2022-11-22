@@ -43,21 +43,19 @@
     End Sub
 #End Region
 
-    Private Sub iniciarsesion(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub login(sender As Object, e As EventArgs) Handles Button1.Click
         Dim user, pass As String
 
         user = _username.Text.Trim
         pass = _password.Text.Trim
 
-        datos.inicioSesion(user, pass)
+        datos.login(user, pass)
 
         If datos.rol = 0 Then
             MessageBox.Show("Incorrect username or password.",
                             "Error",
                             MessageBoxButtons.OK)
         Else
-            'MsgBox($"u did it! here is ur role id: {datos.rol}")
-
             MenuPrincipal._username.Text = user
             Me.Hide()
             ResetBoxes()

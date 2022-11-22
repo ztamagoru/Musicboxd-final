@@ -1,6 +1,8 @@
 ﻿Public Class SongInfo
     Dim extras As New extras
     Dim songs As New cancion
+    Dim rating As New rating
+    Dim validador As New validador
 
 #Region "    links click"
     Private Sub LinkLabel3_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles deezerLink.LinkClicked
@@ -20,130 +22,138 @@
 
     Private Sub star1_MouseEnter(sender As Object, e As EventArgs) Handles star1.MouseEnter
         star1.Image = My.Resources.star__1_
+        star2.Image = My.Resources.star
+        star3.Image = My.Resources.star
+        star4.Image = My.Resources.star
+        star5.Image = My.Resources.star
+        star6.Image = My.Resources.star
+        star7.Image = My.Resources.star
+        star8.Image = My.Resources.star
+        star9.Image = My.Resources.star
+        star10.Image = My.Resources.star
     End Sub
 
-    Private Sub star1_MouseLeave(sender As Object, e As EventArgs) Handles star1.MouseLeave
-        If songs.rating < 1 Then
-            star1.Image = My.Resources.star
-        End If
+    Private Sub star1_MouseLeave(sender As Object, e As EventArgs) Handles star1.MouseLeave, star2.MouseLeave, star3.MouseLeave, star4.MouseLeave, star5.MouseLeave, star6.MouseLeave, star7.MouseLeave, star8.MouseLeave, star9.MouseLeave, star10.MouseLeave
+        setstars(rating.rating)
     End Sub
 
     Private Sub star2_MouseEnter(sender As Object, e As EventArgs) Handles star2.MouseEnter
+        star1.Image = My.Resources.star__1_
         star2.Image = My.Resources.star__1_
-
-        star1_MouseEnter(sender, e)
-    End Sub
-
-    Private Sub star2_MouseLeave(sender As Object, e As EventArgs) Handles star2.MouseLeave
-        If songs.rating < 2 Then
-            star2.Image = My.Resources.star
-        End If
-
-        star1_MouseLeave(sender, e)
+        star3.Image = My.Resources.star
+        star4.Image = My.Resources.star
+        star5.Image = My.Resources.star
+        star6.Image = My.Resources.star
+        star7.Image = My.Resources.star
+        star8.Image = My.Resources.star
+        star9.Image = My.Resources.star
+        star10.Image = My.Resources.star
     End Sub
 
     Private Sub star3_MouseEnter(sender As Object, e As EventArgs) Handles star3.MouseEnter
+        star1.Image = My.Resources.star__1_
+        star2.Image = My.Resources.star__1_
         star3.Image = My.Resources.star__1_
-
-        star2_MouseEnter(sender, e)
-    End Sub
-
-    Private Sub star3_MouseLeave(sender As Object, e As EventArgs) Handles star3.MouseLeave
-        If songs.rating < 3 Then
-            star3.Image = My.Resources.star
-        End If
-        star2_MouseLeave(sender, e)
+        star4.Image = My.Resources.star
+        star5.Image = My.Resources.star
+        star6.Image = My.Resources.star
+        star7.Image = My.Resources.star
+        star8.Image = My.Resources.star
+        star9.Image = My.Resources.star
+        star10.Image = My.Resources.star
     End Sub
 
     Private Sub star4_MouseEnter(sender As Object, e As EventArgs) Handles star4.MouseEnter
+        star1.Image = My.Resources.star__1_
+        star2.Image = My.Resources.star__1_
+        star3.Image = My.Resources.star__1_
         star4.Image = My.Resources.star__1_
-
-        star3_MouseEnter(sender, e)
-    End Sub
-
-    Private Sub star4_MouseLeave(sender As Object, e As EventArgs) Handles star4.MouseLeave
-        If songs.rating < 4 Then
-            star4.Image = My.Resources.star
-        End If
-        star3_MouseLeave(sender, e)
+        star5.Image = My.Resources.star
+        star6.Image = My.Resources.star
+        star7.Image = My.Resources.star
+        star8.Image = My.Resources.star
+        star9.Image = My.Resources.star
+        star10.Image = My.Resources.star
     End Sub
 
     Private Sub star5_MouseEnter(sender As Object, e As EventArgs) Handles star5.MouseEnter
+        star1.Image = My.Resources.star__1_
+        star2.Image = My.Resources.star__1_
+        star3.Image = My.Resources.star__1_
+        star4.Image = My.Resources.star__1_
         star5.Image = My.Resources.star__1_
-
-        star4_MouseEnter(sender, e)
-    End Sub
-
-    Private Sub star5_MouseLeave(sender As Object, e As EventArgs) Handles star5.MouseLeave
-        If songs.rating < 5 Then
-            star5.Image = My.Resources.star
-        End If
-        star4_MouseLeave(sender, e)
+        star6.Image = My.Resources.star
+        star7.Image = My.Resources.star
+        star8.Image = My.Resources.star
+        star9.Image = My.Resources.star
+        star10.Image = My.Resources.star
     End Sub
 
     Private Sub star6_MouseEnter(sender As Object, e As EventArgs) Handles star6.MouseEnter
+        star1.Image = My.Resources.star__1_
+        star2.Image = My.Resources.star__1_
+        star3.Image = My.Resources.star__1_
+        star4.Image = My.Resources.star__1_
+        star5.Image = My.Resources.star__1_
         star6.Image = My.Resources.star__1_
-
-        star5_MouseEnter(sender, e)
-    End Sub
-
-    Private Sub star6_MouseLeave(sender As Object, e As EventArgs) Handles star6.MouseLeave
-        If songs.rating < 6 Then
-            star6.Image = My.Resources.star
-        End If
-        star5_MouseLeave(sender, e)
+        star7.Image = My.Resources.star
+        star8.Image = My.Resources.star
+        star9.Image = My.Resources.star
+        star10.Image = My.Resources.star
     End Sub
 
     Private Sub star7_MouseEnter(sender As Object, e As EventArgs) Handles star7.MouseEnter
+        star1.Image = My.Resources.star__1_
+        star2.Image = My.Resources.star__1_
+        star3.Image = My.Resources.star__1_
+        star4.Image = My.Resources.star__1_
+        star5.Image = My.Resources.star__1_
+        star6.Image = My.Resources.star__1_
         star7.Image = My.Resources.star__1_
+        star8.Image = My.Resources.star
+        star9.Image = My.Resources.star
+        star10.Image = My.Resources.star
 
         star6_MouseEnter(sender, e)
     End Sub
 
-    Private Sub star7_MouseLeave(sender As Object, e As EventArgs) Handles star7.MouseLeave
-        If songs.rating < 7 Then
-            star7.Image = My.Resources.star
-        End If
-        star6_MouseLeave(sender, e)
-    End Sub
-
     Private Sub star8_MouseEnter(sender As Object, e As EventArgs) Handles star8.MouseEnter
+        star1.Image = My.Resources.star__1_
+        star2.Image = My.Resources.star__1_
+        star3.Image = My.Resources.star__1_
+        star4.Image = My.Resources.star__1_
+        star5.Image = My.Resources.star__1_
+        star6.Image = My.Resources.star__1_
+        star7.Image = My.Resources.star__1_
         star8.Image = My.Resources.star__1_
-
-        star7_MouseEnter(sender, e)
-    End Sub
-
-    Private Sub star8_MouseLeave(sender As Object, e As EventArgs) Handles star8.MouseLeave
-        If songs.rating < 8 Then
-            star8.Image = My.Resources.star
-        End If
-        star7_MouseLeave(sender, e)
+        star9.Image = My.Resources.star
+        star10.Image = My.Resources.star
     End Sub
 
     Private Sub star9_MouseEnter(sender As Object, e As EventArgs) Handles star9.MouseEnter
+        star1.Image = My.Resources.star__1_
+        star2.Image = My.Resources.star__1_
+        star3.Image = My.Resources.star__1_
+        star4.Image = My.Resources.star__1_
+        star5.Image = My.Resources.star__1_
+        star6.Image = My.Resources.star__1_
+        star7.Image = My.Resources.star__1_
+        star8.Image = My.Resources.star__1_
         star9.Image = My.Resources.star__1_
-
-        star8_MouseEnter(sender, e)
-    End Sub
-
-    Private Sub star9_MouseLeave(sender As Object, e As EventArgs) Handles star9.MouseLeave
-        If songs.rating < 9 Then
-            star9.Image = My.Resources.star
-        End If
-        star8_MouseLeave(sender, e)
+        star10.Image = My.Resources.star
     End Sub
 
     Private Sub star10_MouseEnter(sender As Object, e As EventArgs) Handles star10.MouseEnter
+        star1.Image = My.Resources.star__1_
+        star2.Image = My.Resources.star__1_
+        star3.Image = My.Resources.star__1_
+        star4.Image = My.Resources.star__1_
+        star5.Image = My.Resources.star__1_
+        star6.Image = My.Resources.star__1_
+        star7.Image = My.Resources.star__1_
+        star8.Image = My.Resources.star__1_
+        star9.Image = My.Resources.star__1_
         star10.Image = My.Resources.star__1_
-
-        star9_MouseEnter(sender, e)
-    End Sub
-
-    Private Sub star10_MouseLeave(sender As Object, e As EventArgs) Handles star10.MouseLeave
-        If songs.rating < 10 Then
-            star10.Image = My.Resources.star
-        End If
-        star9_MouseLeave(sender, e)
     End Sub
 
 #End Region
@@ -182,5 +192,181 @@
     Private Sub logo_Click(sender As Object, e As EventArgs) Handles logo.Click
         Me.Dispose()
         MenuPrincipal.Show()
+    End Sub
+
+    Public Sub setstars(rating As Integer)
+        Select Case (rating)
+            Case 1
+                star1.Image = My.Resources.star__1_
+                star2.Image = My.Resources.star
+                star3.Image = My.Resources.star
+                star4.Image = My.Resources.star
+                star5.Image = My.Resources.star
+                star6.Image = My.Resources.star
+                star7.Image = My.Resources.star
+                star8.Image = My.Resources.star
+                star9.Image = My.Resources.star
+                star10.Image = My.Resources.star
+            Case 2
+                star1.Image = My.Resources.star__1_
+                star2.Image = My.Resources.star__1_
+                star3.Image = My.Resources.star
+                star4.Image = My.Resources.star
+                star5.Image = My.Resources.star
+                star6.Image = My.Resources.star
+                star7.Image = My.Resources.star
+                star8.Image = My.Resources.star
+                star9.Image = My.Resources.star
+                star10.Image = My.Resources.star
+            Case 3
+                star1.Image = My.Resources.star__1_
+                star2.Image = My.Resources.star__1_
+                star3.Image = My.Resources.star__1_
+                star4.Image = My.Resources.star
+                star5.Image = My.Resources.star
+                star6.Image = My.Resources.star
+                star7.Image = My.Resources.star
+                star8.Image = My.Resources.star
+                star9.Image = My.Resources.star
+                star10.Image = My.Resources.star
+            Case 4
+                star1.Image = My.Resources.star__1_
+                star2.Image = My.Resources.star__1_
+                star3.Image = My.Resources.star__1_
+                star4.Image = My.Resources.star__1_
+                star5.Image = My.Resources.star
+                star6.Image = My.Resources.star
+                star7.Image = My.Resources.star
+                star8.Image = My.Resources.star
+                star9.Image = My.Resources.star
+                star10.Image = My.Resources.star
+            Case 5
+                star1.Image = My.Resources.star__1_
+                star2.Image = My.Resources.star__1_
+                star3.Image = My.Resources.star__1_
+                star4.Image = My.Resources.star__1_
+                star5.Image = My.Resources.star__1_
+                star6.Image = My.Resources.star
+                star7.Image = My.Resources.star
+                star8.Image = My.Resources.star
+                star9.Image = My.Resources.star
+                star10.Image = My.Resources.star
+            Case 6
+                star1.Image = My.Resources.star__1_
+                star2.Image = My.Resources.star__1_
+                star3.Image = My.Resources.star__1_
+                star4.Image = My.Resources.star__1_
+                star5.Image = My.Resources.star__1_
+                star6.Image = My.Resources.star__1_
+                star7.Image = My.Resources.star
+                star8.Image = My.Resources.star
+                star9.Image = My.Resources.star
+                star10.Image = My.Resources.star
+            Case 7
+                star1.Image = My.Resources.star__1_
+                star2.Image = My.Resources.star__1_
+                star3.Image = My.Resources.star__1_
+                star4.Image = My.Resources.star__1_
+                star5.Image = My.Resources.star__1_
+                star6.Image = My.Resources.star__1_
+                star7.Image = My.Resources.star__1_
+                star8.Image = My.Resources.star
+                star9.Image = My.Resources.star
+                star10.Image = My.Resources.star
+            Case 8
+                star1.Image = My.Resources.star__1_
+                star2.Image = My.Resources.star__1_
+                star3.Image = My.Resources.star__1_
+                star4.Image = My.Resources.star__1_
+                star5.Image = My.Resources.star__1_
+                star6.Image = My.Resources.star__1_
+                star7.Image = My.Resources.star__1_
+                star8.Image = My.Resources.star__1_
+                star9.Image = My.Resources.star
+                star10.Image = My.Resources.star
+            Case 9
+                star1.Image = My.Resources.star__1_
+                star2.Image = My.Resources.star__1_
+                star3.Image = My.Resources.star__1_
+                star4.Image = My.Resources.star__1_
+                star5.Image = My.Resources.star__1_
+                star6.Image = My.Resources.star__1_
+                star7.Image = My.Resources.star__1_
+                star8.Image = My.Resources.star__1_
+                star9.Image = My.Resources.star__1_
+                star10.Image = My.Resources.star
+            Case 10
+                star1.Image = My.Resources.star__1_
+                star2.Image = My.Resources.star__1_
+                star3.Image = My.Resources.star__1_
+                star4.Image = My.Resources.star__1_
+                star5.Image = My.Resources.star__1_
+                star6.Image = My.Resources.star__1_
+                star7.Image = My.Resources.star__1_
+                star8.Image = My.Resources.star__1_
+                star9.Image = My.Resources.star__1_
+                star10.Image = My.Resources.star__1_
+        End Select
+    End Sub
+
+#Region "    rating value changed"
+
+    Private Sub star1_Click(sender As Object, e As EventArgs) Handles star1.Click
+        rating.changerating(1)
+    End Sub
+
+    Private Sub star2_Click(sender As Object, e As EventArgs) Handles star2.Click
+        rating.changerating(2)
+    End Sub
+
+    Private Sub star3_Click(sender As Object, e As EventArgs) Handles star3.Click
+        rating.changerating(3)
+    End Sub
+
+    Private Sub star4_Click(sender As Object, e As EventArgs) Handles star4.Click
+        rating.changerating(4)
+    End Sub
+
+    Private Sub star5_Click(sender As Object, e As EventArgs) Handles star5.Click
+        rating.changerating(5)
+    End Sub
+
+    Private Sub star6_Click(sender As Object, e As EventArgs) Handles star6.Click
+        rating.changerating(6)
+    End Sub
+
+    Private Sub star7_Click(sender As Object, e As EventArgs) Handles star7.Click
+        rating.changerating(7)
+    End Sub
+
+    Private Sub star8_Click(sender As Object, e As EventArgs) Handles star8.Click
+        rating.changerating(8)
+    End Sub
+
+    Private Sub star9_Click(sender As Object, e As EventArgs) Handles star9.Click
+        rating.changerating(9)
+    End Sub
+
+    Private Sub star10_Click(sender As Object, e As EventArgs) Handles star10.Click
+        rating.changerating(10)
+    End Sub
+
+#End Region
+
+#Region "    review textbox hovers"
+    Private Sub TextBox1_MouseEnter(sender As Object, e As EventArgs) Handles TextBox1.MouseEnter
+        If TextBox1.Text.Trim = "Write your review about the song here!" Then
+
+        End If
+    End Sub
+
+    Private Sub TextBox1_MouseLeave(sender As Object, e As EventArgs) Handles TextBox1.MouseLeave
+
+    End Sub
+
+#End Region
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        validador.censorreview(TextBox1.Text.Trim())
     End Sub
 End Class

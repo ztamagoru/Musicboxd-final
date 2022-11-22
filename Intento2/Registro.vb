@@ -110,7 +110,7 @@
         extras.buttons(Button1)
     End Sub
 
-    Private Sub registrarse(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub register(sender As Object, e As EventArgs) Handles Button1.Click
         If _name.Text.Trim = "Name" Or
                 _surname.Text.Trim = "Surname" Or
                 _email.Text.Trim = "Email" Or
@@ -129,13 +129,13 @@
             name = _name.Text.Trim
             surname = _surname.Text.Trim
 
-            If validator.validarDatos(user, pass, mail, name, surname) Then
-                Select Case (datos.compararDatos())
+            If validator.validateuser(user, pass, mail, name, surname) Then
+                Select Case (datos.comparedata())
                     Case 0
                         Me.Enabled() = False
                         IngresarCodigo.Show()
 
-                        validator.enviarCodigo()
+                        validator.sendcode()
                     Case 1
                         MessageBox.Show("An account with that username already exists.",
                                         "Error",

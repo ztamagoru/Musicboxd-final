@@ -210,11 +210,14 @@ Partial Class SongInfo
         '
         Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox1.Font = New System.Drawing.Font("Mark", 12.0!)
+        Me.TextBox1.ForeColor = System.Drawing.SystemColors.ControlDark
         Me.TextBox1.Location = New System.Drawing.Point(46, 489)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.TextBox1.Size = New System.Drawing.Size(553, 54)
         Me.TextBox1.TabIndex = 52
+        Me.TextBox1.Text = "Write your review about the song here!"
         '
         'lbl_promedio
         '
@@ -255,7 +258,7 @@ Partial Class SongInfo
         '
         Me.star10.Cursor = System.Windows.Forms.Cursors.Hand
         Me.star10.Image = Global.Intento2.My.Resources.Resources.star
-        Me.star10.Location = New System.Drawing.Point(908, 364)
+        Me.star10.Location = New System.Drawing.Point(914, 364)
         Me.star10.Name = "star10"
         Me.star10.Size = New System.Drawing.Size(20, 20)
         Me.star10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -266,7 +269,7 @@ Partial Class SongInfo
         '
         Me.star9.Cursor = System.Windows.Forms.Cursors.Hand
         Me.star9.Image = Global.Intento2.My.Resources.Resources.star
-        Me.star9.Location = New System.Drawing.Point(888, 364)
+        Me.star9.Location = New System.Drawing.Point(893, 364)
         Me.star9.Name = "star9"
         Me.star9.Size = New System.Drawing.Size(20, 20)
         Me.star9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -277,7 +280,7 @@ Partial Class SongInfo
         '
         Me.star8.Cursor = System.Windows.Forms.Cursors.Hand
         Me.star8.Image = Global.Intento2.My.Resources.Resources.star
-        Me.star8.Location = New System.Drawing.Point(868, 364)
+        Me.star8.Location = New System.Drawing.Point(872, 364)
         Me.star8.Name = "star8"
         Me.star8.Size = New System.Drawing.Size(20, 20)
         Me.star8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -288,7 +291,7 @@ Partial Class SongInfo
         '
         Me.star7.Cursor = System.Windows.Forms.Cursors.Hand
         Me.star7.Image = Global.Intento2.My.Resources.Resources.star
-        Me.star7.Location = New System.Drawing.Point(848, 364)
+        Me.star7.Location = New System.Drawing.Point(851, 364)
         Me.star7.Name = "star7"
         Me.star7.Size = New System.Drawing.Size(20, 20)
         Me.star7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -299,7 +302,7 @@ Partial Class SongInfo
         '
         Me.star6.Cursor = System.Windows.Forms.Cursors.Hand
         Me.star6.Image = Global.Intento2.My.Resources.Resources.star
-        Me.star6.Location = New System.Drawing.Point(828, 364)
+        Me.star6.Location = New System.Drawing.Point(830, 364)
         Me.star6.Name = "star6"
         Me.star6.Size = New System.Drawing.Size(20, 20)
         Me.star6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -310,7 +313,7 @@ Partial Class SongInfo
         '
         Me.star5.Cursor = System.Windows.Forms.Cursors.Hand
         Me.star5.Image = Global.Intento2.My.Resources.Resources.star
-        Me.star5.Location = New System.Drawing.Point(808, 364)
+        Me.star5.Location = New System.Drawing.Point(809, 364)
         Me.star5.Name = "star5"
         Me.star5.Size = New System.Drawing.Size(20, 20)
         Me.star5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -332,7 +335,7 @@ Partial Class SongInfo
         '
         Me.star3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.star3.Image = Global.Intento2.My.Resources.Resources.star
-        Me.star3.Location = New System.Drawing.Point(768, 364)
+        Me.star3.Location = New System.Drawing.Point(767, 364)
         Me.star3.Name = "star3"
         Me.star3.Size = New System.Drawing.Size(20, 20)
         Me.star3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -343,7 +346,7 @@ Partial Class SongInfo
         '
         Me.star2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.star2.Image = Global.Intento2.My.Resources.Resources.star
-        Me.star2.Location = New System.Drawing.Point(748, 364)
+        Me.star2.Location = New System.Drawing.Point(746, 364)
         Me.star2.Name = "star2"
         Me.star2.Size = New System.Drawing.Size(20, 20)
         Me.star2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -354,7 +357,7 @@ Partial Class SongInfo
         '
         Me.star1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.star1.Image = Global.Intento2.My.Resources.Resources.star
-        Me.star1.Location = New System.Drawing.Point(728, 364)
+        Me.star1.Location = New System.Drawing.Point(725, 364)
         Me.star1.Name = "star1"
         Me.star1.Size = New System.Drawing.Size(20, 20)
         Me.star1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom

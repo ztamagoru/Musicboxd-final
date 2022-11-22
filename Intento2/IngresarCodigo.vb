@@ -42,10 +42,10 @@ Public Class IngresarCodigo
         End If
     End Sub
 
-    Private Sub ingresarcodigo(sender As Object, e As EventArgs) Handles Button1.Click
-        If validador.validarCodigo(MaskedTextBox1.Text) Then
+    Private Sub insertcode(sender As Object, e As EventArgs) Handles Button1.Click
+        If validador.validatecode(MaskedTextBox1.Text) Then
 
-            datos.registrarUsuario()
+            datos.registeruser()
 
             MessageBox.Show($"Account created succesfully.{vbNewLine}Please sign in.",
                             "Musicboxd",
@@ -64,8 +64,8 @@ Public Class IngresarCodigo
         End If
     End Sub
 
-    Private Sub enviarcodigodevuelta(sender As Object, e As EventArgs) Handles Label2.Click
-        validador.enviarCodigo()
+    Private Sub sendcodeagain(sender As Object, e As EventArgs) Handles Label2.Click
+        validador.sendcode()
         MessageBox.Show($"New code sent to {insertmail.Text}.",
                         "Musicboxd",
                         MessageBoxButtons.OK)

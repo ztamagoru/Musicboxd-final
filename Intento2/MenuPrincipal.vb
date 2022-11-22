@@ -147,36 +147,36 @@ Public Class MenuPrincipal
         Dim artistname As String = artistName1.Text
         Dim songname As String = songName1.Text
 
-        song.specificSong(songname, artistname)
-        SongInfo.Show()
+        song.specificsong(songname, artistname)
         Me.Hide()
+        SongInfo.Show()
     End Sub
 
     Private Sub artistName2_Click(sender As Object, e As EventArgs) Handles songName2.Click, PictureBox5.Click, cover2.Click, artistName2.Click
         Dim artistname As String = artistName2.Text
         Dim songname As String = songName2.Text
 
-        song.specificSong(songname, artistname)
-        SongInfo.Show()
+        song.specificsong(songname, artistname)
         Me.Hide()
+        SongInfo.Show()
     End Sub
 
     Private Sub artistName3_Click(sender As Object, e As EventArgs) Handles songName3.Click, PictureBox4.Click, cover3.Click, artistName3.Click
         Dim artistname As String = artistName3.Text
         Dim songname As String = songName3.Text
 
-        song.specificSong(songname, artistname)
-        SongInfo.Show()
+        song.specificsong(songname, artistname)
         Me.Hide()
+        SongInfo.Show()
     End Sub
 
     Private Sub artistName4_Click(sender As Object, e As EventArgs) Handles songName4.Click, PictureBox6.Click, cover4.Click, artistName4.Click
         Dim artistname As String = artistName4.Text
         Dim songname As String = songName4.Text
 
-        song.specificSong(songname, artistname)
-        SongInfo.Show()
+        song.specificsong(songname, artistname)
         Me.Hide()
+        SongInfo.Show()
     End Sub
 
 #End Region

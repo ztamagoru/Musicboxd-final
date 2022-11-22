@@ -105,7 +105,7 @@ Public Class cancion
         conexion.closeDatabase()
     End Sub
 
-    Public Sub searchsong()
+    Public Sub searchsong(search As String)
 
     End Sub
 End Class

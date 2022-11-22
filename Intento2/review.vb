@@ -4,6 +4,8 @@ Public Class review
     Dim conexion As New conexion
 
     Public Sub getreviews(songname As String, artistname As String, Optional i As Integer = 1)
+        SongInfo.FlowLayoutPanel1.Visible = True
+
         conexion.openDatabase()
         conexion.cmd = New SqlCommand("[Songs].[SP_GET_SONG_REVIEWS]", conexion.conn)
 
@@ -17,9 +19,7 @@ Public Class review
 
             reader = .ExecuteReader()
 
-            SongInfo.FlowLayoutPanel1.Controls.Clear()
-
-            If reader.Read() Then
+            If reader.HasRows() Then
                 While reader.Read()
                     Dim review As New ReviewItem
 
@@ -39,5 +39,25 @@ Public Class review
         End With
 
         conexion.closeDatabase()
+    End Sub
+
+    Public Sub uploadreview(review As String)
+        conexion.openDatabase()
+        conexion.cmd = New SqlCommand("[Users].[SP_SAVE_REVIEW]", conexion.conn)
+
+        With conexion.cmd
+            .CommandType = CommandType.StoredProcedure
+            .Parameters.AddWithValue("@username", SongInfo._username.Text)
+            .Parameters.AddWithValue("@idsong", cancion.idsong)
+            .Parameters.AddWithValue("@review", review)
+
+            .ExecuteScalar()
+        End With
+
+        conexion.closeDatabase()
+
+        With SongInfo
+            getreviews(.lbl_songName.Text, .lbl_artistName.Text)
+        End With
     End Sub
 End Class

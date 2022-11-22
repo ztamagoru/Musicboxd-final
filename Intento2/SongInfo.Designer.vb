@@ -55,6 +55,8 @@ Partial Class SongInfo
         Me.banner = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.orderby = New System.Windows.Forms.ComboBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.star10, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.star9, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -96,7 +98,7 @@ Partial Class SongInfo
         Me.userBttn.Location = New System.Drawing.Point(320, 17)
         Me.userBttn.Name = "userBttn"
         Me.userBttn.Size = New System.Drawing.Size(120, 33)
-        Me.userBttn.TabIndex = 39
+        Me.userBttn.TabIndex = 1
         Me.userBttn.Text = "User center"
         Me.userBttn.UseVisualStyleBackColor = False
         Me.userBttn.Visible = False
@@ -108,7 +110,7 @@ Partial Class SongInfo
         Me.parameterBttn.Location = New System.Drawing.Point(456, 17)
         Me.parameterBttn.Name = "parameterBttn"
         Me.parameterBttn.Size = New System.Drawing.Size(165, 33)
-        Me.parameterBttn.TabIndex = 35
+        Me.parameterBttn.TabIndex = 2
         Me.parameterBttn.Text = "Parameter center"
         Me.parameterBttn.UseVisualStyleBackColor = False
         Me.parameterBttn.Visible = False
@@ -120,7 +122,7 @@ Partial Class SongInfo
         Me.Button1.Location = New System.Drawing.Point(900, 17)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(70, 33)
-        Me.Button1.TabIndex = 37
+        Me.Button1.TabIndex = 4
         Me.Button1.Text = ">"
         Me.Button1.UseVisualStyleBackColor = False
         '
@@ -133,7 +135,7 @@ Partial Class SongInfo
         Me.searchbar.MaxLength = 50
         Me.searchbar.Name = "searchbar"
         Me.searchbar.Size = New System.Drawing.Size(245, 22)
-        Me.searchbar.TabIndex = 36
+        Me.searchbar.TabIndex = 3
         Me.searchbar.Text = "Search song, album or artist"
         '
         'lbl_songName
@@ -169,11 +171,12 @@ Partial Class SongInfo
         Me.spotifyLink.ActiveLinkColor = System.Drawing.Color.RoyalBlue
         Me.spotifyLink.AutoSize = True
         Me.spotifyLink.Font = New System.Drawing.Font("Mark", 13.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.spotifyLink.LinkBehavior = System.Windows.Forms.LinkBehavior.AlwaysUnderline
         Me.spotifyLink.LinkColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(89, Byte), Integer), CType(CType(98, Byte), Integer))
         Me.spotifyLink.Location = New System.Drawing.Point(770, 459)
         Me.spotifyLink.Name = "spotifyLink"
         Me.spotifyLink.Size = New System.Drawing.Size(184, 23)
-        Me.spotifyLink.TabIndex = 46
+        Me.spotifyLink.TabIndex = 7
         Me.spotifyLink.TabStop = True
         Me.spotifyLink.Text = "Escuchar en Spotify"
         Me.spotifyLink.VisitedLinkColor = System.Drawing.Color.FromArgb(CType(CType(185, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(118, Byte), Integer))
@@ -183,11 +186,12 @@ Partial Class SongInfo
         Me.itunesLink.ActiveLinkColor = System.Drawing.Color.RoyalBlue
         Me.itunesLink.AutoSize = True
         Me.itunesLink.Font = New System.Drawing.Font("Mark", 13.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.itunesLink.LinkBehavior = System.Windows.Forms.LinkBehavior.AlwaysUnderline
         Me.itunesLink.LinkColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(89, Byte), Integer), CType(CType(98, Byte), Integer))
         Me.itunesLink.Location = New System.Drawing.Point(779, 495)
         Me.itunesLink.Name = "itunesLink"
         Me.itunesLink.Size = New System.Drawing.Size(175, 23)
-        Me.itunesLink.TabIndex = 49
+        Me.itunesLink.TabIndex = 8
         Me.itunesLink.TabStop = True
         Me.itunesLink.Text = "Escuchar en iTunes"
         Me.itunesLink.VisitedLinkColor = System.Drawing.Color.FromArgb(CType(CType(185, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(118, Byte), Integer))
@@ -197,11 +201,12 @@ Partial Class SongInfo
         Me.deezerLink.ActiveLinkColor = System.Drawing.Color.RoyalBlue
         Me.deezerLink.AutoSize = True
         Me.deezerLink.Font = New System.Drawing.Font("Mark", 13.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.deezerLink.LinkBehavior = System.Windows.Forms.LinkBehavior.AlwaysUnderline
         Me.deezerLink.LinkColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(89, Byte), Integer), CType(CType(98, Byte), Integer))
         Me.deezerLink.Location = New System.Drawing.Point(774, 531)
         Me.deezerLink.Name = "deezerLink"
         Me.deezerLink.Size = New System.Drawing.Size(180, 23)
-        Me.deezerLink.TabIndex = 50
+        Me.deezerLink.TabIndex = 9
         Me.deezerLink.TabStop = True
         Me.deezerLink.Text = "Escuchar en Deezer"
         Me.deezerLink.VisitedLinkColor = System.Drawing.Color.FromArgb(CType(CType(185, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(118, Byte), Integer))
@@ -216,7 +221,7 @@ Partial Class SongInfo
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.TextBox1.Size = New System.Drawing.Size(553, 54)
-        Me.TextBox1.TabIndex = 52
+        Me.TextBox1.TabIndex = 6
         Me.TextBox1.Text = "Write your review about the song here!"
         '
         'lbl_promedio
@@ -239,9 +244,9 @@ Partial Class SongInfo
         '
         Me.FlowLayoutPanel1.AutoScroll = True
         Me.FlowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(195, Byte), Integer), CType(CType(206, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(46, 206)
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(46, 233)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(615, 276)
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(615, 249)
         Me.FlowLayoutPanel1.TabIndex = 66
         '
         'PictureBox3
@@ -461,12 +466,45 @@ Partial Class SongInfo
         Me.Label2.TabIndex = 68
         Me.Label2.Text = "Be the first one to publish one!"
         '
+        'orderby
+        '
+        Me.orderby.BackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(233, Byte), Integer), CType(CType(228, Byte), Integer))
+        Me.orderby.Cursor = System.Windows.Forms.Cursors.Default
+        Me.orderby.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.orderby.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.orderby.Font = New System.Drawing.Font("Mark", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.orderby.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
+        Me.orderby.FormattingEnabled = True
+        Me.orderby.Items.AddRange(New Object() {"Most recent", "Older"})
+        Me.orderby.Location = New System.Drawing.Point(549, 201)
+        Me.orderby.Name = "orderby"
+        Me.orderby.Size = New System.Drawing.Size(112, 27)
+        Me.orderby.TabIndex = 5
+        Me.orderby.TabStop = False
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.FromArgb(CType(CType(195, Byte), Integer), CType(CType(206, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.Label3.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.Label3.Font = New System.Drawing.Font("Mark", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
+        Me.Label3.Location = New System.Drawing.Point(462, 203)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label3.Size = New System.Drawing.Size(82, 20)
+        Me.Label3.TabIndex = 70
+        Me.Label3.Text = "Order by:"
+        '
         'SongInfo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(233, Byte), Integer), CType(CType(228, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(984, 577)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.orderby)
         Me.Controls.Add(Me.FlowLayoutPanel1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -559,4 +597,6 @@ Partial Class SongInfo
     Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents orderby As ComboBox
+    Friend WithEvents Label3 As Label
 End Class

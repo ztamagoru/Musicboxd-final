@@ -4,6 +4,7 @@ Imports System.Net.Mail
 Public Class validador
     Dim conexion As New conexion
     Dim datos As datos
+    Dim review As New review
 
     Private Shared _user, _pass, _mail, _name, _code, _surname As String
     Private _text As String
@@ -170,7 +171,7 @@ Public Class validador
         Return False
     End Function
 
-    Public Sub censorreview(review As String)
+    Public Sub censorreview(text As String)
         Dim insultos As String() = IO.File.ReadAllLines("C:\Musicboxd - imagenes\Insultos.txt")
 
         Dim pattern As String = "(?<=[\w]{1})[\w-\._\+ %]*(?=[\w])"
@@ -180,9 +181,9 @@ Public Class validador
 
             Dim censor As String = Regex.Replace(word, pattern, "**", RegexOptions.IgnoreCase)
 
-            review = Regex.Replace(review, word, censor, RegexOptions.IgnoreCase)
+            text = Regex.Replace(text, word, censor, RegexOptions.IgnoreCase)
         Next
 
-        MsgBox($"{review}")
+        review.uploadreview(text)
     End Sub
 End Class

@@ -3,6 +3,7 @@
     Dim songs As New cancion
     Dim rating As New rating
     Dim validador As New validador
+    Dim review As New review
 
 #Region "    links click"
     Private Sub LinkLabel3_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles deezerLink.LinkClicked
@@ -159,6 +160,9 @@
 #End Region
 
     Private Sub SongInfo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        extras.buttons(userBttn)
+        extras.buttons(parameterBttn)
+
         Select Case (datos.rol)
             Case 2
                 parameterBttn.Visible = True
@@ -354,19 +358,56 @@
 #End Region
 
 #Region "    review textbox hovers"
-    Private Sub TextBox1_MouseEnter(sender As Object, e As EventArgs) Handles TextBox1.MouseEnter
+    Private Sub TextBox1_Enter(sender As Object, e As EventArgs) Handles TextBox1.Enter
         If TextBox1.Text.Trim = "Write your review about the song here!" Then
 
+            With TextBox1
+                .Text = String.Empty
+                .ForeColor = Color.FromArgb(60, 60, 65)
+            End With
         End If
     End Sub
 
-    Private Sub TextBox1_MouseLeave(sender As Object, e As EventArgs) Handles TextBox1.MouseLeave
-
+    Private Sub TextBox1_Leave(sender As Object, e As EventArgs) Handles TextBox1.Leave
+        If TextBox1.Text.Trim = String.Empty Then
+            With TextBox1
+                .Text = "Write your review about the song here!"
+                .ForeColor = Color.FromArgb(160, 160, 160)
+            End With
+        End If
     End Sub
 
 #End Region
 
-    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
-        validador.censorreview(TextBox1.Text.Trim())
+    Private Sub sendreview(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        If TextBox1.Text.Trim <> "Write your review about the song here!" Or
+            TextBox1.Text.Trim <> String.Empty Then
+
+            FlowLayoutPanel1.Controls.Clear()
+            validador.censorreview(TextBox1.Text.Trim())
+            TextBox1.Text = String.Empty
+        Else
+            MessageBox.Show($"Your review's empty.{vbNewLine}Please write something before uploading{vbNewLine}and try again.",
+                            "Error",
+                            MessageBoxButtons.OK)
+        End If
+    End Sub
+
+    Private Sub orderby_SelectedIndexChanged(sender As Object, e As EventArgs) Handles orderby.SelectedIndexChanged
+        FlowLayoutPanel1.Controls.Clear()
+
+        If orderby.Text = "Older" Then
+            review.getreviews(lbl_songName.Text, lbl_artistName.Text)
+        Else
+            review.getreviews(lbl_songName.Text, lbl_artistName.Text, 2)
+        End If
+    End Sub
+
+    Private Sub searchbar_Enter(sender As Object, e As EventArgs) Handles searchbar.Enter
+
+    End Sub
+
+    Private Sub searchbar_Leave(sender As Object, e As EventArgs) Handles searchbar.Leave
+
     End Sub
 End Class

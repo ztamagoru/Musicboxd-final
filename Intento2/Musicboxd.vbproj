@@ -93,6 +93,18 @@
     <Compile Include="ArtistButton.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="ArtistInfo.Designer.vb">
+      <DependentUpon>ArtistInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ArtistInfo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParameterCenter.Designer.vb">
+      <DependentUpon>ParameterCenter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ParameterCenter.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="search.vb" />
     <Compile Include="song.vb" />
     <Compile Include="conexion.vb" />
@@ -181,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ArtistButton.resx">
       <DependentUpon>ArtistButton.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ArtistInfo.resx">
+      <DependentUpon>ArtistInfo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IngresarCodigo.resx">
       <DependentUpon>IngresarCodigo.vb</DependentUpon>

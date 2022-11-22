@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class AlbumInfo
+Partial Class ArtistInfo
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,28 +22,27 @@ Partial Class AlbumInfo
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AlbumInfo))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ArtistInfo))
         Me._username = New System.Windows.Forms.Label()
-        Me.pfp = New System.Windows.Forms.PictureBox()
         Me.userBttn = New System.Windows.Forms.Button()
         Me.parameterBttn = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.logo = New System.Windows.Forms.PictureBox()
         Me.searchbar = New System.Windows.Forms.TextBox()
+        Me.pfp = New System.Windows.Forms.PictureBox()
+        Me.logo = New System.Windows.Forms.PictureBox()
         Me.banner = New System.Windows.Forms.PictureBox()
-        Me.lbl_album = New System.Windows.Forms.Label()
-        Me.lbl_artist = New System.Windows.Forms.Label()
-        Me.cover = New System.Windows.Forms.PictureBox()
+        Me.lbl_albumlist2 = New System.Windows.Forms.Label()
+        Me.lbl_description = New System.Windows.Forms.Label()
+        Me.lbl_albumlist1 = New System.Windows.Forms.Label()
         Me.deezerLink = New System.Windows.Forms.LinkLabel()
         Me.itunesLink = New System.Windows.Forms.LinkLabel()
         Me.spotifyLink = New System.Windows.Forms.LinkLabel()
-        Me.lbl_songslist1 = New System.Windows.Forms.Label()
-        Me.lbl_description = New System.Windows.Forms.Label()
-        Me.lbl_songslist2 = New System.Windows.Forms.Label()
+        Me.photo = New System.Windows.Forms.PictureBox()
+        Me.lbl_artistname = New System.Windows.Forms.Label()
         CType(Me.pfp, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.logo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.banner, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cover, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.photo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         '_username
@@ -58,20 +57,8 @@ Partial Class AlbumInfo
         Me._username.Name = "_username"
         Me._username.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._username.Size = New System.Drawing.Size(97, 23)
-        Me._username.TabIndex = 57
+        Me._username.TabIndex = 65
         Me._username.Text = "username"
-        '
-        'pfp
-        '
-        Me.pfp.BackColor = System.Drawing.Color.FromArgb(CType(CType(195, Byte), Integer), CType(CType(206, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.pfp.Image = Global.Intento2.My.Resources.Resources.image
-        Me.pfp.Location = New System.Drawing.Point(92, 9)
-        Me.pfp.Margin = New System.Windows.Forms.Padding(2)
-        Me.pfp.Name = "pfp"
-        Me.pfp.Size = New System.Drawing.Size(45, 49)
-        Me.pfp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pfp.TabIndex = 56
-        Me.pfp.TabStop = False
         '
         'userBttn
         '
@@ -80,7 +67,7 @@ Partial Class AlbumInfo
         Me.userBttn.Location = New System.Drawing.Point(320, 17)
         Me.userBttn.Name = "userBttn"
         Me.userBttn.Size = New System.Drawing.Size(120, 33)
-        Me.userBttn.TabIndex = 51
+        Me.userBttn.TabIndex = 59
         Me.userBttn.Text = "User center"
         Me.userBttn.UseVisualStyleBackColor = False
         Me.userBttn.Visible = False
@@ -92,7 +79,7 @@ Partial Class AlbumInfo
         Me.parameterBttn.Location = New System.Drawing.Point(456, 17)
         Me.parameterBttn.Name = "parameterBttn"
         Me.parameterBttn.Size = New System.Drawing.Size(165, 33)
-        Me.parameterBttn.TabIndex = 52
+        Me.parameterBttn.TabIndex = 60
         Me.parameterBttn.Text = "Parameter center"
         Me.parameterBttn.UseVisualStyleBackColor = False
         Me.parameterBttn.Visible = False
@@ -104,21 +91,9 @@ Partial Class AlbumInfo
         Me.Button1.Location = New System.Drawing.Point(900, 17)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(70, 33)
-        Me.Button1.TabIndex = 54
+        Me.Button1.TabIndex = 62
         Me.Button1.Text = ">"
         Me.Button1.UseVisualStyleBackColor = False
-        '
-        'logo
-        '
-        Me.logo.BackColor = System.Drawing.Color.FromArgb(CType(CType(195, Byte), Integer), CType(CType(206, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.logo.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.logo.Image = Global.Intento2.My.Resources.Resources.logo
-        Me.logo.Location = New System.Drawing.Point(7, 5)
-        Me.logo.Name = "logo"
-        Me.logo.Size = New System.Drawing.Size(80, 57)
-        Me.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.logo.TabIndex = 55
-        Me.logo.TabStop = False
         '
         'searchbar
         '
@@ -129,8 +104,32 @@ Partial Class AlbumInfo
         Me.searchbar.MaxLength = 100
         Me.searchbar.Name = "searchbar"
         Me.searchbar.Size = New System.Drawing.Size(245, 22)
-        Me.searchbar.TabIndex = 53
+        Me.searchbar.TabIndex = 61
         Me.searchbar.Text = "Search song, album or artist"
+        '
+        'pfp
+        '
+        Me.pfp.BackColor = System.Drawing.Color.FromArgb(CType(CType(195, Byte), Integer), CType(CType(206, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.pfp.Image = Global.Intento2.My.Resources.Resources.image
+        Me.pfp.Location = New System.Drawing.Point(92, 9)
+        Me.pfp.Margin = New System.Windows.Forms.Padding(2)
+        Me.pfp.Name = "pfp"
+        Me.pfp.Size = New System.Drawing.Size(45, 49)
+        Me.pfp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pfp.TabIndex = 64
+        Me.pfp.TabStop = False
+        '
+        'logo
+        '
+        Me.logo.BackColor = System.Drawing.Color.FromArgb(CType(CType(195, Byte), Integer), CType(CType(206, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.logo.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.logo.Image = Global.Intento2.My.Resources.Resources.logo
+        Me.logo.Location = New System.Drawing.Point(7, 5)
+        Me.logo.Name = "logo"
+        Me.logo.Size = New System.Drawing.Size(80, 57)
+        Me.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.logo.TabIndex = 63
+        Me.logo.TabStop = False
         '
         'banner
         '
@@ -139,48 +138,50 @@ Partial Class AlbumInfo
         Me.banner.Name = "banner"
         Me.banner.Size = New System.Drawing.Size(986, 85)
         Me.banner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.banner.TabIndex = 58
+        Me.banner.TabIndex = 66
         Me.banner.TabStop = False
         '
-        'lbl_album
+        'lbl_albumlist2
         '
-        Me.lbl_album.AutoSize = True
-        Me.lbl_album.BackColor = System.Drawing.Color.Transparent
-        Me.lbl_album.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.lbl_album.Font = New System.Drawing.Font("Mark", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_album.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
-        Me.lbl_album.Location = New System.Drawing.Point(31, 107)
-        Me.lbl_album.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.lbl_album.Name = "lbl_album"
-        Me.lbl_album.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lbl_album.Size = New System.Drawing.Size(170, 34)
-        Me.lbl_album.TabIndex = 59
-        Me.lbl_album.Text = "albumname"
+        Me.lbl_albumlist2.AutoSize = True
+        Me.lbl_albumlist2.Cursor = System.Windows.Forms.Cursors.Default
+        Me.lbl_albumlist2.Font = New System.Drawing.Font("Mark", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_albumlist2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
+        Me.lbl_albumlist2.Location = New System.Drawing.Point(344, 332)
+        Me.lbl_albumlist2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lbl_albumlist2.Name = "lbl_albumlist2"
+        Me.lbl_albumlist2.Size = New System.Drawing.Size(90, 20)
+        Me.lbl_albumlist2.TabIndex = 77
+        Me.lbl_albumlist2.Text = "albumlist2"
         '
-        'lbl_artist
+        'lbl_description
         '
-        Me.lbl_artist.AutoSize = True
-        Me.lbl_artist.Cursor = System.Windows.Forms.Cursors.Default
-        Me.lbl_artist.Font = New System.Drawing.Font("Mark", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_artist.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
-        Me.lbl_artist.Location = New System.Drawing.Point(32, 148)
-        Me.lbl_artist.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.lbl_artist.Name = "lbl_artist"
-        Me.lbl_artist.Size = New System.Drawing.Size(119, 25)
-        Me.lbl_artist.TabIndex = 60
-        Me.lbl_artist.Text = "artistname"
+        Me.lbl_description.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lbl_description.AutoSize = True
+        Me.lbl_description.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.lbl_description.Font = New System.Drawing.Font("Mark", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_description.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
+        Me.lbl_description.Location = New System.Drawing.Point(32, 152)
+        Me.lbl_description.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lbl_description.MaximumSize = New System.Drawing.Size(640, 0)
+        Me.lbl_description.Name = "lbl_description"
+        Me.lbl_description.Size = New System.Drawing.Size(636, 75)
+        Me.lbl_description.TabIndex = 76
+        Me.lbl_description.Text = "review aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
         '
-        'cover
+        'lbl_albumlist1
         '
-        Me.cover.Cursor = System.Windows.Forms.Cursors.Default
-        Me.cover.Image = Global.Intento2.My.Resources.Resources.not_found
-        Me.cover.Location = New System.Drawing.Point(704, 104)
-        Me.cover.Margin = New System.Windows.Forms.Padding(2)
-        Me.cover.Name = "cover"
-        Me.cover.Size = New System.Drawing.Size(250, 250)
-        Me.cover.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.cover.TabIndex = 61
-        Me.cover.TabStop = False
+        Me.lbl_albumlist1.AutoSize = True
+        Me.lbl_albumlist1.Cursor = System.Windows.Forms.Cursors.Default
+        Me.lbl_albumlist1.Font = New System.Drawing.Font("Mark", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_albumlist1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
+        Me.lbl_albumlist1.Location = New System.Drawing.Point(33, 332)
+        Me.lbl_albumlist1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lbl_albumlist1.Name = "lbl_albumlist1"
+        Me.lbl_albumlist1.Size = New System.Drawing.Size(90, 20)
+        Me.lbl_albumlist1.TabIndex = 75
+        Me.lbl_albumlist1.Text = "albumlist1"
         '
         'deezerLink
         '
@@ -192,7 +193,7 @@ Partial Class AlbumInfo
         Me.deezerLink.Location = New System.Drawing.Point(774, 437)
         Me.deezerLink.Name = "deezerLink"
         Me.deezerLink.Size = New System.Drawing.Size(180, 23)
-        Me.deezerLink.TabIndex = 64
+        Me.deezerLink.TabIndex = 74
         Me.deezerLink.TabStop = True
         Me.deezerLink.Text = "Escuchar en Deezer"
         Me.deezerLink.VisitedLinkColor = System.Drawing.Color.FromArgb(CType(CType(185, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(118, Byte), Integer))
@@ -207,7 +208,7 @@ Partial Class AlbumInfo
         Me.itunesLink.Location = New System.Drawing.Point(779, 401)
         Me.itunesLink.Name = "itunesLink"
         Me.itunesLink.Size = New System.Drawing.Size(175, 23)
-        Me.itunesLink.TabIndex = 63
+        Me.itunesLink.TabIndex = 73
         Me.itunesLink.TabStop = True
         Me.itunesLink.Text = "Escuchar en iTunes"
         Me.itunesLink.VisitedLinkColor = System.Drawing.Color.FromArgb(CType(CType(185, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(118, Byte), Integer))
@@ -222,68 +223,52 @@ Partial Class AlbumInfo
         Me.spotifyLink.Location = New System.Drawing.Point(770, 365)
         Me.spotifyLink.Name = "spotifyLink"
         Me.spotifyLink.Size = New System.Drawing.Size(184, 23)
-        Me.spotifyLink.TabIndex = 62
+        Me.spotifyLink.TabIndex = 72
         Me.spotifyLink.TabStop = True
         Me.spotifyLink.Text = "Escuchar en Spotify"
         Me.spotifyLink.VisitedLinkColor = System.Drawing.Color.FromArgb(CType(CType(185, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(118, Byte), Integer))
         '
-        'lbl_songslist1
+        'photo
         '
-        Me.lbl_songslist1.AutoSize = True
-        Me.lbl_songslist1.Cursor = System.Windows.Forms.Cursors.Default
-        Me.lbl_songslist1.Font = New System.Drawing.Font("Mark", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_songslist1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
-        Me.lbl_songslist1.Location = New System.Drawing.Point(33, 334)
-        Me.lbl_songslist1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.lbl_songslist1.Name = "lbl_songslist1"
-        Me.lbl_songslist1.Size = New System.Drawing.Size(88, 20)
-        Me.lbl_songslist1.TabIndex = 66
-        Me.lbl_songslist1.Text = "songslist1"
+        Me.photo.Cursor = System.Windows.Forms.Cursors.Default
+        Me.photo.Image = Global.Intento2.My.Resources.Resources.not_found
+        Me.photo.Location = New System.Drawing.Point(704, 104)
+        Me.photo.Margin = New System.Windows.Forms.Padding(2)
+        Me.photo.Name = "photo"
+        Me.photo.Size = New System.Drawing.Size(250, 250)
+        Me.photo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.photo.TabIndex = 71
+        Me.photo.TabStop = False
         '
-        'lbl_description
+        'lbl_artistname
         '
-        Me.lbl_description.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lbl_description.AutoSize = True
-        Me.lbl_description.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.lbl_description.Font = New System.Drawing.Font("Mark", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_description.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
-        Me.lbl_description.Location = New System.Drawing.Point(32, 185)
-        Me.lbl_description.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.lbl_description.MaximumSize = New System.Drawing.Size(640, 0)
-        Me.lbl_description.Name = "lbl_description"
-        Me.lbl_description.Size = New System.Drawing.Size(636, 75)
-        Me.lbl_description.TabIndex = 67
-        Me.lbl_description.Text = "review aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        Me.lbl_artistname.AutoSize = True
+        Me.lbl_artistname.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_artistname.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.lbl_artistname.Font = New System.Drawing.Font("Mark", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_artistname.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
+        Me.lbl_artistname.Location = New System.Drawing.Point(31, 107)
+        Me.lbl_artistname.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lbl_artistname.Name = "lbl_artistname"
+        Me.lbl_artistname.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.lbl_artistname.Size = New System.Drawing.Size(170, 34)
+        Me.lbl_artistname.TabIndex = 69
+        Me.lbl_artistname.Text = "artist name"
         '
-        'lbl_songslist2
-        '
-        Me.lbl_songslist2.AutoSize = True
-        Me.lbl_songslist2.Cursor = System.Windows.Forms.Cursors.Default
-        Me.lbl_songslist2.Font = New System.Drawing.Font("Mark", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_songslist2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
-        Me.lbl_songslist2.Location = New System.Drawing.Point(344, 334)
-        Me.lbl_songslist2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.lbl_songslist2.Name = "lbl_songslist2"
-        Me.lbl_songslist2.Size = New System.Drawing.Size(88, 20)
-        Me.lbl_songslist2.TabIndex = 68
-        Me.lbl_songslist2.Text = "songslist2"
-        '
-        'AlbumInfo
+        'ArtistInfo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(233, Byte), Integer), CType(CType(228, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(984, 577)
-        Me.Controls.Add(Me.lbl_songslist2)
+        Me.Controls.Add(Me.lbl_albumlist2)
         Me.Controls.Add(Me.lbl_description)
-        Me.Controls.Add(Me.lbl_songslist1)
+        Me.Controls.Add(Me.lbl_albumlist1)
         Me.Controls.Add(Me.deezerLink)
         Me.Controls.Add(Me.itunesLink)
         Me.Controls.Add(Me.spotifyLink)
-        Me.Controls.Add(Me.cover)
-        Me.Controls.Add(Me.lbl_artist)
-        Me.Controls.Add(Me.lbl_album)
+        Me.Controls.Add(Me.photo)
+        Me.Controls.Add(Me.lbl_artistname)
         Me.Controls.Add(Me._username)
         Me.Controls.Add(Me.pfp)
         Me.Controls.Add(Me.userBttn)
@@ -295,13 +280,13 @@ Partial Class AlbumInfo
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
-        Me.Name = "AlbumInfo"
+        Me.Name = "ArtistInfo"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Musicboxd"
         CType(Me.pfp, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.logo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.banner, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cover, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.photo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -315,13 +300,12 @@ Partial Class AlbumInfo
     Friend WithEvents logo As PictureBox
     Friend WithEvents searchbar As TextBox
     Friend WithEvents banner As PictureBox
-    Friend WithEvents lbl_album As Label
-    Friend WithEvents lbl_artist As Label
-    Friend WithEvents cover As PictureBox
+    Friend WithEvents lbl_albumlist2 As Label
+    Friend WithEvents lbl_description As Label
+    Friend WithEvents lbl_albumlist1 As Label
     Friend WithEvents deezerLink As LinkLabel
     Friend WithEvents itunesLink As LinkLabel
     Friend WithEvents spotifyLink As LinkLabel
-    Friend WithEvents lbl_songslist1 As Label
-    Friend WithEvents lbl_description As Label
-    Friend WithEvents lbl_songslist2 As Label
+    Friend WithEvents photo As PictureBox
+    Friend WithEvents lbl_artistname As Label
 End Class

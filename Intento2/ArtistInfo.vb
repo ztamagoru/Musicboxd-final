@@ -1,13 +1,8 @@
-﻿Public Class AlbumInfo
+﻿Public Class ArtistInfo
     Dim extras As New extras
     Dim search As New search
 
-    Private Sub logo_Click(sender As Object, e As EventArgs) Handles logo.Click
-        Me.Dispose()
-        MenuPrincipal.Show()
-    End Sub
-
-    Private Sub AlbumInfo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub ArtistInfo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         With extras
             .buttons(userBttn)
             .buttons(parameterBttn)
@@ -24,6 +19,58 @@
 
         _username.Text = MenuPrincipal._username.Text
     End Sub
+
+    Private Sub logo_Click(sender As Object, e As EventArgs) Handles logo.Click
+        Me.Dispose()
+        MenuPrincipal.Show()
+    End Sub
+
+    Private Sub userBttn_Click(sender As Object, e As EventArgs) Handles userBttn.Click
+        Me.Dispose()
+        UserCenter.Show()
+    End Sub
+
+    Private Sub parameterBttn_Click(sender As Object, e As EventArgs) Handles parameterBttn.Click
+        Me.Dispose()
+        ParameterCenter.Show()
+    End Sub
+
+#Region "    searchbar hovers"
+
+    Private Sub searchbarEnter(sender As Object, e As EventArgs) Handles searchbar.Enter
+        If searchbar.Text.Trim = "Search song, album or artist" Then
+            With searchbar
+                .Text = String.Empty
+                .ForeColor = Color.FromArgb(60, 60, 65)
+            End With
+        End If
+    End Sub
+
+    Private Sub searchbarLeave(sender As Object, e As EventArgs) Handles searchbar.Leave
+        If searchbar.Text.Trim = String.Empty Then
+            With searchbar
+                .Text = "Search song, album or artist"
+                .ForeColor = Color.FromArgb(160, 160, 160)
+            End With
+        End If
+    End Sub
+
+#End Region
+
+#Region "    links clicked"
+
+    Private Sub spotifyLink_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles spotifyLink.LinkClicked
+        Process.Start(e.Link.LinkData.ToString)
+    End Sub
+
+    Private Sub itunesLink_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles itunesLink.LinkClicked
+        Process.Start(e.Link.LinkData.ToString)
+    End Sub
+
+    Private Sub deezerLink_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles deezerLink.LinkClicked
+        Process.Start(e.Link.LinkData.ToString)
+    End Sub
+#End Region
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         If searchbar.Text.Trim = "Search song, album or artist" Or
@@ -69,7 +116,7 @@
 
 #End Region
 
-    Private Sub AlbumInfo_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+    Private Sub ArtistInfo_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Dim result = extras.show(
                     {"Close", "Sign out", "Cancel"},
                     "",
@@ -86,29 +133,5 @@
             Case Else
                 e.Cancel = True
         End Select
-    End Sub
-
-#Region "    links clicked"
-
-    Private Sub spotifyLink_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles spotifyLink.LinkClicked
-        Process.Start(e.Link.LinkData.ToString)
-    End Sub
-
-    Private Sub itunesLink_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles itunesLink.LinkClicked
-        Process.Start(e.Link.LinkData.ToString)
-    End Sub
-
-    Private Sub deezerLink_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles deezerLink.LinkClicked
-        Process.Start(e.Link.LinkData.ToString)
-    End Sub
-#End Region
-
-    Private Sub parameterBttn_Click(sender As Object, e As EventArgs) Handles parameterBttn.Click
-        Me.Dispose()
-    End Sub
-
-    Private Sub userBttn_Click(sender As Object, e As EventArgs) Handles userBttn.Click
-        Me.Dispose()
-        UserCenter.Show()
     End Sub
 End Class

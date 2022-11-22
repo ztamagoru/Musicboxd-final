@@ -448,4 +448,14 @@
             Me.Dispose()
         End If
     End Sub
+
+    Private Sub userBttn_Click(sender As Object, e As EventArgs) Handles userBttn.Click
+        Me.Dispose()
+        UserCenter.Show()
+    End Sub
+
+    Private Sub parameterBttn_Click(sender As Object, e As EventArgs) Handles parameterBttn.Click
+        Me.Dispose()
+        ParameterCenter.Show()
+    End Sub
 End Class

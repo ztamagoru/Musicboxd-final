@@ -9,9 +9,9 @@ Public Class ArtistButton
     End Sub
 
     Private Sub buttonbackground_Click(sender As Object, e As EventArgs) Handles buttonbackground.Click, artistphoto.Click, lbl_artistname.Click
-        artist.specificartist(Name)
-        'SearchMenu.Dispose()
-
+        artist.specificartist(lbl_artistname.Text)
+        SearchMenu.Dispose()
+        ArtistInfo.Show()
     End Sub
 
     Private Sub hoverEnter(sender As Object, e As EventArgs) Handles lbl_artistname.MouseEnter, artistphoto.MouseEnter, buttonbackground.MouseEnter

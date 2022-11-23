@@ -26,7 +26,7 @@
 
         With extras
             .buttons(Button1)
-            .buttons(parameterBttn)
+            .buttons(filterBttn)
             .buttons(userBttn)
             .buttons(change)
         End With
@@ -35,9 +35,9 @@
 
         Select Case (datos.rol)
             Case 2
-                parameterBttn.Visible = True
+                filterBttn.Visible = True
             Case 3
-                parameterBttn.Visible = True
+                filterBttn.Visible = True
                 userBttn.Visible = True
         End Select
 

@@ -10,15 +10,15 @@
     Private Sub AlbumInfo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         With extras
             .buttons(userBttn)
-            .buttons(parameterBttn)
+            .buttons(filterBttn)
             .buttons(Button1)
         End With
 
         Select Case (datos.rol)
             Case 2
-                parameterBttn.Visible = True
+                filterBttn.Visible = True
             Case 3
-                parameterBttn.Visible = True
+                filterBttn.Visible = True
                 userBttn.Visible = True
         End Select
 
@@ -103,9 +103,9 @@
     End Sub
 #End Region
 
-    Private Sub parameterBttn_Click(sender As Object, e As EventArgs) Handles parameterBttn.Click
+    Private Sub filterBttn_Click(sender As Object, e As EventArgs) Handles filterBttn.Click
         Me.Dispose()
-        ParameterCenter.Show()
+        FilterCenter.Show()
     End Sub
 
     Private Sub userBttn_Click(sender As Object, e As EventArgs) Handles userBttn.Click

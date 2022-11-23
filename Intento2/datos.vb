@@ -135,6 +135,7 @@ Public Class datos
         With conexion.cmd
             .CommandType = CommandType.StoredProcedure
             .Parameters.AddWithValue("@username", username)
+            .Parameters.AddWithValue("@newrole", newrole)
 
             .ExecuteScalar()
         End With

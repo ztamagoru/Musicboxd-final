@@ -218,4 +218,9 @@ Public Class MenuPrincipal
             Me.Hide()
         End If
     End Sub
+
+    Private Sub parameterBttn_Click(sender As Object, e As EventArgs) Handles parameterBttn.Click
+        Me.Hide()
+        ParameterCenter.Show()
+    End Sub
 End Class

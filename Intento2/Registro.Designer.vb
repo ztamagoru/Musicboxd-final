@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Registro
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,9 +20,8 @@ Partial Class Registro
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Registro))
         Me.Button1 = New System.Windows.Forms.Button()
         Me._password = New System.Windows.Forms.TextBox()
@@ -32,9 +31,7 @@ Partial Class Registro
         Me._name = New System.Windows.Forms.TextBox()
         Me._surname = New System.Windows.Forms.TextBox()
         Me.signin = New System.Windows.Forms.Label()
-        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.eye = New System.Windows.Forms.PictureBox()
-        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.eye, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -139,12 +136,6 @@ Partial Class Registro
         Me.signin.TabIndex = 26
         Me.signin.Text = "Already have an account? Sign in"
         '
-        'ErrorProvider1
-        '
-        Me.ErrorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink
-        Me.ErrorProvider1.ContainerControl = Me
-        Me.ErrorProvider1.Icon = CType(resources.GetObject("ErrorProvider1.Icon"), System.Drawing.Icon)
-        '
         'eye
         '
         Me.eye.Cursor = System.Windows.Forms.Cursors.Hand
@@ -178,7 +169,6 @@ Partial Class Registro
         Me.Name = "Registro"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Musicboxd"
-        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.eye, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -193,6 +183,5 @@ Partial Class Registro
     Friend WithEvents _name As TextBox
     Friend WithEvents _surname As TextBox
     Friend WithEvents signin As Label
-    Friend WithEvents ErrorProvider1 As ErrorProvider
     Friend WithEvents eye As PictureBox
 End Class

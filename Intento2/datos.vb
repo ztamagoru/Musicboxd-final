@@ -2,7 +2,8 @@
 
 Public Class datos
     Dim conexion As New conexion
-    'Dim validador As validador
+    Dim dataset As DataSet
+    Dim dataadapter As SqlDataAdapter
 
     Private Shared _rol As Integer
 
@@ -77,5 +78,67 @@ Public Class datos
         End With
     End Sub
 
+    Public Sub getallusers(username As String)
+        conexion.openDatabase()
+        conexion.cmd = New SqlCommand("[Users].[SP_GET_ALL_USERS]", conexion.conn)
 
+        With conexion.cmd
+            .CommandType = CommandType.StoredProcedure
+            .Parameters.AddWithValue("@username", username)
+
+            .ExecuteScalar()
+
+            dataset = New DataSet
+            dataadapter = New SqlDataAdapter(conexion.cmd)
+
+            dataadapter.Fill(dataset)
+
+            UserCenter.dgUsers.DataSource = dataset.Tables(0).DefaultView
+        End With
+
+        conexion.closeDatabase()
+    End Sub
+
+    Public Sub getuserinfo(username As String)
+        conexion.openDatabase()
+        conexion.cmd = New SqlCommand("[Users].[SP_GET_USER_INFO]", conexion.conn)
+
+        With conexion.cmd
+            .CommandType = CommandType.StoredProcedure
+            .Parameters.AddWithValue("@username", username)
+
+            Dim reader As SqlDataReader
+
+            reader = .ExecuteReader()
+
+            reader.Read()
+
+            With UserCenter
+                .txtusername.Text = reader.GetString(0)
+                .txtemail.Text = reader.GetString(1)
+                .txtname.Text = reader.GetString(2)
+                .txtsurname.Text = reader.GetString(3)
+
+                .role.SelectedIndex = .role.FindStringExact(reader.GetString(4))
+            End With
+
+            reader.Close()
+        End With
+
+        conexion.closeDatabase()
+    End Sub
+
+    Public Sub changerole(username As String, newrole As String)
+        conexion.openDatabase()
+        conexion.cmd = New SqlCommand("[Users].[SP_CHANGE_ROLE]", conexion.conn)
+
+        With conexion.cmd
+            .CommandType = CommandType.StoredProcedure
+            .Parameters.AddWithValue("@username", username)
+
+            .ExecuteScalar()
+        End With
+
+        conexion.closeDatabase()
+    End Sub
 End Class

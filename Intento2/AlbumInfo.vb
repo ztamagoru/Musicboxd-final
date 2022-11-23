@@ -90,21 +90,22 @@
 
 #Region "    links clicked"
 
-    Private Sub spotifyLink_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles spotifyLink.LinkClicked
+    Private Sub spotifyLink_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs)
         Process.Start(e.Link.LinkData.ToString)
     End Sub
 
-    Private Sub itunesLink_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles itunesLink.LinkClicked
+    Private Sub itunesLink_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs)
         Process.Start(e.Link.LinkData.ToString)
     End Sub
 
-    Private Sub deezerLink_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles deezerLink.LinkClicked
+    Private Sub deezerLink_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs)
         Process.Start(e.Link.LinkData.ToString)
     End Sub
 #End Region
 
     Private Sub parameterBttn_Click(sender As Object, e As EventArgs) Handles parameterBttn.Click
         Me.Dispose()
+        ParameterCenter.Show()
     End Sub
 
     Private Sub userBttn_Click(sender As Object, e As EventArgs) Handles userBttn.Click

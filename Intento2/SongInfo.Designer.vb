@@ -30,9 +30,6 @@ Partial Class SongInfo
         Me.searchbar = New System.Windows.Forms.TextBox()
         Me.lbl_songName = New System.Windows.Forms.Label()
         Me.lbl_artistName = New System.Windows.Forms.Label()
-        Me.spotifyLink = New System.Windows.Forms.LinkLabel()
-        Me.itunesLink = New System.Windows.Forms.LinkLabel()
-        Me.deezerLink = New System.Windows.Forms.LinkLabel()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.lbl_promedio = New System.Windows.Forms.Label()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
@@ -57,6 +54,9 @@ Partial Class SongInfo
         Me.Label2 = New System.Windows.Forms.Label()
         Me.orderby = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.deezerLink = New System.Windows.Forms.LinkLabel()
+        Me.itunesLink = New System.Windows.Forms.LinkLabel()
+        Me.spotifyLink = New System.Windows.Forms.LinkLabel()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.star10, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.star9, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -165,51 +165,6 @@ Partial Class SongInfo
         Me.lbl_artistName.Size = New System.Drawing.Size(128, 25)
         Me.lbl_artistName.TabIndex = 45
         Me.lbl_artistName.Text = "songName1"
-        '
-        'spotifyLink
-        '
-        Me.spotifyLink.ActiveLinkColor = System.Drawing.Color.RoyalBlue
-        Me.spotifyLink.AutoSize = True
-        Me.spotifyLink.Font = New System.Drawing.Font("Mark", 13.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.spotifyLink.LinkBehavior = System.Windows.Forms.LinkBehavior.AlwaysUnderline
-        Me.spotifyLink.LinkColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(89, Byte), Integer), CType(CType(98, Byte), Integer))
-        Me.spotifyLink.Location = New System.Drawing.Point(770, 459)
-        Me.spotifyLink.Name = "spotifyLink"
-        Me.spotifyLink.Size = New System.Drawing.Size(184, 23)
-        Me.spotifyLink.TabIndex = 7
-        Me.spotifyLink.TabStop = True
-        Me.spotifyLink.Text = "Escuchar en Spotify"
-        Me.spotifyLink.VisitedLinkColor = System.Drawing.Color.FromArgb(CType(CType(185, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(118, Byte), Integer))
-        '
-        'itunesLink
-        '
-        Me.itunesLink.ActiveLinkColor = System.Drawing.Color.RoyalBlue
-        Me.itunesLink.AutoSize = True
-        Me.itunesLink.Font = New System.Drawing.Font("Mark", 13.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.itunesLink.LinkBehavior = System.Windows.Forms.LinkBehavior.AlwaysUnderline
-        Me.itunesLink.LinkColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(89, Byte), Integer), CType(CType(98, Byte), Integer))
-        Me.itunesLink.Location = New System.Drawing.Point(779, 495)
-        Me.itunesLink.Name = "itunesLink"
-        Me.itunesLink.Size = New System.Drawing.Size(175, 23)
-        Me.itunesLink.TabIndex = 8
-        Me.itunesLink.TabStop = True
-        Me.itunesLink.Text = "Escuchar en iTunes"
-        Me.itunesLink.VisitedLinkColor = System.Drawing.Color.FromArgb(CType(CType(185, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(118, Byte), Integer))
-        '
-        'deezerLink
-        '
-        Me.deezerLink.ActiveLinkColor = System.Drawing.Color.RoyalBlue
-        Me.deezerLink.AutoSize = True
-        Me.deezerLink.Font = New System.Drawing.Font("Mark", 13.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.deezerLink.LinkBehavior = System.Windows.Forms.LinkBehavior.AlwaysUnderline
-        Me.deezerLink.LinkColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(89, Byte), Integer), CType(CType(98, Byte), Integer))
-        Me.deezerLink.Location = New System.Drawing.Point(774, 531)
-        Me.deezerLink.Name = "deezerLink"
-        Me.deezerLink.Size = New System.Drawing.Size(180, 23)
-        Me.deezerLink.TabIndex = 9
-        Me.deezerLink.TabStop = True
-        Me.deezerLink.Text = "Escuchar en Deezer"
-        Me.deezerLink.VisitedLinkColor = System.Drawing.Color.FromArgb(CType(CType(185, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(118, Byte), Integer))
         '
         'TextBox1
         '
@@ -497,12 +452,60 @@ Partial Class SongInfo
         Me.Label3.TabIndex = 70
         Me.Label3.Text = "Order by:"
         '
+        'deezerLink
+        '
+        Me.deezerLink.ActiveLinkColor = System.Drawing.Color.RoyalBlue
+        Me.deezerLink.AutoSize = True
+        Me.deezerLink.Font = New System.Drawing.Font("Mark", 13.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.deezerLink.LinkBehavior = System.Windows.Forms.LinkBehavior.AlwaysUnderline
+        Me.deezerLink.LinkColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(89, Byte), Integer), CType(CType(98, Byte), Integer))
+        Me.deezerLink.Location = New System.Drawing.Point(805, 527)
+        Me.deezerLink.Name = "deezerLink"
+        Me.deezerLink.Size = New System.Drawing.Size(149, 23)
+        Me.deezerLink.TabIndex = 77
+        Me.deezerLink.TabStop = True
+        Me.deezerLink.Text = "Listen in Deezer"
+        Me.deezerLink.VisitedLinkColor = System.Drawing.Color.FromArgb(CType(CType(185, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(118, Byte), Integer))
+        '
+        'itunesLink
+        '
+        Me.itunesLink.ActiveLinkColor = System.Drawing.Color.RoyalBlue
+        Me.itunesLink.AutoSize = True
+        Me.itunesLink.Font = New System.Drawing.Font("Mark", 13.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.itunesLink.LinkBehavior = System.Windows.Forms.LinkBehavior.AlwaysUnderline
+        Me.itunesLink.LinkColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(89, Byte), Integer), CType(CType(98, Byte), Integer))
+        Me.itunesLink.Location = New System.Drawing.Point(810, 491)
+        Me.itunesLink.Name = "itunesLink"
+        Me.itunesLink.Size = New System.Drawing.Size(144, 23)
+        Me.itunesLink.TabIndex = 76
+        Me.itunesLink.TabStop = True
+        Me.itunesLink.Text = "Listen in iTunes"
+        Me.itunesLink.VisitedLinkColor = System.Drawing.Color.FromArgb(CType(CType(185, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(118, Byte), Integer))
+        '
+        'spotifyLink
+        '
+        Me.spotifyLink.ActiveLinkColor = System.Drawing.Color.RoyalBlue
+        Me.spotifyLink.AutoSize = True
+        Me.spotifyLink.Font = New System.Drawing.Font("Mark", 13.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.spotifyLink.LinkBehavior = System.Windows.Forms.LinkBehavior.AlwaysUnderline
+        Me.spotifyLink.LinkColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(89, Byte), Integer), CType(CType(98, Byte), Integer))
+        Me.spotifyLink.Location = New System.Drawing.Point(801, 455)
+        Me.spotifyLink.Name = "spotifyLink"
+        Me.spotifyLink.Size = New System.Drawing.Size(153, 23)
+        Me.spotifyLink.TabIndex = 75
+        Me.spotifyLink.TabStop = True
+        Me.spotifyLink.Text = "Listen in Spotify"
+        Me.spotifyLink.VisitedLinkColor = System.Drawing.Color.FromArgb(CType(CType(185, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(118, Byte), Integer))
+        '
         'SongInfo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(233, Byte), Integer), CType(CType(228, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(984, 577)
+        Me.Controls.Add(Me.deezerLink)
+        Me.Controls.Add(Me.itunesLink)
+        Me.Controls.Add(Me.spotifyLink)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.orderby)
         Me.Controls.Add(Me.FlowLayoutPanel1)
@@ -522,10 +525,7 @@ Partial Class SongInfo
         Me.Controls.Add(Me.star1)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.deezerLink)
-        Me.Controls.Add(Me.itunesLink)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.spotifyLink)
         Me.Controls.Add(Me.lbl_artistName)
         Me.Controls.Add(Me.lbl_songName)
         Me.Controls.Add(Me.cover)
@@ -576,10 +576,7 @@ Partial Class SongInfo
     Friend WithEvents cover As PictureBox
     Friend WithEvents lbl_songName As Label
     Friend WithEvents lbl_artistName As Label
-    Friend WithEvents spotifyLink As LinkLabel
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents itunesLink As LinkLabel
-    Friend WithEvents deezerLink As LinkLabel
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents star1 As PictureBox
@@ -599,4 +596,7 @@ Partial Class SongInfo
     Friend WithEvents Label2 As Label
     Friend WithEvents orderby As ComboBox
     Friend WithEvents Label3 As Label
+    Friend WithEvents deezerLink As LinkLabel
+    Friend WithEvents itunesLink As LinkLabel
+    Friend WithEvents spotifyLink As LinkLabel
 End Class

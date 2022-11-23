@@ -3,8 +3,7 @@
 Public Class FilterCenter
     Dim extras As New extras
     Dim search As New search
-
-    Dim lista As New Queue
+    Dim filter As New filter
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         Me.Dispose()
@@ -16,6 +15,7 @@ Public Class FilterCenter
             .buttons(Button1)
             .buttons(filterBttn)
             .buttons(userBttn)
+            .buttons(Button2)
         End With
 
         _username.Text = MenuPrincipal._username.Text
@@ -31,20 +31,34 @@ Public Class FilterCenter
         refreshlist()
     End Sub
 
-    Public Sub refreshlist()
+    Public Sub refreshlist(Optional order As Integer = 1)
         Dim palabras As String() = File.ReadAllLines("C:\Musicboxd - imagenes\Insultos.txt")
-
-        lista.Clear()
 
         listapalabras.Items.Clear()
 
-        For i = 0 To palabras.Length - 1
-            lista.Enqueue(palabras(i))
-        Next
+        If order = 1 Then
+            Dim lista As New Queue
 
-        For Each z In lista
-            listapalabras.Items.Add(z)
-        Next
+            For i = 0 To palabras.Length - 1
+                lista.Enqueue(palabras(i))
+            Next
+
+            For Each z In lista
+                listapalabras.Items.Add(z)
+            Next
+
+            orderby.Text = String.Empty
+        Else
+            Dim lista As New Stack
+
+            For i = 0 To palabras.Length - 1
+                lista.Push(palabras(i))
+            Next
+
+            For Each z In lista
+                listapalabras.Items.Add(z)
+            Next
+        End If
     End Sub
 
     Private Sub FilterCenter_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
@@ -114,7 +128,43 @@ Public Class FilterCenter
         End If
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub addword(sender As Object, e As EventArgs) Handles Button2.Click
+        If newword.Text.Trim = "Insert new word to filter" Or
+                newword.Text.Trim = String.Empty Then
+            MessageBox.Show($"New word empty.{vbNewLine}Complete the blank spaces and try again.")
+        Else
+            If filter.checkword(newword.Text.Trim) Then
+                MessageBox.Show($"Word already saved.{vbNewLine}Please try uploading another word.")
+            Else
+                filter.addword(newword.Text.Trim)
+                refreshlist()
+            End If
+        End If
+    End Sub
 
+    Private Sub orderby_SelectedIndexChanged(sender As Object, e As EventArgs) Handles orderby.SelectedIndexChanged
+        If orderby.Text = "Recently added" Then
+            refreshlist(2)
+        Else
+            refreshlist()
+        End If
+    End Sub
+
+    Private Sub newword_Enter(sender As Object, e As EventArgs) Handles newword.Enter
+        If newword.Text.Trim = "Insert new word to filter" Then
+            With newword
+                .Text = String.Empty
+                .ForeColor = Color.FromArgb(91, 90, 86)
+            End With
+        End If
+    End Sub
+
+    Private Sub newword_Leave(sender As Object, e As EventArgs) Handles newword.Leave
+        If newword.Text.Trim = String.Empty Then
+            With newword
+                .Text = "Insert new word to filter"
+                .ForeColor = Color.FromArgb(160, 160, 160)
+            End With
+        End If
     End Sub
 End Class

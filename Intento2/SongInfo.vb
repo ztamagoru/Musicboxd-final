@@ -7,19 +7,11 @@
     Dim search As New search
 
 #Region "    links click"
-    Private Sub LinkLabel3_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) 
+    Private Sub LinkLabel3_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles spotifyLink.LinkClicked, deezerLink.LinkClicked, itunesLink.LinkClicked
         Process.Start(e.Link.LinkData.ToString)
     End Sub
 
-    Private Sub LinkLabel2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) 
-        Process.Start(e.Link.LinkData.ToString)
-    End Sub
-
-    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) 
-        Process.Start(e.Link.LinkData.ToString)
-    End Sub
 #End Region
-
 #Region "    stars hovers"
 
     Private Sub star1_MouseEnter(sender As Object, e As EventArgs) Handles star1.MouseEnter
@@ -458,15 +450,5 @@
             SearchMenu.Show()
             Me.Dispose()
         End If
-    End Sub
-
-    Private Sub userBttn_Click(sender As Object, e As EventArgs) Handles userBttn.Click
-        Me.Dispose()
-        UserCenter.Show()
-    End Sub
-
-    Private Sub filterBttn_Click(sender As Object, e As EventArgs) Handles filterBttn.Click
-        Me.Dispose()
-        FilterCenter.Show()
     End Sub
 End Class

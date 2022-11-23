@@ -75,6 +75,7 @@ Public Class rating
             .ExecuteScalar()
 
             SongInfo.lbl_promedio.Text = CType(.Parameters("@rating").Value, String)
+            SongInfo.lbl_promedio.Text = $"{Left(SongInfo.lbl_promedio.Text, 3)}"
         End With
 
         conexion.closeDatabase()

@@ -52,10 +52,9 @@ Public Class IngresarCodigo
                             MessageBoxButtons.OK)
 
             Registro.Enabled() = True
-            Registro.Hide()
+            Registro.Dispose()
 
             Inicio.Show()
-
             Me.Dispose()
         Else
             MessageBox.Show($"Incorrect code.{vbNewLine}Please try again.",

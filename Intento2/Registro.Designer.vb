@@ -22,6 +22,7 @@ Partial Class Registro
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Registro))
         Me.Button1 = New System.Windows.Forms.Button()
         Me._password = New System.Windows.Forms.TextBox()
@@ -32,6 +33,8 @@ Partial Class Registro
         Me._surname = New System.Windows.Forms.TextBox()
         Me.signin = New System.Windows.Forms.Label()
         Me.eye = New System.Windows.Forms.PictureBox()
+        Me.usernameTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.passwordTip = New System.Windows.Forms.ToolTip(Me.components)
         CType(Me.eye, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -147,6 +150,18 @@ Partial Class Registro
         Me.eye.TabIndex = 27
         Me.eye.TabStop = False
         '
+        'usernameTip
+        '
+        Me.usernameTip.BackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(233, Byte), Integer), CType(CType(228, Byte), Integer))
+        Me.usernameTip.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
+        Me.usernameTip.ShowAlways = True
+        '
+        'passwordTip
+        '
+        Me.passwordTip.BackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(233, Byte), Integer), CType(CType(228, Byte), Integer))
+        Me.passwordTip.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
+        Me.passwordTip.ShowAlways = True
+        '
         'Registro
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -184,4 +199,6 @@ Partial Class Registro
     Friend WithEvents _surname As TextBox
     Friend WithEvents signin As Label
     Friend WithEvents eye As PictureBox
+    Friend WithEvents usernameTip As ToolTip
+    Friend WithEvents passwordTip As ToolTip
 End Class

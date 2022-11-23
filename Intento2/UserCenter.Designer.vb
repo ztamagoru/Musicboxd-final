@@ -25,15 +25,11 @@ Partial Class UserCenter
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UserCenter))
         Me.dgUsers = New System.Windows.Forms.DataGridView()
         Me._username = New System.Windows.Forms.Label()
-        Me.pfp = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.label1 = New System.Windows.Forms.Label()
-        Me.banner = New System.Windows.Forms.PictureBox()
         Me.userBttn = New System.Windows.Forms.Button()
         Me.filterBttn = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.searchbar = New System.Windows.Forms.TextBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.txtusername = New System.Windows.Forms.TextBox()
         Me.txtemail = New System.Windows.Forms.TextBox()
         Me.txtname = New System.Windows.Forms.TextBox()
@@ -45,6 +41,10 @@ Partial Class UserCenter
         Me.txtsurname = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.change = New System.Windows.Forms.Button()
+        Me.pfp = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.banner = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         CType(Me.dgUsers, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pfp, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -60,7 +60,7 @@ Partial Class UserCenter
         Me.dgUsers.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgUsers.Location = New System.Drawing.Point(560, 225)
-        Me.dgUsers.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dgUsers.Margin = New System.Windows.Forms.Padding(4)
         Me.dgUsers.Name = "dgUsers"
         Me.dgUsers.ReadOnly = True
         Me.dgUsers.RowHeadersWidth = 51
@@ -81,30 +81,6 @@ Partial Class UserCenter
         Me._username.TabIndex = 36
         Me._username.Text = "username"
         '
-        'pfp
-        '
-        Me.pfp.Image = Global.Intento2.My.Resources.Resources.image
-        Me.pfp.Location = New System.Drawing.Point(123, 11)
-        Me.pfp.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.pfp.Name = "pfp"
-        Me.pfp.Size = New System.Drawing.Size(60, 60)
-        Me.pfp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pfp.TabIndex = 35
-        Me.pfp.TabStop = False
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(195, Byte), Integer), CType(CType(206, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox1.Image = Global.Intento2.My.Resources.Resources.logo
-        Me.PictureBox1.Location = New System.Drawing.Point(9, 6)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(107, 70)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 34
-        Me.PictureBox1.TabStop = False
-        '
         'label1
         '
         Me.label1.AutoSize = True
@@ -119,23 +95,12 @@ Partial Class UserCenter
         Me.label1.TabIndex = 37
         Me.label1.Text = "User center"
         '
-        'banner
-        '
-        Me.banner.Image = CType(resources.GetObject("banner.Image"), System.Drawing.Image)
-        Me.banner.Location = New System.Drawing.Point(0, 0)
-        Me.banner.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.banner.Name = "banner"
-        Me.banner.Size = New System.Drawing.Size(1315, 105)
-        Me.banner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.banner.TabIndex = 38
-        Me.banner.TabStop = False
-        '
         'userBttn
         '
         Me.userBttn.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(186, Byte), Integer), CType(CType(184, Byte), Integer))
         Me.userBttn.Font = New System.Drawing.Font("Mark", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.userBttn.Location = New System.Drawing.Point(469, 21)
-        Me.userBttn.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.userBttn.Margin = New System.Windows.Forms.Padding(4)
         Me.userBttn.Name = "userBttn"
         Me.userBttn.Size = New System.Drawing.Size(160, 41)
         Me.userBttn.TabIndex = 42
@@ -148,7 +113,7 @@ Partial Class UserCenter
         Me.filterBttn.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(186, Byte), Integer), CType(CType(184, Byte), Integer))
         Me.filterBttn.Font = New System.Drawing.Font("Mark", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.filterBttn.Location = New System.Drawing.Point(649, 21)
-        Me.filterBttn.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.filterBttn.Margin = New System.Windows.Forms.Padding(4)
         Me.filterBttn.Name = "filterBttn"
         Me.filterBttn.Size = New System.Drawing.Size(179, 41)
         Me.filterBttn.TabIndex = 39
@@ -161,7 +126,7 @@ Partial Class UserCenter
         Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(89, Byte), Integer), CType(CType(98, Byte), Integer))
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.Location = New System.Drawing.Point(1200, 21)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(93, 41)
         Me.Button1.TabIndex = 41
@@ -174,23 +139,12 @@ Partial Class UserCenter
         Me.searchbar.Font = New System.Drawing.Font("Mark", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.searchbar.ForeColor = System.Drawing.SystemColors.ControlDark
         Me.searchbar.Location = New System.Drawing.Point(851, 27)
-        Me.searchbar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.searchbar.Margin = New System.Windows.Forms.Padding(4)
         Me.searchbar.MaxLength = 100
         Me.searchbar.Name = "searchbar"
         Me.searchbar.Size = New System.Drawing.Size(327, 28)
         Me.searchbar.TabIndex = 40
         Me.searchbar.Text = "Search song, album or artist"
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = Global.Intento2.My.Resources.Resources.Untitled_3
-        Me.PictureBox2.Location = New System.Drawing.Point(536, 203)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(735, 470)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 43
-        Me.PictureBox2.TabStop = False
         '
         'txtusername
         '
@@ -199,7 +153,7 @@ Partial Class UserCenter
         Me.txtusername.Font = New System.Drawing.Font("Mark", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtusername.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
         Me.txtusername.Location = New System.Drawing.Point(47, 249)
-        Me.txtusername.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtusername.Margin = New System.Windows.Forms.Padding(4)
         Me.txtusername.MaxLength = 100
         Me.txtusername.Name = "txtusername"
         Me.txtusername.Size = New System.Drawing.Size(440, 28)
@@ -212,7 +166,7 @@ Partial Class UserCenter
         Me.txtemail.Font = New System.Drawing.Font("Mark", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtemail.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
         Me.txtemail.Location = New System.Drawing.Point(47, 316)
-        Me.txtemail.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtemail.Margin = New System.Windows.Forms.Padding(4)
         Me.txtemail.MaxLength = 100
         Me.txtemail.Name = "txtemail"
         Me.txtemail.Size = New System.Drawing.Size(440, 28)
@@ -225,7 +179,7 @@ Partial Class UserCenter
         Me.txtname.Font = New System.Drawing.Font("Mark", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtname.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
         Me.txtname.Location = New System.Drawing.Point(47, 384)
-        Me.txtname.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtname.Margin = New System.Windows.Forms.Padding(4)
         Me.txtname.MaxLength = 100
         Me.txtname.Name = "txtname"
         Me.txtname.Size = New System.Drawing.Size(440, 28)
@@ -242,7 +196,7 @@ Partial Class UserCenter
         Me.role.FormattingEnabled = True
         Me.role.Items.AddRange(New Object() {"Owner", "Administrador", "Usuario"})
         Me.role.Location = New System.Drawing.Point(111, 505)
-        Me.role.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.role.Margin = New System.Windows.Forms.Padding(4)
         Me.role.Name = "role"
         Me.role.Size = New System.Drawing.Size(235, 32)
         Me.role.TabIndex = 47
@@ -311,7 +265,7 @@ Partial Class UserCenter
         Me.txtsurname.Font = New System.Drawing.Font("Mark", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtsurname.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
         Me.txtsurname.Location = New System.Drawing.Point(47, 455)
-        Me.txtsurname.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtsurname.Margin = New System.Windows.Forms.Padding(4)
         Me.txtsurname.MaxLength = 100
         Me.txtsurname.Name = "txtsurname"
         Me.txtsurname.Size = New System.Drawing.Size(440, 28)
@@ -337,12 +291,58 @@ Partial Class UserCenter
         Me.change.Enabled = False
         Me.change.Font = New System.Drawing.Font("Mark", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.change.Location = New System.Drawing.Point(147, 596)
-        Me.change.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.change.Margin = New System.Windows.Forms.Padding(4)
         Me.change.Name = "change"
         Me.change.Size = New System.Drawing.Size(241, 41)
         Me.change.TabIndex = 77
         Me.change.Text = "Make changes"
         Me.change.UseVisualStyleBackColor = False
+        '
+        'pfp
+        '
+        Me.pfp.Image = Global.Intento2.My.Resources.Resources.image
+        Me.pfp.Location = New System.Drawing.Point(123, 11)
+        Me.pfp.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.pfp.Name = "pfp"
+        Me.pfp.Size = New System.Drawing.Size(60, 60)
+        Me.pfp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pfp.TabIndex = 35
+        Me.pfp.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(195, Byte), Integer), CType(CType(206, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox1.Image = Global.Intento2.My.Resources.Resources.logo
+        Me.PictureBox1.Location = New System.Drawing.Point(9, 6)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(107, 70)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 34
+        Me.PictureBox1.TabStop = False
+        '
+        'banner
+        '
+        Me.banner.Image = CType(resources.GetObject("banner.Image"), System.Drawing.Image)
+        Me.banner.Location = New System.Drawing.Point(0, 0)
+        Me.banner.Margin = New System.Windows.Forms.Padding(4)
+        Me.banner.Name = "banner"
+        Me.banner.Size = New System.Drawing.Size(1315, 105)
+        Me.banner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.banner.TabIndex = 38
+        Me.banner.TabStop = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = Global.Intento2.My.Resources.Resources.Untitled_3
+        Me.PictureBox2.Location = New System.Drawing.Point(536, 203)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(735, 470)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 43
+        Me.PictureBox2.TabStop = False
         '
         'UserCenter
         '
@@ -374,7 +374,7 @@ Partial Class UserCenter
         Me.Controls.Add(Me.PictureBox2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.Name = "UserCenter"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

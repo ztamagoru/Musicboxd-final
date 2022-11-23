@@ -1,6 +1,7 @@
 ﻿Public Class UserCenter
     Dim extras As New extras
     Dim datos As New datos
+    Dim search As New search
 
     Private Sub UserCenter_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Dim result = extras.show(
@@ -44,6 +45,27 @@
         datos.getallusers(_username.Text)
     End Sub
 
+#Region "    searchbar hovers"
+
+    Private Sub searchbar_Enter(sender As Object, e As EventArgs) Handles searchbar.Enter
+        If searchbar.Text.Trim = "Search song, album or artist" Then
+            With searchbar
+                .Text = String.Empty
+                .ForeColor = Color.FromArgb(60, 60, 65)
+            End With
+        End If
+    End Sub
+
+    Private Sub searchbar_Leave(sender As Object, e As EventArgs) Handles searchbar.Leave
+        If searchbar.Text.Trim = String.Empty Then
+            With searchbar
+                .Text = "Search song, album or artist"
+                .ForeColor = Color.FromArgb(160, 160, 160)
+            End With
+        End If
+    End Sub
+#End Region
+
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         MenuPrincipal.Show()
         Me.Dispose()
@@ -72,5 +94,32 @@
         datos.changerole(txtusername.Text, role.Text)
 
         datos.getallusers(_username.Text)
+    End Sub
+
+    Private Sub filterBttn_Click(sender As Object, e As EventArgs) Handles filterBttn.Click
+        Me.Dispose()
+        FilterCenter.Show()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        If searchbar.Text.Trim = "Search song, album or artist" Or
+            searchbar.Text.Trim = String.Empty Then
+
+            MessageBox.Show($"Search bar empty.{vbNewLine}Complete the blank space and try again",
+                            "Error",
+                            MessageBoxButtons.OK)
+        Else
+            SearchMenu.lbl.Text = $"Search results for: {searchbar.Text.Trim}"
+
+            search.makesearch(searchbar.Text.Trim)
+
+            With SearchMenu.searchbar
+                .Text = "Search song, album or artist"
+                .ForeColor = Color.FromArgb(160, 160, 160)
+            End With
+
+            SearchMenu.Show()
+            Me.Dispose()
+        End If
     End Sub
 End Class

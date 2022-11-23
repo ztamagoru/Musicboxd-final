@@ -197,6 +197,9 @@
     <EmbeddedResource Include="ArtistInfo.resx">
       <DependentUpon>ArtistInfo.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FilterCenter.resx">
+      <DependentUpon>FilterCenter.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="IngresarCodigo.resx">
       <DependentUpon>IngresarCodigo.vb</DependentUpon>
     </EmbeddedResource>

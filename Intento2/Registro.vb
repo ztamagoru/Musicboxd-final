@@ -112,7 +112,7 @@
         usernameTip.SetToolTip(_username,
                                $"The username needs to have between{vbNewLine}8 and 50 characters.")
         passwordTip.SetToolTip(_password,
-                               $"The password needs to contain ar least:{vbNewLine}• One upcase character{vbNewLine}• One number")
+                               $"The password needs to contain at least:{vbNewLine}• Between 8 and 20 characters{vbNewLine}• One upcase character{vbNewLine}• One number")
     End Sub
 
     Private Sub register(sender As Object, e As EventArgs) Handles Button1.Click

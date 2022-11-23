@@ -31,6 +31,9 @@ Partial Class FilterCenter
         Me.pfp = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.banner = New System.Windows.Forms.PictureBox()
+        Me.listapalabras = New System.Windows.Forms.ListBox()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         CType(Me.pfp, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.banner, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -136,12 +139,40 @@ Partial Class FilterCenter
         Me.banner.TabIndex = 46
         Me.banner.TabStop = False
         '
+        'listapalabras
+        '
+        Me.listapalabras.FormattingEnabled = True
+        Me.listapalabras.ItemHeight = 16
+        Me.listapalabras.Location = New System.Drawing.Point(767, 174)
+        Me.listapalabras.Name = "listapalabras"
+        Me.listapalabras.Size = New System.Drawing.Size(379, 452)
+        Me.listapalabras.TabIndex = 51
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(246, 363)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 52
+        Me.Button2.Text = "Button2"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(221, 287)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(100, 22)
+        Me.TextBox1.TabIndex = 53
+        '
         'FilterCenter
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(233, Byte), Integer), CType(CType(228, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1312, 710)
+        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.listapalabras)
         Me.Controls.Add(Me.userBttn)
         Me.Controls.Add(Me.filterBttn)
         Me.Controls.Add(Me.Button1)
@@ -172,4 +203,7 @@ Partial Class FilterCenter
     Friend WithEvents pfp As PictureBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents banner As PictureBox
+    Friend WithEvents listapalabras As ListBox
+    Friend WithEvents Button2 As Button
+    Friend WithEvents TextBox1 As TextBox
 End Class

@@ -1,6 +1,10 @@
-﻿Public Class FilterCenter
+﻿Imports System.IO
+
+Public Class FilterCenter
     Dim extras As New extras
     Dim search As New search
+
+    Dim lista As New Queue
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         Me.Dispose()
@@ -23,6 +27,24 @@
                 filterBttn.Visible = True
                 userBttn.Visible = True
         End Select
+
+        refreshlist()
+    End Sub
+
+    Public Sub refreshlist()
+        Dim palabras As String() = File.ReadAllLines("C:\Musicboxd - imagenes\Insultos.txt")
+
+        lista.Clear()
+
+        listapalabras.Items.Clear()
+
+        For i = 0 To palabras.Length - 1
+            lista.Enqueue(palabras(i))
+        Next
+
+        For Each z In lista
+            listapalabras.Items.Add(z)
+        Next
     End Sub
 
     Private Sub FilterCenter_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
@@ -90,5 +112,9 @@
             SearchMenu.Show()
             Me.Dispose()
         End If
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+
     End Sub
 End Class

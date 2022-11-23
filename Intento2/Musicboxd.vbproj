@@ -99,6 +99,7 @@
     <Compile Include="ArtistInfo.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="filter.vb" />
     <Compile Include="FilterCenter.Designer.vb">
       <DependentUpon>FilterCenter.vb</DependentUpon>
     </Compile>
